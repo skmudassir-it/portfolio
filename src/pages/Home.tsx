@@ -26,7 +26,7 @@ const Home = () => {
                         <h1 className="text-5xl md:text-7xl font-black mb-6">
                             Building the <span className="text-gradient">Future</span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-10">
+                        <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto mb-10">
                             Creative Developer specializing in immersive 3D web experiences and modern digital solutions.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -40,14 +40,14 @@ const Home = () => {
                     </motion.div>
                 </div>
                 <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-                    <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
-                        <div className="w-1 h-2 bg-white rounded-full"></div>
+                    <div className="w-6 h-10 border-2 border-dark/20 rounded-full flex justify-center pt-2">
+                        <div className="w-1 h-2 bg-dark/60 rounded-full"></div>
                     </div>
                 </div>
             </section>
 
             {/* Feature Text Section */}
-            <section className="py-24 px-4 bg-dark">
+            <section className="py-24 px-4 bg-light">
                 <div className="max-w-4xl mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -58,7 +58,7 @@ const Home = () => {
                         <h2 className="text-3xl md:text-5xl font-bold mb-8">
                             Bridging <span className="text-primary">Design</span> & <span className="text-secondary">Technology</span>
                         </h2>
-                        <p className="text-lg text-gray-400 leading-relaxed italic">
+                        <p className="text-lg text-gray-600 leading-relaxed italic">
                             "I believe that the web can be more than just flat pages. It can be a space for storytelling, interaction, and wonder. My mission is to push the boundaries of what's possible in the browser."
                         </p>
                     </motion.div>
@@ -66,11 +66,11 @@ const Home = () => {
             </section>
 
             {/* Feature Cards Section */}
-            <section className="py-24 px-4 bg-dark-light">
+            <section className="py-24 px-4 bg-light-dark">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold mb-4">Explore My <span className="text-gradient">World</span></h2>
-                        <p className="text-gray-400">Everything you need to know about my professional life.</p>
+                        <p className="text-gray-600">Everything you need to know about my professional life.</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {featurePages.map((page, index) => (
@@ -82,12 +82,12 @@ const Home = () => {
                                 transition={{ delay: index * 0.1, duration: 0.5 }}
                             >
                                 <Link to={page.path} className="group block h-full">
-                                    <div className="glass-morphism p-8 h-full rounded-2xl hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-2">
-                                        <div className="w-14 h-14 rounded-xl bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                    <div className="glass-morphism p-8 h-full rounded-2xl hover:bg-black/5 transition-all duration-300 transform hover:-translate-y-2">
+                                        <div className="w-14 h-14 rounded-xl bg-black/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                                             {page.icon}
                                         </div>
                                         <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{page.title}</h3>
-                                        <p className="text-gray-400 mb-6">{page.desc}</p>
+                                        <p className="text-gray-600 mb-6">{page.desc}</p>
                                         <div className="flex items-center text-sm font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity">
                                             Learn More <ArrowRight size={16} className="ml-1" />
                                         </div>

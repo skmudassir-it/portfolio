@@ -13,6 +13,7 @@ const Navbar = () => {
         { name: 'Experience', path: '/experience' },
         { name: 'Projects', path: '/projects' },
         { name: 'Publication', path: '/publication' },
+        { name: 'Certifications', path: '/certifications' },
         { name: 'Contact', path: '/contact' },
     ];
 
@@ -39,7 +40,7 @@ const Navbar = () => {
                             <Link
                                 key={link.name}
                                 to={link.path}
-                                className={`transition-colors duration-300 hover:text-primary ${location.pathname === link.path ? 'text-primary font-semibold' : 'text-gray-300'}`}
+                                className={`transition-colors duration-300 hover:text-primary ${location.pathname === link.path ? 'text-primary font-semibold' : 'text-gray-600'}`}
                             >
                                 {link.name}
                             </Link>
@@ -50,7 +51,7 @@ const Navbar = () => {
                     <div className="md:hidden">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="text-gray-300 hover:text-white"
+                            className="text-gray-600 hover:text-dark"
                         >
                             {isOpen ? <X size={28} /> : <Menu size={28} />}
                         </button>
@@ -66,7 +67,7 @@ const Navbar = () => {
                             key={link.name}
                             to={link.path}
                             onClick={() => setIsOpen(false)}
-                            className={`text-lg ${location.pathname === link.path ? 'text-primary font-semibold' : 'text-gray-300'}`}
+                            className={`text-lg ${location.pathname === link.path ? 'text-primary font-semibold' : 'text-gray-600'}`}
                         >
                             {link.name}
                         </Link>

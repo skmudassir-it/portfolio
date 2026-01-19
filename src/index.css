@@ -5,11 +5,11 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark light;
+  color-scheme: light dark;
 }
 
 body {
-  @apply bg-dark text-white font-outfit antialiased selection:bg-primary/30;
+  @apply bg-white text-gray-900 font-outfit antialiased selection:bg-primary/20;
   margin: 0;
   min-height: 100vh;
 }
@@ -20,7 +20,7 @@ body {
 }
 
 .glass-morphism {
-  @apply bg-white/5 backdrop-blur-lg border border-white/10;
+  @apply bg-white/70 backdrop-blur-lg border border-gray-200;
 }
 
 .text-gradient {
@@ -28,9 +28,9 @@ body {
 }
 
 .btn-primary {
-  @apply px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-full font-semibold transition-all duration-300 shadow-lg shadow-primary/20 hover:shadow-primary/40 active:scale-95;
+  @apply px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-full font-semibold transition-all duration-300 shadow-lg shadow-primary/20 hover:shadow-primary/40 active:scale-95;
 }
 
 .btn-secondary {
-  @apply px-6 py-3 bg-transparent border-2 border-primary text-white rounded-full font-semibold transition-all duration-300 hover:bg-primary/10 active:scale-95;
+  @apply px-6 py-3 bg-transparent border-2 border-primary text-primary rounded-full font-semibold transition-all duration-300 hover:bg-primary/10 active:scale-95;
 }
