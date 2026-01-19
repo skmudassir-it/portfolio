@@ -27,19 +27,53 @@ export const Education = () => (
         <PageHeader title="Education" subtitle="My academic background and certifications." />
         <section className="py-20 px-4">
             <div className="max-w-4xl mx-auto space-y-8">
-                <div className="glass-morphism p-8 rounded-2xl border-l-4 border-primary">
-                    <span className="text-primary font-bold">2018 - 2022</span>
-                    <h3 className="text-2xl font-bold mt-2">Bachelor of Computer Science</h3>
-                    <p className="text-gray-600 mt-2">University Name • GPA: 3.9/4.0</p>
-                    <p className="text-gray-600 mt-4 leading-relaxed">
-                        Focused on software engineering, computer graphics, and distributed systems. Recipient of several academic excellence awards.
-                    </p>
-                </div>
-                <div className="glass-morphism p-8 rounded-2xl border-l-4 border-secondary">
-                    <span className="text-secondary font-bold">2022</span>
-                    <h3 className="text-2xl font-bold mt-2">Advanced Web Development Certification</h3>
-                    <p className="text-gray-600 mt-2">Online Platform / Institute</p>
-                </div>
+                {[
+                    {
+                        degree: "Masters in Information Technology Management",
+                        school: "Indiana Wesleyan University",
+                        period: "Jan 2023 - Dec 2024",
+                        color: "border-primary",
+                        image: "/education/Indiana-Wesleyan-University.webp"
+                    },
+                    {
+                        degree: "MSc Datascience",
+                        school: "Chandigarh University",
+                        period: "Aug 2021 - Mar 2023",
+                        color: "border-secondary",
+                        image: "/education/chandigarh_university.png"
+                    },
+                    {
+                        degree: "BE Mechanical Engineering",
+                        school: "Muffakham Jah College of Engg and Tech",
+                        period: "May 2014 - May 2017",
+                        color: "border-primary",
+                        image: "/education/mjcet.jpg"
+                    },
+                    {
+                        degree: "Diploma in Automobile Engineering",
+                        school: "Govt Polytechnic Masabtank",
+                        period: "May 2009 - Apr 2012",
+                        color: "border-secondary",
+                        image: "/education/diploma.jpg"
+                    }
+                ].map((edu, idx) => (
+                    <div key={idx} className={`glass-morphism p-8 rounded-2xl border-l-4 ${edu.color} hover:bg-black/5 transition-all flex flex-col md:flex-row gap-6 items-center md:items-start`}>
+                        <div className="w-24 h-24 flex-shrink-0 bg-white rounded-xl p-2 flex items-center justify-center border border-gray-100">
+                            <img src={edu.image} alt={edu.school} className="max-w-full max-h-full object-contain" />
+                        </div>
+                        <div className="flex-grow w-full">
+                            <div className="flex flex-col md:flex-row justify-between items-start gap-2">
+                                <div>
+                                    <h3 className="text-2xl font-bold">{edu.degree}</h3>
+                                    <p className="text-gray-600 mt-2 text-lg">{edu.school}</p>
+                                </div>
+                                <span className={`px-4 py-1 rounded-full ${idx % 2 === 0 ? 'bg-primary/10 text-primary' : 'bg-secondary/10 text-secondary'} font-bold text-sm whitespace-nowrap`}>
+                                    {edu.period}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                ))}
             </div>
         </section>
     </div>

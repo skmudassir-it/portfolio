@@ -65,6 +65,72 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* Education Section */}
+            <section className="py-24 px-4 bg-white">
+                <div className="max-w-7xl mx-auto">
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                        <div>
+                            <h2 className="text-4xl font-bold mb-4">Academic <span className="text-gradient">Background</span></h2>
+                            <p className="text-gray-600 max-w-xl text-lg">My educational journey and qualifications.</p>
+                        </div>
+                        <Link to="/education" className="btn-secondary flex items-center gap-2 group whitespace-nowrap">
+                            View Full Education <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {[
+                            {
+                                degree: "Masters in Information Technology Management",
+                                school: "Indiana Wesleyan University",
+                                period: "2023 - 2024",
+                                image: "/education/Indiana-Wesleyan-University.webp",
+                                color: "border-primary"
+                            },
+                            {
+                                degree: "MSc Datascience",
+                                school: "Chandigarh University",
+                                period: "2021 - 2023",
+                                image: "/education/chandigarh_university.png",
+                                color: "border-secondary"
+                            },
+                            {
+                                degree: "BE Mechanical Engineering",
+                                school: "Muffakham Jah College of Engg and Tech",
+                                period: "2014 - 2017",
+                                image: "/education/mjcet.jpg",
+                                color: "border-primary"
+                            },
+                            {
+                                degree: "Diploma in Automobile Engineering",
+                                school: "Govt Polytechnic Masabtank",
+                                period: "2009 - 2012",
+                                image: "/education/diploma.jpg",
+                                color: "border-secondary"
+                            }
+                        ].map((edu, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: idx * 0.1 }}
+                                className={`glass-morphism p-6 rounded-2xl border-l-4 ${edu.color} flex items-center gap-6 hover:bg-black/5 transition-all`}
+                            >
+                                <div className="w-20 h-20 flex-shrink-0 bg-white rounded-xl p-2 flex items-center justify-center border border-gray-100">
+                                    <img src={edu.image} alt={edu.school} className="max-w-full max-h-full object-contain" />
+                                </div>
+                                <div>
+                                    <h3 className="text-lg font-bold mb-1">{edu.degree}</h3>
+                                    <p className="text-sm text-gray-600 mb-2">{edu.school}</p>
+                                    <span className="px-3 py-1 bg-black/5 text-gray-500 text-xs font-bold rounded-full">{edu.period}</span>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* Featured Certifications Section */}
             <section className="py-24 px-4 bg-white overflow-hidden">
                 <div className="max-w-7xl mx-auto">
