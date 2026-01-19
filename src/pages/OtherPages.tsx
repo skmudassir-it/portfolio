@@ -96,6 +96,18 @@ export const experienceData = [
             'Orchestrated CI/CD pipelines with Jenkins and Git, streamlining the development-to-deployment lifecycle.',
             'Collaborated with global teams to maintain and scale cloud infrastructure on AWS, ensuring 99.9% system availability.',
             'Ensured compliance with strict financial security standards and regulatory requirements across all software modules.'
+        ],
+        recommendations: [
+            {
+                author: "Tina Huges",
+                relation: "Client",
+                text: "Mudassir has continuously provided the highest level of service in the testing of our applications. He demonstrates strong technical knowledge and attention to detail, allowing the team to release without defects. He brings a positive attitude to every meeting, building relationships while also delivering on his commitments."
+            },
+            {
+                author: "Shefali",
+                relation: "Senior Colleague",
+                text: "Muddasir is a hard working guy. He has a deep knowledge on Test automation and exposure to various automation tools. He is a seasoned quality analyst and always willing to learn new things."
+            }
         ]
     },
     {
@@ -114,6 +126,18 @@ export const experienceData = [
             'Designed and deployed serverless architecture on AWS, significantly reducing operational costs and improving scalability.',
             'Worked closely with marketing stakeholders to transform raw data into interactive dashboards and actionable business intelligence.',
             'Optimized data ingestion pipelines, improving real-time processing capabilities for streaming media metrics.'
+        ],
+        recommendations: [
+            {
+                author: "Aamir",
+                relation: "Client",
+                text: "I have had the opportunity to work with Mudassir for the last two years, Mudassir has consistently shown his grasp and mastery at his occupation and the art of thinking outside the box. Any team would be lucky to have him in their team."
+            },
+            {
+                author: "Aditi Digital Team",
+                relation: "Colleague",
+                text: "Mudassir is a technology enthusiast and he has valuable potential in the streams of Data Science, Machine Learning, Deep Learning, Python Programming, and Neural Networks."
+            }
         ]
     },
     {
@@ -132,33 +156,78 @@ export const experienceData = [
             'Reduced scrap rates by 15% through meticulous analytical problem-solving and process redesign.',
             'Collaborated with the manufacturing team to integrate computer-aided engineering (CAE) tools into the standard design workflow.',
             'Authored technical reports and documentation for new manufacturing methodologies and quality control standards.'
+        ],
+        recommendations: [
+            {
+                author: "Sushmitha",
+                relation: "Colleague",
+                text: "Mudassir has very good technical knowledge and it is very much comfortable to work with him. Mudassir has an ability to tackle challenges easily."
+            }
         ]
     }
 ];
 
+export const generalRecommendations = [
+    {
+        author: "Dr. Daniel Nguyen",
+        title: "Professor at IWU | Academic Mentor",
+        text: "Mudassir happened to be one of my top students and research mentees at Indiana Wesleyan University (IWU). I rated him as one of the top 5% in the Information Systems Management Programs at IWU. He was very prompt in submitting his work as well as paying attention in detail to addressing assignments requirements."
+    }
+];
+
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Quote } from 'lucide-react';
+
+const TestimonialCard = ({ quote, author, relation, title }: { quote: string, author: string, relation?: string, title?: string }) => (
+    <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="glass-morphism p-8 rounded-3xl relative h-full flex flex-col"
+    >
+        <Quote className="text-primary/20 absolute top-6 right-8" size={40} />
+        <p className="text-gray-600 italic leading-relaxed mb-6 text-lg">"{quote}"</p>
+        <div className="mt-auto">
+            <h4 className="font-bold text-lg text-dark">{author}</h4>
+            <p className="text-sm text-primary font-bold uppercase tracking-wider mt-1">
+                {relation || title}
+            </p>
+        </div>
+    </motion.div>
+);
 
 export const Experience = () => (
     <div className="min-h-screen">
         <PageHeader title="Experience" subtitle="My professional journey and career highlights." />
         <section className="py-20 px-4">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {experienceData.map((exp, i) => (
-                    <Link key={i} to={`/experience/${exp.slug}`} className="group">
-                        <div className={`glass-morphism p-8 rounded-3xl border-l-4 ${exp.color} hover:bg-black/5 transition-all h-full flex flex-col`}>
-                            <div className="w-20 h-20 bg-white rounded-2xl p-3 flex items-center justify-center border border-gray-100 mb-6 group-hover:scale-110 transition-transform">
-                                <img src={exp.image} alt={exp.company} className="max-w-full max-h-full object-contain" />
+            <div className="max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+                    {experienceData.map((exp, i) => (
+                        <Link key={i} to={`/experience/${exp.slug}`} className="group">
+                            <div className={`glass-morphism p-8 rounded-3xl border-l-4 ${exp.color} hover:bg-black/5 transition-all h-full flex flex-col`}>
+                                <div className="w-20 h-20 bg-white rounded-2xl p-3 flex items-center justify-center border border-gray-100 mb-6 group-hover:scale-110 transition-transform">
+                                    <img src={exp.image} alt={exp.company} className="max-w-full max-h-full object-contain" />
+                                </div>
+                                <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">{exp.role}</h3>
+                                <p className="text-gray-600 font-semibold mb-1">{exp.company}</p>
+                                <p className="text-xs text-primary font-bold uppercase tracking-widest mb-4">{exp.domain}</p>
+                                <span className="mt-auto inline-block px-4 py-1 rounded-full bg-black/5 text-xs font-semibold w-fit">
+                                    {exp.period}
+                                </span>
                             </div>
-                            <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">{exp.role}</h3>
-                            <p className="text-gray-600 font-semibold mb-1">{exp.company}</p>
-                            <p className="text-xs text-primary font-bold uppercase tracking-widest mb-4">{exp.domain}</p>
-                            <span className="mt-auto inline-block px-4 py-1 rounded-full bg-black/5 text-xs font-semibold w-fit">
-                                {exp.period}
-                            </span>
-                        </div>
-                    </Link>
-                ))}
+                        </Link>
+                    ))}
+                </div>
+
+                {/* Academic/General Recommendations */}
+                <div className="max-w-4xl mx-auto pt-20 border-t border-gray-100">
+                    <h2 className="text-4xl font-black text-center mb-16">Voices of <span className="text-gradient">Mentors & Clients</span></h2>
+                    <div className="grid grid-cols-1 gap-8">
+                        {generalRecommendations.map((rec, i) => (
+                            <TestimonialCard key={i} quote={rec.text} author={rec.author} title={rec.title} />
+                        ))}
+                    </div>
+                </div>
             </div>
         </section>
     </div>
@@ -195,7 +264,7 @@ export const ExperienceDetail = () => {
 
             <section className="py-20 px-4">
                 <div className="max-w-4xl mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
                         <div className="md:col-span-2">
                             <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
                                 <span className="w-8 h-1 bg-primary rounded-full"></span>
@@ -230,6 +299,18 @@ export const ExperienceDetail = () => {
                             </div>
                         </div>
                     </div>
+
+                    {/* Role Specific Recommendations */}
+                    {exp.recommendations && (
+                        <div className="mt-20 pt-20 border-t border-gray-100">
+                            <h3 className="text-3xl font-bold mb-12">Colleague Recommendations</h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                {exp.recommendations.map((rec, i) => (
+                                    <TestimonialCard key={i} quote={rec.text} author={rec.author} relation={rec.relation} />
+                                ))}
+                            </div>
+                        </div>
+                    )}
                 </div>
             </section>
         </div>
