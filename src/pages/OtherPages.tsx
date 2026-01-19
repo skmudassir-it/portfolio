@@ -82,21 +82,55 @@ export const Experience = () => (
     </div>
 );
 
-export const Publication = () => (
-    <div className="min-h-screen">
-        <PageHeader title="Publications" subtitle="My research papers, articles, and shared knowledge." />
-        <section className="py-20 px-4">
-            <div className="max-w-4xl mx-auto grid grid-cols-1 gap-6">
-                <div className="glass-morphism p-8 rounded-2xl hover:bg-black/5 transition-all cursor-pointer">
-                    <h3 className="text-2xl font-bold mb-3">Exploring the Frontiers of WebGL and Three.js</h3>
-                    <p className="text-gray-600 mb-4">Published in Tech Insights Journal • 2024</p>
-                    <p className="text-gray-600">An in-depth look at how 3D graphics are changing user behavior and engagement on the web.</p>
-                    <button className="mt-6 text-primary font-bold hover:underline">Read Article -&gt;</button>
+export const Publication = () => {
+    const publications = [
+        {
+            title: "Design and Analysis of Disc Brake and Caliper of four wheeler",
+            url: "https://ijste.org/Article.php?manuscript=IJSTEV3I8065",
+            description: "International Journal of Science Technology & Engineering article (volume 3, issue 8, ISSN 2349-784X). Peer-reviewed, monthly online journal publishing original research in engineering and technology fields such as civil, mechanical, computer science, and electronics.",
+            publishedIn: "Bachelor's",
+            image: "/Publication/ijste.png",
+            color: "border-blue-500"
+        },
+        {
+            title: "Impact of Artificial Intelligence on Corporate Leadership",
+            url: "https://www.scirp.org/journal/paperinformation?paperid=132403",
+            description: "Scientific Research Publishing (SCIRP) journal paper. Open-access research article in a multidisciplinary science journal.",
+            publishedIn: "Master's",
+            image: "/Publication/SRP_logo.svg",
+            color: "border-purple-500"
+        }
+    ];
+
+    return (
+        <div className="min-h-screen">
+            <PageHeader title="Publications" subtitle="My research papers, articles, and shared knowledge." />
+            <section className="py-20 px-4">
+                <div className="max-w-4xl mx-auto space-y-8">
+                    {publications.map((pub, idx) => (
+                        <div key={idx} className={`glass-morphism p-8 rounded-2xl border-l-4 ${pub.color} hover:bg-black/5 transition-all group`}>
+                            <div className="flex flex-col md:flex-row gap-6 items-start">
+                                <div className="w-full md:w-32 h-32 flex-shrink-0 bg-white rounded-xl p-4 flex items-center justify-center border border-gray-100">
+                                    <img src={pub.image} alt="Journal Logo" className="max-w-full max-h-full object-contain" />
+                                </div>
+                                <div>
+                                    <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">{pub.title}</h3>
+                                    <div className="flex items-center gap-2 mb-4">
+                                        <span className="px-3 py-1 bg-black/5 text-gray-600 text-xs font-bold rounded-lg uppercase tracking-wider">{pub.publishedIn}</span>
+                                    </div>
+                                    <p className="text-gray-600 mb-6 leading-relaxed">{pub.description}</p>
+                                    <a href={pub.url} target="_blank" rel="noopener noreferrer" className="text-primary font-bold hover:underline flex items-center gap-2">
+                                        Read Article <span className="text-xl">→</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-            </div>
-        </section>
-    </div>
-);
+            </section>
+        </div>
+    );
+};
 
 export const Projects = () => {
     const projects = [

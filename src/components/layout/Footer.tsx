@@ -25,7 +25,7 @@ const Footer = () => {
                         <h4 className="text-lg font-semibold mb-4 text-dark">Socials</h4>
                         <div className="flex space-x-4">
                             <a href="#" className="w-10 h-10 rounded-full glass-morphism flex items-center justify-center hover:bg-primary/20 transition-all">GH</a>
-                            <a href="#" className="w-10 h-10 rounded-full glass-morphism flex items-center justify-center hover:bg-primary/20 transition-all">LI</a>
+                            <a href="https://www.linkedin.com/in/mudassirshaik/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass-morphism flex items-center justify-center hover:bg-primary/20 transition-all">LI</a>
                             <a href="#" className="w-10 h-10 rounded-full glass-morphism flex items-center justify-center hover:bg-primary/20 transition-all">TW</a>
                         </div>
                     </div>

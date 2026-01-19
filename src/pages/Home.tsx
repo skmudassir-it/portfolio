@@ -108,6 +108,125 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* Featured Projects Section */}
+            <section className="py-24 px-4 bg-light">
+                <div className="max-w-7xl mx-auto">
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                        <div>
+                            <h2 className="text-4xl font-bold mb-4">Featured <span className="text-gradient">Projects</span></h2>
+                            <p className="text-gray-600 max-w-xl text-lg">A selection of my recent professional work and digital solutions.</p>
+                        </div>
+                        <Link to="/projects" className="btn-secondary flex items-center gap-2 group whitespace-nowrap">
+                            View All Projects <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {[
+                            {
+                                name: "Beauty and company",
+                                url: "https://www.bandconline.com",
+                                image: "/projects/beauty_and_company.webp",
+                                platform: "Shopify (e-commerce)",
+                                color: "from-blue-500/20 to-indigo-500/20"
+                            },
+                            {
+                                name: "Shop Hershe",
+                                url: "https://shophershe.com",
+                                image: "/projects/shop_hershe.avif",
+                                platform: "Shopify (e-commerce)",
+                                color: "from-pink-500/20 to-rose-500/20"
+                            },
+                            {
+                                name: "Go Sticky Icky",
+                                url: "https://gostickyicky.com",
+                                image: "/projects/Go_stickyIcky.avif",
+                                platform: "Shopify (e-commerce)",
+                                color: "from-green-500/20 to-emerald-500/20"
+                            }
+                        ].map((project, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: idx * 0.1 }}
+                                className="group relative h-full"
+                            >
+                                <a href={project.url} target="_blank" rel="noopener noreferrer" className="block h-full">
+                                    <div className="glass-morphism overflow-hidden rounded-3xl h-full flex flex-col transition-all duration-300 transform group-hover:-translate-y-2 group-hover:shadow-xl">
+                                        <div className={`h-48 bg-gradient-to-br ${project.color} flex items-center justify-center relative overflow-hidden`}>
+                                            <img
+                                                src={project.image}
+                                                alt={project.name}
+                                                className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                                            />
+                                            <div className="absolute inset-0 bg-dark/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                                <span className="px-5 py-2 bg-white text-dark font-bold rounded-full text-sm">Visit Site</span>
+                                            </div>
+                                        </div>
+                                        <div className="p-6">
+                                            <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.name}</h3>
+                                            <p className="text-sm text-gray-500 font-semibold">{project.platform}</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Recent Publications Section */}
+            <section className="py-24 px-4 bg-white">
+                <div className="max-w-7xl mx-auto">
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                        <div>
+                            <h2 className="text-4xl font-bold mb-4">Recent <span className="text-gradient">Publications</span></h2>
+                            <p className="text-gray-600 max-w-xl text-lg">My latest research contributions in engineering and technology.</p>
+                        </div>
+                        <Link to="/publication" className="btn-secondary flex items-center gap-2 group whitespace-nowrap">
+                            All Publications <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {[
+                            {
+                                title: "Design and Analysis of Disc Brake and Caliper of four wheeler",
+                                image: "/Publication/ijste.png",
+                                publishedIn: "Bachelor's",
+                                link: "https://ijste.org/Article.php?manuscript=IJSTEV3I8065"
+                            },
+                            {
+                                title: "Impact of Artificial Intelligence on Corporate Leadership",
+                                image: "/Publication/SRP_logo.svg",
+                                publishedIn: "Master's",
+                                link: "https://www.scirp.org/journal/paperinformation?paperid=132403"
+                            }
+                        ].map((pub, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, x: idx === 0 ? -20 : 20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                className="glass-morphism p-6 rounded-2xl flex items-center gap-6 group hover:bg-black/5 transition-colors cursor-pointer"
+                                onClick={() => window.open(pub.link, '_blank')}
+                            >
+                                <div className="w-24 h-24 flex-shrink-0 bg-white rounded-xl p-2 flex items-center justify-center border border-gray-100">
+                                    <img src={pub.image} alt="Journal Logo" className="max-w-full max-h-full object-contain" />
+                                </div>
+                                <div>
+                                    <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors line-clamp-2">{pub.title}</h3>
+                                    <span className="px-3 py-1 bg-black/5 text-gray-600 text-xs font-bold rounded-lg uppercase tracking-wider">{pub.publishedIn}</span>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+
+            </section>
+
             {/* Feature Cards Section */}
             <section className="py-24 px-4 bg-light-dark">
                 <div className="max-w-7xl mx-auto">
