@@ -174,84 +174,187 @@ export const Certifications = () => (
                     {
                         category: "Amazon Web Services (AWS)",
                         certs: [
-                            { title: "AWS Certified Developer – Associate", type: "Associate" },
-                            { title: "AWS Certified Machine Learning Engineer – Associate", type: "Associate" },
-                            { title: "AWS Certified Cloud Practitioner", type: "Foundational" },
-                            { title: "AWS Certified AI Practitioner", type: "Foundational" }
+                            {
+                                title: "AWS Certified Developer – Associate",
+                                type: "Associate",
+                                image: "/certificates/AWS Developer.png",
+                                link: "https://www.credly.com/badges/30bd878d-9d39-497b-9f30-ab4adb19a843/linked_in?t=sry2ws"
+                            },
+                            {
+                                title: "AWS Certified Machine Learning Engineer – Associate",
+                                type: "Associate",
+                                image: "/certificates/AWS_MLE.png",
+                                link: "https://www.credly.com/org/amazon-web-services/badge/aws-certified-machine-learning-engineer-associate"
+                            },
+                            {
+                                title: "AWS Certified Cloud Practitioner",
+                                type: "Foundational",
+                                image: "/certificates/AWS_CP.png",
+                                link: "https://www.credly.com/badges/3ceb3869-0074-4029-970d-704391c3c4b0"
+                            },
+                            {
+                                title: "AWS Certified AI Practitioner",
+                                type: "Foundational",
+                                image: "/certificates/AWS_AIP.png",
+                                link: "https://www.credly.com/badges/0b88cdc0-494a-4003-bf5f-8a691de38ac7"
+                            }
                         ]
                     },
                     {
-                        category: "Microsoft",
+                        category: "Microsoft & HarvardX",
                         certs: [
-                            { title: "Microsoft Certified: Azure DevOps Engineer Expert", type: "Exam AZ-400" }
-                        ]
-                    },
-                    {
-                        category: "HarvardX",
-                        certs: [
-                            { title: "Data Science: Machine Learning (PH125.8x)", date: "August 31, 2022" }
-                        ]
-                    },
-                    {
-                        category: "Google / Coursera",
-                        certs: [
-                            { title: "Crash Course on Python", date: "January 23, 2022" }
+                            {
+                                title: "Azure DevOps Engineer Expert (AZ-400)",
+                                type: "Expert",
+                                image: "/certificates/AZ-400.png",
+                                link: "https://www.credly.com/badges/a6caa3d8-8460-463c-a1f9-f4b5125480dc/public_url"
+                            },
+                            {
+                                title: "Data Science: Machine Learning",
+                                issuer: "HarvardX",
+                                image: "/certificates/PH125.8x.jpg",
+                                link: "https://www.credly.com/badges/e6b3d236-f5aa-40ab-83e1-1dca29057613/linked_in_profile"
+                            },
+                            {
+                                title: "Crash Course on Python",
+                                issuer: "Google",
+                                image: "/certificates/udmy_python.jpg",
+                                link: "https://www.coursera.org/verify/6J2LBSDD4PKN"
+                            }
                         ]
                     },
                     {
                         category: "IBM / Cognitive Class",
                         certs: [
-                            { title: "Data Science Foundations", type: "Foundational" },
-                            { title: "Data Science Methodologies", type: "Foundational" },
-                            { title: "Data Science Tools", type: "Foundational" },
-                            { title: "Python for Data Science", type: "Foundational" }
+                            {
+                                title: "Data Science Foundations",
+                                issuer: "IBM / CC",
+                                image: "/certificates/IBM_CC.png",
+                                link: "https://cognitiveclass.ai/courses/data-science-101"
+                            },
+                            {
+                                title: "Data Science Methodologies",
+                                issuer: "IBM / CC",
+                                image: "/certificates/IBM_DS_Methodoligies.png",
+                                link: "https://cognitiveclass.ai/courses/data-science-methodology"
+                            },
+                            {
+                                title: "Data Science Tools",
+                                issuer: "IBM / CC",
+                                image: "/certificates/IBM_DS_tools.png",
+                                link: "https://cognitiveclass.ai/courses/data-science-tools"
+                            },
+                            {
+                                title: "Python for Data Science",
+                                issuer: "IBM / CC",
+                                image: "/certificates/IBM_PythonDS.png",
+                                link: "https://cognitiveclass.ai/courses/python-for-data-science"
+                            }
                         ]
                     },
                     {
-                        category: "Udemy & Others",
+                        category: "Udemy Specializations",
                         certs: [
-                            { title: "Linux for Data Engineers (Hands On)", date: "January 8, 2025" },
-                            { title: "Python REST APIs with Flask, Docker, MongoDB, and AWS DevOps", date: "Oct 24, 2022" },
-                            { title: "Master Discrete Mathematics: Sets, Math Logic, and More", date: "Oct 19, 2022" },
-                            { title: "Complete PySpark & Google Colab Primer For Data Science", date: "Oct 14, 2022" },
-                            { title: "Deploy Machine Learning Models on GCP + AWS Lambda (Docker)", date: "Aug 18, 2022" },
-                            { title: "Introduction to Natural Language Processing (NLP)", date: "Aug 16, 2022" }
+                            {
+                                title: "Linux for Data Engineers (Hands On)",
+                                date: "Jan 2025",
+                                image: "/certificates/udemy_linux.png",
+                                link: "https://www.ude.my/UC-cb404715-3a5b-4526-beb0-55408addd0ef/"
+                            },
+                            {
+                                title: "Python REST APIs with Flask & Docker",
+                                date: "Oct 2022",
+                                image: "/certificates/udemy REST.jpg",
+                                link: "http://ude.my/UC-2398dacc-bd0d-4968-b96d-c0ef9a1d4597"
+                            },
+                            {
+                                title: "Master Discrete Mathematics",
+                                date: "Oct 2022",
+                                image: "/certificates/udemy_master.jpg",
+                                link: "http://ude.my/UC-a448148b-304d-4c17-9663-e4045b0084fe"
+                            },
+                            {
+                                title: "Complete PySpark & Colab Primer",
+                                date: "Oct 2022",
+                                image: "/certificates/udemy_pyspark.jpg",
+                                link: "https://ude.my/UC-0a724f2f-a0f0-4a38-a9fd-a9375f8dbaa0"
+                            },
+                            {
+                                title: "Deploy ML Models on GCP + AWS",
+                                date: "Aug 2022",
+                                image: "/certificates/udemy_ml.jpg",
+                                link: "https://www.ude.my/UC-c403efb4-db48-4c81-ba1b-7395de0695b7/"
+                            },
+                            {
+                                title: "Natural Language Processing (NLP)",
+                                date: "Aug 2022",
+                                image: "/certificates/udemyNLP.jpg",
+                                link: "https://www.ude.my/UC-cb404715-3a5b-4526-beb0-55408addd0ef/"
+                            },
+                            {
+                                title: "Machine Learning Specialization",
+                                type: "Advanced",
+                                image: "/certificates/MLE_Early.png",
+                                link: "https://sites.google.com/view/skmudassir/certificates"
+                            }
                         ]
                     }
-                ].map((group, idx) => (
-                    <div key={idx}>
-                        <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
-                            <span className="w-8 h-1 bg-primary rounded-full"></span>
-                            {group.category}
-                        </h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {(group.certs as { title: string, type?: string, date?: string }[]).map((cert, cidx) => (
-                                <motion.div
-                                    key={cidx}
-                                    initial={{ opacity: 0, scale: 0.95 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: cidx * 0.05 }}
-                                    className="glass-morphism p-6 rounded-2xl hover:bg-black/5 transition-all group border-l-4 border-primary/30 hover:border-primary"
-                                >
-                                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{cert.title}</h3>
-                                    <div className="flex justify-between items-center mt-4">
-                                        {cert.type && (
-                                            <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-lg uppercase">
-                                                {cert.type}
-                                            </span>
-                                        )}
-                                        {cert.date && (
-                                            <span className="text-sm text-gray-500 font-medium ml-auto">
-                                                {cert.date}
-                                            </span>
-                                        )}
-                                    </div>
-                                </motion.div>
-                            ))}
+                ]
+                    .map((group, idx) => (
+                        <div key={idx}>
+                            <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
+                                <span className="w-8 h-1 bg-primary rounded-full"></span>
+                                {group.category}
+                            </h2>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {(group.certs as { title: string, type?: string, date?: string, image?: string, link?: string, issuer?: string }[]).map((cert, cidx) => (
+                                    <motion.div
+                                        key={cidx}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: cidx * 0.1 }}
+                                        className="group relative"
+                                    >
+                                        <a href={cert.link} target="_blank" rel="noopener noreferrer" className="block h-full">
+                                            <div className="glass-morphism p-6 rounded-2xl h-full transition-all duration-300 transform group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-primary/10 overflow-hidden">
+                                                <div className="relative h-48 mb-6 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-4">
+                                                    {cert.image ? (
+                                                        <img
+                                                            src={cert.image}
+                                                            alt={cert.title}
+                                                            className="max-h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                                                        />
+                                                    ) : (
+                                                        <div className="w-full h-full bg-primary/5 flex items-center justify-center text-primary font-bold">
+                                                            {cert.issuer || "Certificate"}
+                                                        </div>
+                                                    )}
+                                                    <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                                        <span className="px-4 py-2 bg-white text-primary font-bold rounded-full text-sm translate-y-4 group-hover:translate-y-0 transition-transform">View Certificate</span>
+                                                    </div>
+                                                </div>
+                                                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2">{cert.title}</h3>
+                                                <div className="flex items-center gap-2 mt-auto">
+                                                    {cert.type && (
+                                                        <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-lg uppercase tracking-wider">
+                                                            {cert.type}
+                                                        </span>
+                                                    )}
+                                                    {cert.date && (
+                                                        <span className="text-xs text-gray-400 font-semibold">{cert.date}</span>
+                                                    )}
+                                                    {cert.issuer && (
+                                                        <span className="text-xs text-gray-500 font-bold uppercase">{cert.issuer}</span>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </motion.div>
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
             </div>
         </section>
     </div>

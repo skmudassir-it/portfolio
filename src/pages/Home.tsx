@@ -65,6 +65,49 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* Featured Certifications Section */}
+            <section className="py-24 px-4 bg-white overflow-hidden">
+                <div className="max-w-7xl mx-auto">
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                        <div>
+                            <h2 className="text-4xl font-bold mb-4">Professional <span className="text-gradient">Certifications</span></h2>
+                            <p className="text-gray-600 max-w-xl text-lg">Independently verified skills from industry leaders like AWS, Microsoft, and Harvard.</p>
+                        </div>
+                        <Link to="/certifications" className="btn-secondary flex items-center gap-2 group whitespace-nowrap">
+                            View All Certifications <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {[
+                            { title: "AWS Developer Associate", issuer: "Amazon Web Services", image: "/certificates/AWS Developer.png" },
+                            { title: "Azure DevOps Expert", issuer: "Microsoft", image: "/certificates/AZ-400.png" },
+                            { title: "Data Science: ML", issuer: "HarvardX", image: "/certificates/PH125.8x.jpg" },
+                            { title: "AWS ML Engineer", issuer: "AWS", image: "/certificates/AWS_MLE.png" },
+                            { title: "AWS Cloud Practitioner", issuer: "AWS", image: "/certificates/AWS_CP.png" },
+                            { title: "Data Science Foundations", issuer: "IBM / CC", image: "/certificates/IBM_CC.png" },
+                            { title: "Crash Course on Python", issuer: "Google", image: "/certificates/udmy_python.jpg" },
+                            { title: "AWS AI Practitioner", issuer: "AWS", image: "/certificates/AWS_AIP.png" }
+                        ].map((cert, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: idx * 0.1 }}
+                                className="glass-morphism p-6 rounded-2xl flex flex-col items-center text-center group hover:border-primary/50 transition-colors"
+                            >
+                                <div className="h-32 mb-4 bg-gray-50 w-full rounded-xl flex items-center justify-center p-3">
+                                    <img src={cert.image} alt={cert.title} className="max-h-full object-contain group-hover:scale-110 transition-transform duration-500" />
+                                </div>
+                                <h3 className="font-bold text-gray-900 group-hover:text-primary transition-colors">{cert.title}</h3>
+                                <p className="text-xs text-gray-500 font-bold uppercase mt-1 tracking-widest">{cert.issuer}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* Feature Cards Section */}
             <section className="py-24 px-4 bg-light-dark">
                 <div className="max-w-7xl mx-auto">
