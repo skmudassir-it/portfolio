@@ -98,34 +98,138 @@ export const Publication = () => (
     </div>
 );
 
-export const Projects = () => (
-    <div className="min-h-screen">
-        <PageHeader title="Projects" subtitle="A selection of my recent work and personal projects." />
-        <section className="py-20 px-4">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-                {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="glass-morphism overflow-hidden rounded-3xl group">
-                        <div className="h-64 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center relative overflow-hidden">
-                            <div className="text-6xl font-black opacity-10 group-hover:scale-125 transition-transform duration-500">PROJECT {i}</div>
-                            <div className="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-                                <button className="px-6 py-2 bg-dark text-white font-bold rounded-full hover:bg-primary transition-all">Demo</button>
-                                <button className="px-6 py-2 border border-dark text-dark font-bold rounded-full hover:bg-dark hover:text-white transition-all">Code</button>
+export const Projects = () => {
+    const projects = [
+        {
+            name: "Beauty and company",
+            url: "https://www.bandconline.com",
+            platform: "Shopify (e-commerce)",
+            image: "/projects/beauty_and_company.webp",
+            apps: "Android & iOS Apps available",
+            color: "from-blue-500/20 to-indigo-500/20",
+            tags: ["Shopify", "E-commerce", "Mobile Apps"]
+        },
+        {
+            name: "Shop Hershe",
+            url: "https://shophershe.com",
+            platform: "Shopify (e-commerce)",
+            image: "/projects/shop_hershe.avif",
+            apps: "Android & iOS Apps available",
+            color: "from-pink-500/20 to-rose-500/20",
+            tags: ["Shopify", "E-commerce", "Retail"]
+        },
+        {
+            name: "Go Sticky Icky",
+            url: "https://gostickyicky.com",
+            platform: "Shopify (e-commerce)",
+            image: "/projects/Go_stickyIcky.avif",
+            apps: "Android & iOS Apps available",
+            color: "from-green-500/20 to-emerald-500/20",
+            tags: ["Shopify", "E-commerce", "Lifestyle"]
+        },
+        {
+            name: "Sweet Cheeks Diaper Ministry",
+            url: "https://www.sweetcheeksdiaperministry.org",
+            platform: "WordPress (non-profit)",
+            image: "/projects/sweetcheeks.png",
+            apps: "No app listed",
+            color: "from-sky-400/20 to-blue-400/20",
+            tags: ["WordPress", "Non-Profit", "Community"]
+        },
+        {
+            name: "Q107.5",
+            url: "https://q1075.com",
+            platform: "Custom CMS / Radio",
+            image: "/projects/q1075.png",
+            apps: "No app listed",
+            color: "from-yellow-400/20 to-orange-400/20",
+            tags: ["Custom CMS", "Radio", "Streaming"]
+        },
+        {
+            name: "Hot 107.1",
+            url: "https://hot1071.com",
+            platform: "Custom CMS / Radio",
+            image: "/projects/hot1071.webp",
+            apps: "No app listed",
+            color: "from-red-500/20 to-orange-500/20",
+            tags: ["Custom CMS", "Radio", "Entertainment"]
+        },
+        {
+            name: "Sunny 1210",
+            url: "https://sunny1210.com",
+            platform: "Custom CMS / Radio",
+            image: "/projects/sunnt1201.png",
+            apps: "No app listed",
+            color: "from-amber-400/20 to-yellow-600/20",
+            tags: ["Custom CMS", "Radio", "AM Station"]
+        },
+        {
+            name: "AMSIT Services",
+            url: "https://www.amsitservices.com",
+            platform: "WordPress (B2B)",
+            image: "/projects/AMS.png",
+            apps: "No app listed",
+            color: "from-slate-500/20 to-gray-700/20",
+            tags: ["WordPress", "B2B", "Professional Services"]
+        },
+        {
+            name: "American Metal and Saw",
+            url: "https://www.americanmetalandsaw.com",
+            platform: "Shopify (e-commerce)",
+            image: "/projects/Americanmetalandsaw.png",
+            apps: "No app listed",
+            color: "from-gray-600/20 to-zinc-800/20",
+            tags: ["Shopify", "E-commerce", "Industrial"]
+        },
+    ];
+
+    return (
+        <div className="min-h-screen">
+            <PageHeader title="Projects" subtitle="Selected professional work and successful digital solutions." />
+            <section className="py-20 px-4">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {projects.map((project, i) => (
+                        <div key={i} className="glass-morphism overflow-hidden rounded-3xl group flex flex-col h-full">
+                            <div className={`h-48 bg-gradient-to-br ${project.color} flex items-center justify-center relative overflow-hidden`}>
+                                {project.image && (
+                                    <img
+                                        src={project.image}
+                                        alt={project.name}
+                                        className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                                    />
+                                )}
+                                {!project.image && (
+                                    <div className="text-4xl font-black opacity-10 group-hover:scale-125 transition-transform duration-500 uppercase">{project.name}</div>
+                                )}
+                                <div className="absolute inset-0 bg-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-white text-dark font-bold rounded-full hover:bg-primary hover:text-white transition-all">Visit Website</a>
+                                </div>
+                            </div>
+                            <div className="p-8 flex-grow flex flex-col">
+                                <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{project.name}</h3>
+                                <div className="flex flex-wrap gap-2 mb-4">
+                                    {project.tags.map((tag, idx) => (
+                                        <span key={idx} className="px-3 py-1 bg-black/5 text-gray-600 text-[10px] font-bold rounded-lg uppercase tracking-wider">{tag}</span>
+                                    ))}
+                                </div>
+                                <div className="space-y-3 mt-auto">
+                                    <div className="flex items-center gap-2 text-sm text-gray-600">
+                                        <span className="w-2 h-2 rounded-full bg-primary"></span>
+                                        <span className="font-semibold">{project.platform}</span>
+                                    </div>
+                                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                                        <span className="w-2 h-2 rounded-full bg-secondary"></span>
+                                        <span>{project.apps}</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div className="p-8">
-                            <h3 className="text-2xl font-bold mb-3">Amazing Project Title</h3>
-                            <div className="flex gap-2 mb-4">
-                                <span className="px-3 py-1 bg-primary/20 text-primary text-xs font-bold rounded-lg uppercase tracking-wider">React</span>
-                                <span className="px-3 py-1 bg-secondary/20 text-secondary text-xs font-bold rounded-lg uppercase tracking-wider">Three.js</span>
-                            </div>
-                            <p className="text-gray-600">A detailed description of the project, the technologies used, and the problems it solves.</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </section>
-    </div>
-);
+                    ))}
+                </div>
+            </section>
+        </div>
+    );
+};
 
 export const Contact = () => (
     <div className="min-h-screen">
