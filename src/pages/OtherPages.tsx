@@ -79,42 +79,162 @@ export const Education = () => (
     </div>
 );
 
+export const experienceData = [
+    {
+        slug: 'attra',
+        role: 'Software Engineer',
+        company: 'Attra, a Synechron Company',
+        period: 'July 2021 - December 2022',
+        domain: 'Financial Domain',
+        color: 'border-primary',
+        image: '/experience/attra.jpg',
+        tech: ['Python', 'Java', 'Selenium', 'Jenkins', 'Git', 'AWS'],
+        shortDesc: 'Developed robust backend solutions and automated testing frameworks in the financial sector.',
+        responsibilities: [
+            'Architected and implemented scalable backend services using Python and Java for high-volume financial transaction processing.',
+            'Developed comprehensive automated testing suites utilizing Selenium, reducing manual testing overhead by 40%.',
+            'Orchestrated CI/CD pipelines with Jenkins and Git, streamlining the development-to-deployment lifecycle.',
+            'Collaborated with global teams to maintain and scale cloud infrastructure on AWS, ensuring 99.9% system availability.',
+            'Ensured compliance with strict financial security standards and regulatory requirements across all software modules.'
+        ]
+    },
+    {
+        slug: 'aditi',
+        role: 'Software Engineer',
+        company: 'Aditi Digital Solutions',
+        period: 'February 2020 - May 2021',
+        domain: 'Marketing & Media Domain',
+        color: 'border-secondary',
+        image: '/experience/Aditi Digital Solutions.png',
+        tech: ['Python', 'Machine Learning', 'AWS'],
+        shortDesc: 'Architected data-driven solutions for the marketing and media industry using ML and cloud services.',
+        responsibilities: [
+            'Engineered data analytics platforms to process and analyze large-scale media consumption data.',
+            'Integrated Machine Learning models to provide predictive insights for targeted marketing campaigns.',
+            'Designed and deployed serverless architecture on AWS, significantly reducing operational costs and improving scalability.',
+            'Worked closely with marketing stakeholders to transform raw data into interactive dashboards and actionable business intelligence.',
+            'Optimized data ingestion pipelines, improving real-time processing capabilities for streaming media metrics.'
+        ]
+    },
+    {
+        slug: 'aurangabad-electricals',
+        role: 'R&D Engineer',
+        company: 'Aurangabad Electricals',
+        period: 'October 2017 - November 2019',
+        domain: 'Manufacturing Domain',
+        color: 'border-primary',
+        image: '/experience/aurangabad_electricals_logo.png',
+        tech: ['Flow Simulation', 'IT Systems', 'Analytical Problem-Solving'],
+        shortDesc: 'Spearheaded research and development initiatives within the manufacturing domain focusing on process optimization.',
+        responsibilities: [
+            'Led research initiatives for optimizing aluminum die casting processes through advanced flow simulation modeling.',
+            'Implemented IT systems to monitor and analyze production line data, identifying bottlenecks and areas for efficiency gain.',
+            'Reduced scrap rates by 15% through meticulous analytical problem-solving and process redesign.',
+            'Collaborated with the manufacturing team to integrate computer-aided engineering (CAE) tools into the standard design workflow.',
+            'Authored technical reports and documentation for new manufacturing methodologies and quality control standards.'
+        ]
+    }
+];
+
+import { Link, useParams } from 'react-router-dom';
+import { ArrowLeft, CheckCircle2 } from 'lucide-react';
+
 export const Experience = () => (
     <div className="min-h-screen">
         <PageHeader title="Experience" subtitle="My professional journey and career highlights." />
         <section className="py-20 px-4">
-            <div className="max-w-4xl mx-auto space-y-12">
-                {[
-                    {
-                        role: 'Full Stack Developer',
-                        company: 'Tech Solutions Inc.',
-                        period: '2023 - Present',
-                        color: 'border-primary',
-                        desc: 'Leading the frontend team in developing high-performance web applications using React and Next.js.'
-                    },
-                    {
-                        role: 'Software Engineer Intern',
-                        company: 'InnoWorks',
-                        period: '2022 - 2023',
-                        color: 'border-secondary',
-                        desc: 'Collaborated on developing microservices and optimizing database queries for high-traffic platforms.'
-                    }
-                ].map((exp, i) => (
-                    <div key={i} className={`glass-morphism p-8 rounded-2xl border-l-4 ${exp.color}`}>
-                        <div className="flex justify-between items-start flex-wrap gap-2">
-                            <div>
-                                <h3 className="text-2xl font-bold">{exp.role}</h3>
-                                <p className="text-gray-600 mt-1">{exp.company}</p>
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {experienceData.map((exp, i) => (
+                    <Link key={i} to={`/experience/${exp.slug}`} className="group">
+                        <div className={`glass-morphism p-8 rounded-3xl border-l-4 ${exp.color} hover:bg-black/5 transition-all h-full flex flex-col`}>
+                            <div className="w-20 h-20 bg-white rounded-2xl p-3 flex items-center justify-center border border-gray-100 mb-6 group-hover:scale-110 transition-transform">
+                                <img src={exp.image} alt={exp.company} className="max-w-full max-h-full object-contain" />
                             </div>
-                            <span className="px-4 py-1 rounded-full bg-black/5 text-sm font-semibold">{exp.period}</span>
+                            <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">{exp.role}</h3>
+                            <p className="text-gray-600 font-semibold mb-1">{exp.company}</p>
+                            <p className="text-xs text-primary font-bold uppercase tracking-widest mb-4">{exp.domain}</p>
+                            <span className="mt-auto inline-block px-4 py-1 rounded-full bg-black/5 text-xs font-semibold w-fit">
+                                {exp.period}
+                            </span>
                         </div>
-                        <p className="text-gray-600 mt-6 leading-relaxed">{exp.desc}</p>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </section>
     </div>
 );
+
+export const ExperienceDetail = () => {
+    const { slug } = useParams();
+    const exp = experienceData.find(e => e.slug === slug);
+
+    if (!exp) return <div className="pt-32 text-center">Experience not found</div>;
+
+    return (
+        <div className="min-h-screen bg-white">
+            <div className="pt-32 pb-16 px-4 bg-light">
+                <div className="max-w-4xl mx-auto">
+                    <Link to="/experience" className="inline-flex items-center gap-2 text-primary font-bold mb-8 hover:translate-x-1 transition-transform">
+                        <ArrowLeft size={18} /> Back to Experience
+                    </Link>
+                    <div className="flex flex-col md:flex-row gap-8 items-center md:items-start mb-12">
+                        <div className="w-32 h-32 bg-white rounded-3xl p-4 flex items-center justify-center border border-gray-100 shadow-sm">
+                            <img src={exp.image} alt={exp.company} className="max-w-full max-h-full object-contain" />
+                        </div>
+                        <div className="text-center md:text-left">
+                            <h1 className="text-4xl md:text-5xl font-black mb-4">{exp.role}</h1>
+                            <h2 className="text-2xl font-bold text-gray-700 mb-2">{exp.company}</h2>
+                            <div className="flex flex-wrap gap-4 justify-center md:justify-start items-center">
+                                <span className="px-4 py-1 rounded-full bg-black/5 text-sm font-bold">{exp.period}</span>
+                                <span className="text-primary font-bold uppercase tracking-widest text-xs">{exp.domain}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section className="py-20 px-4">
+                <div className="max-w-4xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                        <div className="md:col-span-2">
+                            <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
+                                <span className="w-8 h-1 bg-primary rounded-full"></span>
+                                Roles & Responsibilities
+                            </h3>
+                            <div className="space-y-6">
+                                {exp.responsibilities.map((resp, idx) => (
+                                    <motion.div
+                                        key={idx}
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ delay: idx * 0.1 }}
+                                        className="flex gap-4"
+                                    >
+                                        <CheckCircle2 className="text-primary flex-shrink-0 mt-1" size={20} />
+                                        <p className="text-gray-600 text-lg leading-relaxed">{resp}</p>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
+                        <div>
+                            <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
+                                <span className="w-8 h-1 bg-secondary rounded-full"></span>
+                                Technologies
+                            </h3>
+                            <div className="flex flex-wrap gap-3 text-nowrap">
+                                {exp.tech.map((t, idx) => (
+                                    <span key={idx} className="px-4 py-2 glass-morphism text-gray-600 text-sm font-bold rounded-xl border border-gray-100 italic transition-all hover:border-primary/50 hover:bg-white">
+                                        {t}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    );
+};
 
 export const Publication = () => {
     const publications = [

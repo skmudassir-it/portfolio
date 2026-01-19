@@ -2,6 +2,7 @@ import Hero3D from '../components/home/Hero3D';
 import { motion } from 'framer-motion';
 import { ArrowRight, BookOpen, Briefcase, FileText, Layout, Send } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { experienceData } from './OtherPages';
 
 const Home = () => {
     const featurePages = [
@@ -125,6 +126,46 @@ const Home = () => {
                                     <p className="text-sm text-gray-600 mb-2">{edu.school}</p>
                                     <span className="px-3 py-1 bg-black/5 text-gray-500 text-xs font-bold rounded-full">{edu.period}</span>
                                 </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Experience Section */}
+            <section className="py-24 px-4 bg-light">
+                <div className="max-w-7xl mx-auto">
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                        <div>
+                            <h2 className="text-4xl font-bold mb-4">Professional <span className="text-gradient">Experience</span></h2>
+                            <p className="text-gray-600 max-w-xl text-lg">My career journey across diverse domains and technologies.</p>
+                        </div>
+                        <Link to="/experience" className="btn-secondary flex items-center gap-2 group whitespace-nowrap">
+                            View All Experience <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {experienceData.map((exp, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: idx * 0.1 }}
+                            >
+                                <Link to={`/experience/${exp.slug}`} className="group block h-full">
+                                    <div className={`glass-morphism p-8 rounded-3xl border-l-4 ${exp.color} hover:bg-black/5 transition-all h-full flex flex-col`}>
+                                        <div className="w-16 h-16 bg-white rounded-2xl p-3 flex items-center justify-center border border-gray-100 mb-6 group-hover:scale-110 transition-transform">
+                                            <img src={exp.image} alt={exp.company} className="max-w-full max-h-full object-contain" />
+                                        </div>
+                                        <h3 className="text-xl font-bold mb-1 group-hover:text-primary transition-colors">{exp.role}</h3>
+                                        <p className="text-sm text-gray-600 font-semibold mb-3">{exp.company}</p>
+                                        <span className="mt-auto inline-block px-3 py-1 rounded-full bg-black/5 text-[10px] font-bold w-fit uppercase tracking-wider">
+                                            {exp.period}
+                                        </span>
+                                    </div>
+                                </Link>
                             </motion.div>
                         ))}
                     </div>
