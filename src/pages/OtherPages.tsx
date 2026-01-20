@@ -1,32 +1,36 @@
 import { motion } from 'framer-motion';
 
 const PageHeader = ({ title, subtitle }: { title: string; subtitle: string }) => (
-    <div className="pt-32 pb-16 px-4 bg-light">
-        <div className="max-w-7xl mx-auto text-center">
-            <motion.h1
+    <div className="relative pt-32 pb-20 px-4 bg-light overflow-hidden">
+        {/* Decorative Orbs */}
+        <div className="absolute top-0 right-[-10%] w-[30%] h-full bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-0 left-[-10%] w-[30%] h-full bg-secondary/5 rounded-full blur-[100px] pointer-events-none" />
+
+        <div className="relative z-10 max-w-7xl mx-auto text-center">
+            <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-5xl md:text-7xl font-black mb-6 text-gradient"
+                transition={{ duration: 0.6 }}
             >
-                {title}
-            </motion.h1>
-            <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-                className="text-xl text-gray-600 max-w-2xl mx-auto"
-            >
-                {subtitle}
-            </motion.p>
+                <h1 className="text-5xl md:text-8xl font-black mb-8 tracking-tight">
+                    <span className="text-gradient">{title}</span>
+                </h1>
+                <p className="text-xl md:text-2xl text-dark/60 max-w-3xl mx-auto font-medium leading-relaxed">
+                    {subtitle}
+                </p>
+                <div className="mt-10 flex justify-center">
+                    <div className="w-20 h-1.5 bg-gradient-to-r from-primary via-secondary to-transparent rounded-full opacity-30" />
+                </div>
+            </motion.div>
         </div>
     </div>
 );
 
 export const Education = () => (
-    <div className="min-h-screen">
-        <PageHeader title="Education" subtitle="My academic background and certifications." />
-        <section className="py-20 px-4">
-            <div className="max-w-4xl mx-auto space-y-8">
+    <div className="min-h-screen bg-light">
+        <PageHeader title="Education" subtitle="My academic background and specialized certifications that shaped my technical foundation." />
+        <section className="py-24 px-4 relative">
+            <div className="max-w-5xl mx-auto space-y-12">
                 {[
                     {
                         degree: "Masters in Information Technology Management",
@@ -57,22 +61,28 @@ export const Education = () => (
                         image: "/education/diploma.jpg"
                     }
                 ].map((edu, idx) => (
-                    <div key={idx} className={`glass-morphism p-8 rounded-2xl border-l-4 ${edu.color} hover:bg-black/5 transition-all flex flex-col md:flex-row gap-6 items-center md:items-start`}>
-                        <div className="w-24 h-24 flex-shrink-0 bg-white rounded-xl p-2 flex items-center justify-center border border-gray-100">
-                            <img src={edu.image} alt={edu.school} className="max-w-full max-h-full object-contain" />
+                    <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className={`glass-morphism p-10 rounded-[32px] border-l-[6px] ${edu.color} hover:bg-white/80 transition-all duration-500 shadow-sm flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left`}
+                    >
+                        <div className="w-24 h-24 md:w-32 md:h-32 flex-shrink-0 bg-white rounded-3xl p-4 flex items-center justify-center shadow-sm border border-black/5 overflow-hidden">
+                            <img src={edu.image} alt={edu.school} className="max-w-full max-h-full object-contain hover:scale-110 transition-transform duration-500" />
                         </div>
                         <div className="flex-grow w-full">
-                            <div className="flex flex-col md:flex-row justify-between items-start gap-2">
+                            <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-4">
                                 <div>
-                                    <h3 className="text-2xl font-bold">{edu.degree}</h3>
-                                    <p className="text-gray-600 mt-2 text-lg">{edu.school}</p>
+                                    <h3 className="text-2xl md:text-3xl font-black text-dark mb-3">{edu.degree}</h3>
+                                    <p className="text-primary font-bold text-xl mb-4">{edu.school}</p>
                                 </div>
-                                <span className={`px-4 py-1 rounded-full ${idx % 2 === 0 ? 'bg-primary/10 text-primary' : 'bg-secondary/10 text-secondary'} font-bold text-sm whitespace-nowrap`}>
+                                <span className={`px-6 py-2 rounded-full ${idx % 2 === 0 ? 'bg-primary/10 text-primary' : 'bg-secondary/10 text-secondary'} font-black text-sm whitespace-nowrap shadow-sm`}>
                                     {edu.period}
                                 </span>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </section>
@@ -197,25 +207,39 @@ const TestimonialCard = ({ quote, author, relation, title }: { quote: string, au
 );
 
 export const Experience = () => (
-    <div className="min-h-screen">
-        <PageHeader title="Experience" subtitle="My professional journey and career highlights." />
-        <section className="py-20 px-4">
+    <div className="min-h-screen bg-light">
+        <PageHeader title="Experience" subtitle="A professional journey driven by innovation, problem-solving, and a commitment to excellence in engineering." />
+        <section className="py-24 px-4 overflow-hidden">
             <div className="max-w-7xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
                     {experienceData.map((exp, i) => (
-                        <Link key={i} to={`/experience/${exp.slug}`} className="group">
-                            <div className={`glass-morphism p-8 rounded-3xl border-l-4 ${exp.color} hover:bg-black/5 transition-all h-full flex flex-col`}>
-                                <div className="w-20 h-20 bg-white rounded-2xl p-3 flex items-center justify-center border border-gray-100 mb-6 group-hover:scale-110 transition-transform">
-                                    <img src={exp.image} alt={exp.company} className="max-w-full max-h-full object-contain" />
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.1 }}
+                        >
+                            <Link to={`/experience/${exp.slug}`} className="group block h-full">
+                                <div className={`glass-morphism p-10 rounded-[40px] border-l-[6px] ${exp.color} hover:bg-white/80 transition-all duration-500 h-full flex flex-col items-center text-center shadow-sm`}>
+                                    <div className="w-24 h-24 md:w-32 md:h-32 bg-white rounded-3xl p-5 flex items-center justify-center shadow-md mb-8 group-hover:scale-110 transition-transform duration-500 overflow-hidden">
+                                        <img src={exp.image} alt={exp.company} className="max-w-full max-h-full object-contain" />
+                                    </div>
+                                    <h3 className="text-2xl md:text-3xl font-black mb-3 text-dark group-hover:text-primary transition-colors">{exp.role}</h3>
+                                    <p className="text-dark/60 font-bold text-lg mb-2">{exp.company}</p>
+                                    <p className="text-xs text-primary font-black uppercase tracking-[0.2em] mb-8">{exp.domain}</p>
+
+                                    <div className="mt-auto pt-6 border-t border-black/5 w-full flex flex-col items-center">
+                                        <span className="px-6 py-2 rounded-full bg-black/5 text-xs font-black uppercase tracking-widest text-dark/70 mb-4">
+                                            {exp.period}
+                                        </span>
+                                        <div className="text-primary font-black text-xs uppercase tracking-widest flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                            Case Study <span className="text-lg">→</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">{exp.role}</h3>
-                                <p className="text-gray-600 font-semibold mb-1">{exp.company}</p>
-                                <p className="text-xs text-primary font-bold uppercase tracking-widest mb-4">{exp.domain}</p>
-                                <span className="mt-auto inline-block px-4 py-1 rounded-full bg-black/5 text-xs font-semibold w-fit">
-                                    {exp.period}
-                                </span>
-                            </div>
-                        </Link>
+                            </Link>
+                        </motion.div>
                     ))}
                 </div>
 
@@ -237,27 +261,39 @@ export const ExperienceDetail = () => {
     const { slug } = useParams();
     const exp = experienceData.find(e => e.slug === slug);
 
-    if (!exp) return <div className="pt-32 text-center">Experience not found</div>;
+    if (!exp) return <div className="pt-32 text-center text-2xl font-black">Experience not found</div>;
 
     return (
-        <div className="min-h-screen bg-white">
-            <div className="pt-32 pb-16 px-4 bg-light">
-                <div className="max-w-4xl mx-auto">
-                    <Link to="/experience" className="inline-flex items-center gap-2 text-primary font-bold mb-8 hover:translate-x-1 transition-transform">
-                        <ArrowLeft size={18} /> Back to Experience
+        <div className="min-h-screen bg-light">
+            <div className="relative pt-32 pb-20 px-4 overflow-hidden">
+                {/* Decor */}
+                <div className="absolute top-0 right-0 w-[40%] h-full bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
+
+                <div className="relative z-10 max-w-5xl mx-auto">
+                    <Link to="/experience" className="inline-flex items-center gap-3 text-dark/60 font-black mb-12 hover:text-primary transition-colors group">
+                        <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" /> Back to Journey
                     </Link>
-                    <div className="flex flex-col md:flex-row gap-8 items-center md:items-start mb-12">
-                        <div className="w-32 h-32 bg-white rounded-3xl p-4 flex items-center justify-center border border-gray-100 shadow-sm">
+
+                    <div className="flex flex-col md:flex-row gap-12 items-center md:items-start">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            className="w-40 h-40 md:w-56 md:h-56 bg-white rounded-[40px] p-8 flex items-center justify-center shadow-xl border border-black/5"
+                        >
                             <img src={exp.image} alt={exp.company} className="max-w-full max-h-full object-contain" />
-                        </div>
-                        <div className="text-center md:text-left">
-                            <h1 className="text-4xl md:text-5xl font-black mb-4">{exp.role}</h1>
-                            <h2 className="text-2xl font-bold text-gray-700 mb-2">{exp.company}</h2>
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            className="text-center md:text-left flex-grow"
+                        >
+                            <h1 className="text-4xl md:text-7xl font-black mb-6 text-dark tracking-tight leading-tight">{exp.role}</h1>
+                            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">{exp.company}</h2>
                             <div className="flex flex-wrap gap-4 justify-center md:justify-start items-center">
-                                <span className="px-4 py-1 rounded-full bg-black/5 text-sm font-bold">{exp.period}</span>
-                                <span className="text-primary font-bold uppercase tracking-widest text-xs">{exp.domain}</span>
+                                <span className="px-6 py-2 rounded-full bg-white shadow-sm text-sm font-black uppercase tracking-widest text-dark/70">{exp.period}</span>
+                                <span className="text-secondary font-black uppercase tracking-[0.2em] text-xs">{exp.domain}</span>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>
@@ -325,7 +361,7 @@ export const Publication = () => {
             description: "International Journal of Science Technology & Engineering article (volume 3, issue 8, ISSN 2349-784X). Peer-reviewed, monthly online journal publishing original research in engineering and technology fields such as civil, mechanical, computer science, and electronics.",
             publishedIn: "Bachelor's",
             image: "/Publication/ijste.png",
-            color: "border-blue-500"
+            color: "border-primary"
         },
         {
             title: "Impact of Artificial Intelligence on Corporate Leadership",
@@ -333,33 +369,35 @@ export const Publication = () => {
             description: "Scientific Research Publishing (SCIRP) journal paper. Open-access research article in a multidisciplinary science journal.",
             publishedIn: "Master's",
             image: "/Publication/SRP_logo.svg",
-            color: "border-purple-500"
+            color: "border-secondary"
         }
     ];
 
     return (
-        <div className="min-h-screen">
-            <PageHeader title="Publications" subtitle="My research papers, articles, and shared knowledge." />
-            <section className="py-20 px-4">
-                <div className="max-w-4xl mx-auto space-y-8">
+        <div className="min-h-screen bg-light">
+            <PageHeader title="Publications" subtitle="Contributing to the global knowledge base through technical research and engineering analysis." />
+            <section className="py-24 px-4">
+                <div className="max-w-5xl mx-auto space-y-12">
                     {publications.map((pub, idx) => (
-                        <div key={idx} className={`glass-morphism p-8 rounded-2xl border-l-4 ${pub.color} hover:bg-black/5 transition-all group`}>
-                            <div className="flex flex-col md:flex-row gap-6 items-start">
-                                <div className="w-full md:w-32 h-32 flex-shrink-0 bg-white rounded-xl p-4 flex items-center justify-center border border-gray-100">
-                                    <img src={pub.image} alt="Journal Logo" className="max-w-full max-h-full object-contain" />
-                                </div>
-                                <div>
-                                    <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">{pub.title}</h3>
-                                    <div className="flex items-center gap-2 mb-4">
-                                        <span className="px-3 py-1 bg-black/5 text-gray-600 text-xs font-bold rounded-lg uppercase tracking-wider">{pub.publishedIn}</span>
-                                    </div>
-                                    <p className="text-gray-600 mb-6 leading-relaxed">{pub.description}</p>
-                                    <a href={pub.url} target="_blank" rel="noopener noreferrer" className="text-primary font-bold hover:underline flex items-center gap-2">
-                                        Read Article <span className="text-xl">→</span>
-                                    </a>
-                                </div>
+                        <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className={`glass-morphism p-10 rounded-[40px] border-l-[6px] ${pub.color} hover:bg-white/80 transition-all duration-500 group flex flex-col md:flex-row gap-10 items-center md:items-start text-center md:text-left`}
+                        >
+                            <div className="w-32 h-32 md:w-48 md:h-48 flex-shrink-0 bg-white rounded-3xl p-6 flex items-center justify-center shadow-md border border-black/5 overflow-hidden">
+                                <img src={pub.image} alt="Journal Logo" className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500" />
                             </div>
-                        </div>
+                            <div className="flex-grow">
+                                <span className="inline-block px-4 py-1 bg-black/5 text-primary text-xs font-black uppercase tracking-widest rounded-lg mb-4">{pub.publishedIn}</span>
+                                <h3 className="text-2xl md:text-3xl font-black mb-4 text-dark group-hover:text-primary transition-colors leading-tight">{pub.title}</h3>
+                                <p className="text-dark/60 mb-8 leading-relaxed font-medium text-lg">{pub.description}</p>
+                                <a href={pub.url} target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2 px-8 py-3 text-sm">
+                                    Explore Research <ArrowLeft size={18} className="rotate-180" />
+                                </a>
+                            </div>
+                        </motion.div>
                     ))}
                 </div>
             </section>
@@ -375,7 +413,7 @@ export const Projects = () => {
             platform: "Shopify (e-commerce)",
             image: "/projects/beauty_and_company.webp",
             apps: "Android & iOS Apps available",
-            color: "from-blue-500/20 to-indigo-500/20",
+            color: "from-primary/10 to-transparent",
             tags: ["Shopify", "E-commerce", "Mobile Apps"]
         },
         {
@@ -384,7 +422,7 @@ export const Projects = () => {
             platform: "Shopify (e-commerce)",
             image: "/projects/shop_hershe.avif",
             apps: "Android & iOS Apps available",
-            color: "from-pink-500/20 to-rose-500/20",
+            color: "from-secondary/10 to-transparent",
             tags: ["Shopify", "E-commerce", "Retail"]
         },
         {
@@ -393,7 +431,7 @@ export const Projects = () => {
             platform: "Shopify (e-commerce)",
             image: "/projects/Go_stickyIcky.avif",
             apps: "Android & iOS Apps available",
-            color: "from-green-500/20 to-emerald-500/20",
+            color: "from-accent/10 to-transparent",
             tags: ["Shopify", "E-commerce", "Lifestyle"]
         },
         {
@@ -402,7 +440,7 @@ export const Projects = () => {
             platform: "WordPress (non-profit)",
             image: "/projects/sweetcheeks.png",
             apps: "No app listed",
-            color: "from-sky-400/20 to-blue-400/20",
+            color: "from-blue-500/10 to-transparent",
             tags: ["WordPress", "Non-Profit", "Community"]
         },
         {
@@ -411,7 +449,7 @@ export const Projects = () => {
             platform: "Custom CMS / Radio",
             image: "/projects/q1075.png",
             apps: "No app listed",
-            color: "from-yellow-400/20 to-orange-400/20",
+            color: "from-orange-500/10 to-transparent",
             tags: ["Custom CMS", "Radio", "Streaming"]
         },
         {
@@ -420,7 +458,7 @@ export const Projects = () => {
             platform: "Custom CMS / Radio",
             image: "/projects/hot1071.webp",
             apps: "No app listed",
-            color: "from-red-500/20 to-orange-500/20",
+            color: "from-red-500/10 to-transparent",
             tags: ["Custom CMS", "Radio", "Entertainment"]
         },
         {
@@ -429,7 +467,7 @@ export const Projects = () => {
             platform: "Custom CMS / Radio",
             image: "/projects/sunnt1201.png",
             apps: "No app listed",
-            color: "from-amber-400/20 to-yellow-600/20",
+            color: "from-amber-500/10 to-transparent",
             tags: ["Custom CMS", "Radio", "AM Station"]
         },
         {
@@ -438,7 +476,7 @@ export const Projects = () => {
             platform: "WordPress (B2B)",
             image: "/projects/AMS.png",
             apps: "No app listed",
-            color: "from-slate-500/20 to-gray-700/20",
+            color: "from-slate-500/10 to-transparent",
             tags: ["WordPress", "B2B", "Professional Services"]
         },
         {
@@ -447,52 +485,55 @@ export const Projects = () => {
             platform: "Shopify (e-commerce)",
             image: "/projects/Americanmetalandsaw.png",
             apps: "No app listed",
-            color: "from-gray-600/20 to-zinc-800/20",
+            color: "from-gray-600/10 to-transparent",
             tags: ["Shopify", "E-commerce", "Industrial"]
         },
     ];
 
     return (
-        <div className="min-h-screen">
-            <PageHeader title="Projects" subtitle="Selected professional work and successful digital solutions." />
-            <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="min-h-screen bg-light">
+            <PageHeader title="Projects" subtitle="Engineering digital excellence across diverse platforms, from global e-commerce to custom CMS and non-profit portals." />
+            <section className="py-24 px-4">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {projects.map((project, i) => (
-                        <div key={i} className="glass-morphism overflow-hidden rounded-3xl group flex flex-col h-full">
-                            <div className={`h-48 bg-gradient-to-br ${project.color} flex items-center justify-center relative overflow-hidden`}>
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.05 }}
+                            className="glass-morphism overflow-hidden rounded-[40px] group flex flex-col h-full hover:bg-white/80 transition-all duration-500 shadow-sm border border-black/5"
+                        >
+                            <div className={`h-64 bg-gradient-to-br ${project.color} flex items-center justify-center relative overflow-hidden p-10`}>
                                 {project.image && (
                                     <img
                                         src={project.image}
                                         alt={project.name}
-                                        className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                                        className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-700 filter drop-shadow-lg"
                                     />
                                 )}
-                                {!project.image && (
-                                    <div className="text-4xl font-black opacity-10 group-hover:scale-125 transition-transform duration-500 uppercase">{project.name}</div>
-                                )}
-                                <div className="absolute inset-0 bg-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-                                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-white text-dark font-bold rounded-full hover:bg-primary hover:text-white transition-all">Visit Website</a>
+                                <div className="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="btn-primary px-8 py-3 rounded-full flex items-center gap-2">Visit Website <span className="text-lg">→</span></a>
                                 </div>
                             </div>
-                            <div className="p-8 flex-grow flex flex-col">
-                                <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{project.name}</h3>
-                                <div className="flex flex-wrap gap-2 mb-4">
+                            <div className="p-10 flex-grow flex flex-col text-center items-center">
+                                <h3 className="text-2xl md:text-3xl font-black mb-4 text-dark group-hover:text-primary transition-colors">{project.name}</h3>
+                                <div className="flex flex-wrap justify-center gap-2 mb-8">
                                     {project.tags.map((tag, idx) => (
-                                        <span key={idx} className="px-3 py-1 bg-black/5 text-gray-600 text-[10px] font-bold rounded-lg uppercase tracking-wider">{tag}</span>
+                                        <span key={idx} className="px-4 py-1.5 bg-black/5 text-dark/60 text-[10px] font-black rounded-full uppercase tracking-widest">{tag}</span>
                                     ))}
                                 </div>
-                                <div className="space-y-3 mt-auto">
-                                    <div className="flex items-center gap-2 text-sm text-gray-600">
-                                        <span className="w-2 h-2 rounded-full bg-primary"></span>
-                                        <span className="font-semibold">{project.platform}</span>
+                                <div className="space-y-4 mt-auto w-full pt-8 border-t border-black/5">
+                                    <div className="flex items-center justify-center gap-3 text-sm font-bold text-primary">
+                                        <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                                        {project.platform}
                                     </div>
-                                    <div className="flex items-center gap-2 text-sm text-gray-500">
-                                        <span className="w-2 h-2 rounded-full bg-secondary"></span>
-                                        <span>{project.apps}</span>
+                                    <div className="text-xs font-black uppercase tracking-widest text-dark/40">
+                                        {project.apps}
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </section>
@@ -539,10 +580,10 @@ export const Contact = () => (
     </div>
 );
 export const Certifications = () => (
-    <div className="min-h-screen">
-        <PageHeader title="Certifications" subtitle="Professional certifications and specialized training." />
-        <section className="py-20 px-4">
-            <div className="max-w-7xl mx-auto space-y-16">
+    <div className="min-h-screen bg-light">
+        <PageHeader title="Certifications" subtitle="A testament to rigorous learning and specialized expertise in cloud architecture, AI, and enterprise engineering." />
+        <section className="py-24 px-4 overflow-hidden">
+            <div className="max-w-7xl mx-auto space-y-24">
                 {[
                     {
                         category: "Amazon Web Services (AWS)",
@@ -674,9 +715,9 @@ export const Certifications = () => (
                     }
                 ]
                     .map((group, idx) => (
-                        <div key={idx}>
-                            <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
-                                <span className="w-8 h-1 bg-primary rounded-full"></span>
+                        <div key={idx} className="relative">
+                            <h2 className="text-3xl md:text-5xl font-black mb-12 flex items-center gap-4 text-dark tracking-tight">
+                                <span className="w-12 h-2 bg-gradient-to-r from-primary to-transparent rounded-full shadow-sm"></span>
                                 {group.category}
                             </h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -690,35 +731,35 @@ export const Certifications = () => (
                                         className="group relative"
                                     >
                                         <a href={cert.link} target="_blank" rel="noopener noreferrer" className="block h-full">
-                                            <div className="glass-morphism p-6 rounded-2xl h-full transition-all duration-300 transform group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-primary/10 overflow-hidden">
-                                                <div className="relative h-48 mb-6 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-4">
+                                            <div className="glass-morphism p-8 rounded-[32px] h-full transition-all duration-500 hover:bg-white flex flex-col items-center text-center shadow-sm border border-black/5">
+                                                <div className="relative w-32 h-32 md:w-40 md:h-40 mb-8 rounded-[32px] overflow-hidden bg-white shadow-md flex items-center justify-center p-6 border border-black/5">
                                                     {cert.image ? (
                                                         <img
                                                             src={cert.image}
                                                             alt={cert.title}
-                                                            className="max-h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                                                            className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-700"
                                                         />
                                                     ) : (
-                                                        <div className="w-full h-full bg-primary/5 flex items-center justify-center text-primary font-bold">
+                                                        <div className="w-full h-full bg-primary/5 flex items-center justify-center text-primary font-black uppercase tracking-widest text-xs">
                                                             {cert.issuer || "Certificate"}
                                                         </div>
                                                     )}
                                                     <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                                        <span className="px-4 py-2 bg-white text-primary font-bold rounded-full text-sm translate-y-4 group-hover:translate-y-0 transition-transform">View Certificate</span>
+                                                        <span className="px-6 py-2 bg-white text-primary font-black rounded-full text-xs shadow-xl uppercase tracking-widest">Verify Credential</span>
                                                     </div>
                                                 </div>
-                                                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2">{cert.title}</h3>
-                                                <div className="flex items-center gap-2 mt-auto">
+                                                <h3 className="text-xl md:text-2xl font-bold mb-4 group-hover:text-primary transition-colors line-clamp-2 leading-tight">{cert.title}</h3>
+                                                <div className="flex flex-col items-center gap-3 mt-auto w-full pt-6 border-t border-black/5">
                                                     {cert.type && (
-                                                        <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-lg uppercase tracking-wider">
+                                                        <span className="px-5 py-1.5 bg-primary/10 text-primary text-[10px] font-black rounded-full uppercase tracking-[0.2em]">
                                                             {cert.type}
                                                         </span>
                                                     )}
                                                     {cert.date && (
-                                                        <span className="text-xs text-gray-400 font-semibold">{cert.date}</span>
+                                                        <span className="text-[10px] text-dark/40 font-black uppercase tracking-widest">{cert.date}</span>
                                                     )}
                                                     {cert.issuer && (
-                                                        <span className="text-xs text-gray-500 font-bold uppercase">{cert.issuer}</span>
+                                                        <span className="text-xs text-secondary font-black uppercase tracking-[0.2em]">{cert.issuer}</span>
                                                     )}
                                                 </div>
                                             </div>
