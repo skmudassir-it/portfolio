@@ -3,6 +3,7 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Home from './pages/Home';
 import TechDetail from './pages/TechDetail';
+import Resume from './pages/Resume';
 import { Education, Experience, Publication, Projects, Contact, Certifications, ExperienceDetail } from './pages/OtherPages';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
                         <Route path="/projects" element={<Projects />} />
                         <Route path="/certifications" element={<Certifications />} />
                         <Route path="/contact" element={<Contact />} />
+                        <Route path="/resume" element={<Resume />} />
                     </Routes>
                 </main>
                 <Footer />

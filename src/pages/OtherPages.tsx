@@ -186,7 +186,7 @@ export const generalRecommendations = [
 ];
 
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, CheckCircle2, Quote } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Quote, Phone, Globe } from 'lucide-react';
 
 const TestimonialCard = ({ quote, author, relation, title }: { quote: string, author: string, relation?: string, title?: string }) => (
     <motion.div
@@ -551,10 +551,25 @@ export const Contact = () => (
                     <p className="text-gray-600 mb-8 leading-relaxed">
                         Whether you have a question, a project idea, or just want to say hi, my inbox is always open.
                     </p>
-                    <div className="space-y-4">
-                        <div className="flex items-center gap-4 text-gray-600">
-                            <div className="w-12 h-12 rounded-xl glass-morphism flex items-center justify-center text-primary italic">@</div>
-                            <span>hello@yourdomain.com</span>
+                    <div className="space-y-6">
+                        <div className="flex flex-col items-center md:items-start gap-6">
+                            <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/50">
+                                <img src="/mudassir-image.jpeg" alt="Mudassir" className="w-full h-full object-cover" />
+                            </div>
+                            <div className="space-y-4 w-full">
+                                <div className="flex items-center gap-4 text-gray-600">
+                                    <div className="w-12 h-12 rounded-xl glass-morphism flex items-center justify-center text-primary italic">@</div>
+                                    <span className="font-medium">skmudassir.it@gmail.com</span>
+                                </div>
+                                <div className="flex items-center gap-4 text-gray-600">
+                                    <div className="w-12 h-12 rounded-xl glass-morphism flex items-center justify-center text-primary"><Phone size={20} /></div>
+                                    <span className="font-medium">+1-(901)-415-0779</span>
+                                </div>
+                                <div className="flex items-center gap-4 text-gray-600">
+                                    <div className="w-12 h-12 rounded-xl glass-morphism flex items-center justify-center text-primary"><Globe size={20} /></div>
+                                    <a href="https://skmudassir.in" target="_blank" rel="noopener noreferrer" className="font-medium hover:text-primary transition-colors">skmudassir.in</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

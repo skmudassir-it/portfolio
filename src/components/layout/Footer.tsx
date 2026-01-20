@@ -23,10 +23,15 @@ const Footer = () => {
                     </div>
                     <div>
                         <h4 className="text-lg font-semibold mb-4 text-dark">Socials</h4>
-                        <div className="flex space-x-4">
-                            <a href="#" className="w-10 h-10 rounded-full glass-morphism flex items-center justify-center hover:bg-primary/20 transition-all">GH</a>
-                            <a href="https://www.linkedin.com/in/mudassirshaik/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass-morphism flex items-center justify-center hover:bg-primary/20 transition-all">LI</a>
-                            <a href="#" className="w-10 h-10 rounded-full glass-morphism flex items-center justify-center hover:bg-primary/20 transition-all">TW</a>
+                        <div className="flex flex-col space-y-4">
+                            <div className="flex space-x-4">
+                                <a href="#" className="w-10 h-10 rounded-full glass-morphism flex items-center justify-center hover:bg-primary/20 transition-all">GH</a>
+                                <a href="https://www.linkedin.com/in/mudassirshaik/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass-morphism flex items-center justify-center hover:bg-primary/20 transition-all">LI</a>
+                                <a href="#" className="w-10 h-10 rounded-full glass-morphism flex items-center justify-center hover:bg-primary/20 transition-all">TW</a>
+                            </div>
+                            <a href="/resume" className="inline-block bg-blue-600 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-700 transition-all shadow-md text-center max-w-[150px]">
+                                E-Resume
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -15,6 +15,7 @@ const Navbar = () => {
         { name: 'Publication', path: '/publication' },
         { name: 'Certifications', path: '/certifications' },
         { name: 'Contact', path: '/contact' },
+        { name: 'E-Resume', path: '/resume' },
     ];
 
     useEffect(() => {
@@ -40,7 +41,10 @@ const Navbar = () => {
                             <Link
                                 key={link.name}
                                 to={link.path}
-                                className={`transition-colors duration-300 hover:text-primary ${location.pathname === link.path ? 'text-primary font-semibold' : 'text-gray-600'}`}
+                                className={`transition-all duration-300 ${link.name === 'E-Resume'
+                                    ? 'bg-blue-600 text-white px-4 py-2 rounded-full font-bold hover:bg-blue-700 shadow-md'
+                                    : location.pathname === link.path ? 'text-primary font-semibold' : 'text-gray-600 hover:text-primary'
+                                    }`}
                             >
                                 {link.name}
                             </Link>
