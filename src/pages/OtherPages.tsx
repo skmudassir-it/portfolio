@@ -407,6 +407,7 @@ export const Publication = () => {
 
 export const Projects = () => {
     const projects = [
+        // ─── CLIENT PROJECTS ────────────────────────────────
         {
             name: "Beauty and company",
             url: "https://www.bandconline.com",
@@ -487,6 +488,228 @@ export const Projects = () => {
             apps: "No app listed",
             color: "from-gray-600/10 to-transparent",
             tags: ["Shopify", "E-commerce", "Industrial"]
+        },
+
+        // ─── FULL-STACK SAAS & DASHBOARDS ───────────────────
+        {
+            name: "IntelliSyncs — AI Warehouse Automation",
+            url: "https://intellisyncs-web.vercel.app",
+            platform: "Next.js 16 + Tailwind v4 + shadcn/ui",
+            image: "",
+            apps: "6-page marketing site, case studies",
+            color: "from-cyan-500/10 to-transparent",
+            tags: ["Next.js", "AI", "Automation", "B2B"]
+        },
+        {
+            name: "Blackbox CRM",
+            url: "https://github.com/skmudassir-it/blackbox-crm",
+            platform: "Next.js 16 + Tailwind + shadcn/ui",
+            image: "",
+            apps: "Contacts, Email Gen (DeepSeek), Gmail OAuth, Kanban",
+            color: "from-violet-500/10 to-transparent",
+            tags: ["Next.js", "CRM", "AI", "Full-Stack"]
+        },
+        {
+            name: "InsureEase — Insurance Platform",
+            url: "https://github.com/skmudassir-it/insurease-landing",
+            platform: "Next.js 16 + Tailwind v4 + shadcn/ui",
+            image: "",
+            apps: "Landing page + Auth + Dashboard",
+            color: "from-emerald-500/10 to-transparent",
+            tags: ["Next.js", "InsurTech", "SaaS", "Auth"]
+        },
+        {
+            name: "Zooder — Social Feed App",
+            url: "https://github.com/skmudassir-it/zooder",
+            platform: "Next.js + TypeScript + Tailwind",
+            image: "",
+            apps: "Real-time social feed with post creation",
+            color: "from-rose-500/10 to-transparent",
+            tags: ["Next.js", "Social", "Real-time", "TypeScript"]
+        },
+        {
+            name: "AMS Client Portal",
+            url: "https://ams-client-portal.vercel.app",
+            platform: "Next.js + Tailwind + shadcn/ui",
+            image: "",
+            apps: "Client dashboard with project tracking",
+            color: "from-indigo-500/10 to-transparent",
+            tags: ["Next.js", "Client Portal", "Dashboard"]
+        },
+
+        // ─── BUSINESS & LANDING PAGES ───────────────────────
+        {
+            name: "ALT 8 IT Solutions",
+            url: "https://alt8-web.vercel.app",
+            platform: "Next.js + Tailwind CSS",
+            image: "",
+            apps: "Modern business website",
+            color: "from-sky-500/10 to-transparent",
+            tags: ["Next.js", "Business", "IT Services"]
+        },
+        {
+            name: "Dr. Daniel Nguyen — Professional Site",
+            url: "https://drprofnguyen-site.vercel.app",
+            platform: "Next.js + Tailwind CSS",
+            image: "",
+            apps: "Multi-page federal IT executive portfolio",
+            color: "from-teal-500/10 to-transparent",
+            tags: ["Next.js", "Portfolio", "Professional"]
+        },
+        {
+            name: "Newly Weds Foods",
+            url: "https://newly-weds-foods.vercel.app",
+            platform: "Next.js + Tailwind CSS",
+            image: "",
+            apps: "44-route corporate food manufacturing site",
+            color: "from-amber-500/10 to-transparent",
+            tags: ["Next.js", "Corporate", "Food Industry"]
+        },
+        {
+            name: "Building Coolers LLC",
+            url: "https://building-coolers.vercel.app",
+            platform: "Next.js + Tailwind CSS",
+            image: "",
+            apps: "HVAC / modular cooling solutions",
+            color: "from-blue-700/10 to-transparent",
+            tags: ["Next.js", "HVAC", "Industrial", "Business"]
+        },
+        {
+            name: "Memphis Indian Restaurant",
+            url: "https://memphis-indian-restaurant.vercel.app",
+            platform: "Next.js + Tailwind CSS",
+            image: "",
+            apps: "Animated menu with category transitions",
+            color: "from-orange-600/10 to-transparent",
+            tags: ["Next.js", "Restaurant", "Food", "Local"]
+        },
+        {
+            name: "Mufasa Jeweler",
+            url: "https://mufasa-jeweler.vercel.app",
+            platform: "Next.js + Tailwind CSS",
+            image: "",
+            apps: "Premium gold jewelry storefront",
+            color: "from-yellow-500/10 to-transparent",
+            tags: ["Next.js", "E-commerce", "Jewelry", "Luxury"]
+        },
+        {
+            name: "Mem Food Truck",
+            url: "https://mem-food-truck.vercel.app",
+            platform: "Next.js + Tailwind + shadcn/ui",
+            image: "",
+            apps: "Cinematic street food brand website",
+            color: "from-red-600/10 to-transparent",
+            tags: ["Next.js", "Food Truck", "Branding"]
+        },
+        {
+            name: "Luxury Hotel Landing",
+            url: "https://hotel-frontend-next.vercel.app",
+            platform: "Next.js + Tailwind CSS",
+            image: "",
+            apps: "Room cards, amenities, booking flow",
+            color: "from-stone-500/10 to-transparent",
+            tags: ["Next.js", "Hospitality", "Landing Page"]
+        },
+        {
+            name: "AMS Frontend — Headless WP",
+            url: "https://ams-frontend-eosin.vercel.app",
+            platform: "Next.js + WordPress REST API",
+            image: "",
+            apps: "Decoupled frontend for American Metal and Saw",
+            color: "from-zinc-500/10 to-transparent",
+            tags: ["Next.js", "Headless", "WordPress", "API"]
+        },
+        {
+            name: "AMS IT Services Dashboard",
+            url: "https://mind-map-henna.vercel.app",
+            platform: "Next.js + TypeScript",
+            image: "",
+            apps: "Interactive services dashboard",
+            color: "from-purple-500/10 to-transparent",
+            tags: ["Next.js", "Dashboard", "Analytics"]
+        },
+        {
+            name: "Single-Page Web App",
+            url: "https://social.amsitservices.com",
+            platform: "React + JavaScript",
+            image: "",
+            apps: "Multi-section social page with terms & privacy",
+            color: "from-pink-500/10 to-transparent",
+            tags: ["React", "SPA", "Social", "Web App"]
+        },
+
+        // ─── TOOLS & APPS ───────────────────────────────────
+        {
+            name: "Baby Feeding Tracker",
+            url: "https://baby-feeder-rho.vercel.app",
+            platform: "Next.js + Flask + SQLite",
+            image: "",
+            apps: "Track milk/food, charts, full-stack",
+            color: "from-pink-400/10 to-transparent",
+            tags: ["Next.js", "Flask", "Full-Stack", "Health"]
+        },
+        {
+            name: "Watermark App",
+            url: "https://watermark-app-next.vercel.app",
+            platform: "Next.js + Canvas API",
+            image: "",
+            apps: "Client-side image watermarking, no server",
+            color: "from-slate-400/10 to-transparent",
+            tags: ["Next.js", "Canvas", "Image Tool", "Client-Side"]
+        },
+        {
+            name: "Meme Generator",
+            url: "https://meme-generator-next-nine.vercel.app",
+            platform: "Next.js + Reddit API",
+            image: "",
+            apps: "Browse Reddit memes, gallery, modal, share",
+            color: "from-green-500/10 to-transparent",
+            tags: ["Next.js", "Reddit API", "Gallery", "Fun"]
+        },
+        {
+            name: "BMI Calculator",
+            url: "https://bmi-calculator-next-eta.vercel.app",
+            platform: "Next.js 16 + Framer Motion",
+            image: "",
+            apps: "Animated gauge, history, metric/imperial",
+            color: "from-lime-500/10 to-transparent",
+            tags: ["Next.js", "Health", "Calculator", "Animation"]
+        },
+        {
+            name: "Power Plant Energy Predictor",
+            url: "https://power-plant-frontend-ten.vercel.app",
+            platform: "Next.js + ML (Decision Tree)",
+            image: "",
+            apps: "Embedded sklearn model, real-time predictions",
+            color: "from-yellow-600/10 to-transparent",
+            tags: ["Next.js", "ML", "Energy", "Data Science"]
+        },
+        {
+            name: "Birthday Celebration Page",
+            url: "https://birthday-celebration-gamma.vercel.app",
+            platform: "Next.js + Framer Motion",
+            image: "",
+            apps: "Balloons, fireworks, pop animations",
+            color: "from-fuchsia-500/10 to-transparent",
+            tags: ["Next.js", "Animation", "Interactive", "Fun"]
+        },
+        {
+            name: "Property Listings",
+            url: "https://property.amsitservices.com",
+            platform: "Next.js + TypeScript",
+            image: "",
+            apps: "Real estate property showcase",
+            color: "from-neutral-500/10 to-transparent",
+            tags: ["Next.js", "Real Estate", "Listings"]
+        },
+        {
+            name: "Kanban Board",
+            url: "https://github.com/skmudassir-it/kanban-board",
+            platform: "Next.js + TypeScript + Tailwind + shadcn/ui",
+            image: "",
+            apps: "Responsive drag-and-drop board",
+            color: "from-blue-400/10 to-transparent",
+            tags: ["Next.js", "Kanban", "Productivity", "shadcn"]
         },
     ];
 
