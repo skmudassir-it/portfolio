@@ -91,6 +91,44 @@ export const Education = () => (
 
 export const experienceData = [
     {
+        slug: 'bsw-outlet',
+        role: 'IT Engineer & Business Analyst',
+        company: 'BSW Outlet',
+        period: 'January 2026 - Present',
+        domain: 'Warehouse Management & Business Operations',
+        color: 'border-primary',
+        image: '/experience/bsw-outlet.png',
+        tech: ['IT Infrastructure', 'Inventory Systems', 'Social Media Marketing', 'Team Management', 'Payroll', 'Business Development'],
+        shortDesc: 'Leading IT operations and business strategy for a retail warehouse outlet, bridging technology with day-to-day business management.',
+        responsibilities: [
+            'Manage end-to-end IT infrastructure and warehouse operations for retail outlet',
+            'Lead social media marketing strategy and business development initiatives driving brand growth',
+            'Oversee team management, payroll processing, and workforce scheduling across departments',
+            'Implement inventory tracking systems providing real-time stock visibility and order fulfillment',
+            'Bridge technology and business operations to drive efficiency, reduce costs, and improve workflows'
+        ],
+        recommendations: []
+    },
+    {
+        slug: 'beauty-and-company',
+        role: 'Web Developer',
+        company: 'Beauty and Company',
+        period: 'March 2023 - December 2025',
+        domain: 'E-Commerce & Digital Presence',
+        color: 'border-secondary',
+        image: '/projects/beauty_and_company.webp',
+        tech: ['Shopify', 'AI Tools', 'Mobile Apps', 'Marketing Design', 'React', 'Branding'],
+        shortDesc: 'Built and maintained the complete digital ecosystem — Shopify store, company website, and mobile apps for a beauty e-commerce brand.',
+        responsibilities: [
+            'Built and maintained Shopify e-commerce platform driving sustained online sales growth',
+            'Leveraged AI tools for marketing design, content creation, and customer engagement automation',
+            'Developed responsive company website and cross-platform mobile app for Android & iOS',
+            'Created marketing collateral, branding materials, and digital design assets for campaigns',
+            'Managed end-to-end digital presence from development and deployment to analytics and optimization'
+        ],
+        recommendations: []
+    },
+    {
         slug: 'attra',
         role: 'Software Engineer',
         company: 'Attra, a Synechron Company',
@@ -408,6 +446,15 @@ export const Publication = () => {
 export const Projects = () => {
     const projects = [
         // ─── CLIENT PROJECTS ────────────────────────────────
+        {
+            name: "BSW Outlet",
+            url: "https://github.com/skmudassir-it/bsw_Watnot",
+            platform: "IT Management & Business Operations",
+            image: "",
+            apps: "Warehouse, Inventory, Payroll, Social Media, Team Mgmt",
+            color: "from-indigo-600/10 to-transparent",
+            tags: ["IT Operations", "Warehouse", "Business", "Retail"]
+        },
         {
             name: "Beauty and company",
             url: "https://www.bandconline.com",
