@@ -22,7 +22,7 @@ const Resume = () => {
         {
             degree: "MSc Datascience",
             school: "Chandigarh University",
-            period: "Aug 2021 - Mar 2023",
+            period: "Aug 2021 - Apr 2023",
             location: "India"
         },
         {
