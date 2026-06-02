@@ -711,6 +711,466 @@ export const Projects = () => {
             color: "from-blue-400/10 to-transparent",
             tags: ["Next.js", "Kanban", "Productivity", "shadcn"]
         },
+
+        // ─── ADDITIONAL WEB APPS ────────────────────────────
+        {
+            name: "InsureEase Auth",
+            url: "https://github.com/skmudassir-it/insurease-auth",
+            platform: "Next.js 16 + Tailwind + shadcn/ui",
+            image: "",
+            apps: "Login, Registration & Dashboard for insurance agents",
+            color: "from-emerald-400/10 to-transparent",
+            tags: ["Next.js", "Auth", "InsurTech", "Dashboard"]
+        },
+        {
+            name: "AMS India",
+            url: "https://github.com/skmudassir-it/AMS_India",
+            platform: "Next.js + TypeScript",
+            image: "",
+            apps: "Regional AMS India landing & services page",
+            color: "from-orange-500/10 to-transparent",
+            tags: ["Next.js", "Business", "India", "Landing"]
+        },
+        {
+            name: "Mineral Wells Church",
+            url: "https://github.com/skmudassir-it/Mineral-Wells-Church-",
+            platform: "Next.js + TypeScript",
+            image: "",
+            apps: "Church website with events & community features",
+            color: "from-sky-400/10 to-transparent",
+            tags: ["Next.js", "Church", "Community", "Non-Profit"]
+        },
+        {
+            name: "Quran App",
+            url: "https://github.com/skmudassir-it/quran",
+            platform: "Next.js + TypeScript",
+            image: "",
+            apps: "Islamic scripture reading & study app",
+            color: "from-emerald-600/10 to-transparent",
+            tags: ["Next.js", "Religion", "Reading", "Education"]
+        },
+        {
+            name: "AI Image Generator",
+            url: "https://github.com/skmudassir-it/Ai-Image-generator",
+            platform: "Next.js + TypeScript",
+            image: "",
+            apps: "Generate AI images from text prompts",
+            color: "from-purple-600/10 to-transparent",
+            tags: ["Next.js", "AI", "Image Gen", "Creative"]
+        },
+        {
+            name: "Mana Urban Bowl",
+            url: "https://github.com/skmudassir-it/mana-urban-bowl",
+            platform: "Next.js + TypeScript",
+            image: "",
+            apps: "Restaurant website — urban bowl concept",
+            color: "from-green-500/10 to-transparent",
+            tags: ["Next.js", "Restaurant", "Food", "Brand"]
+        },
+        {
+            name: "BSW Scheduler",
+            url: "https://github.com/skmudassir-it/BSW_schuduller",
+            platform: "Next.js + TypeScript",
+            image: "",
+            apps: "Scheduling & booking tool",
+            color: "from-cyan-600/10 to-transparent",
+            tags: ["Next.js", "Scheduling", "Booking", "Tool"]
+        },
+        {
+            name: "BSW Whatnot",
+            url: "https://github.com/skmudassir-it/bsw_Watnot",
+            platform: "Next.js + TypeScript",
+            image: "",
+            apps: "Whatnot marketplace integration tool",
+            color: "from-pink-600/10 to-transparent",
+            tags: ["Next.js", "Marketplace", "Whatnot", "Tool"]
+        },
+        {
+            name: "Blog App",
+            url: "https://github.com/skmudassir-it/blog-App",
+            platform: "Next.js + TypeScript",
+            image: "",
+            apps: "Full-featured blogging platform",
+            color: "from-indigo-400/10 to-transparent",
+            tags: ["Next.js", "Blog", "CMS", "Content"]
+        },
+        {
+            name: "Dating App",
+            url: "https://github.com/skmudassir-it/Dating_App",
+            platform: "Next.js + TypeScript",
+            image: "",
+            apps: "Modern dating platform",
+            color: "from-rose-500/10 to-transparent",
+            tags: ["Next.js", "Dating", "Social", "App"]
+        },
+        {
+            name: "E-Commerce Web",
+            url: "https://github.com/skmudassir-it/ecommerce-web",
+            platform: "Next.js + TypeScript",
+            image: "",
+            apps: "Full e-commerce storefront",
+            color: "from-amber-400/10 to-transparent",
+            tags: ["Next.js", "E-commerce", "Storefront", "Shop"]
+        },
+
+        // ─── JAVASCRIPT PROJECTS ─────────────────────────────
+        {
+            name: "YouTube Automation",
+            url: "https://github.com/skmudassir-it/youtube_automation",
+            platform: "JavaScript + Node.js",
+            image: "",
+            apps: "Automated YouTube content management",
+            color: "from-red-500/10 to-transparent",
+            tags: ["JavaScript", "YouTube", "Automation", "Node.js"]
+        },
+        {
+            name: "Food Delivery App",
+            url: "https://github.com/skmudassir-it/food_Delevery",
+            platform: "JavaScript",
+            image: "",
+            apps: "Online food ordering & delivery platform",
+            color: "from-orange-400/10 to-transparent",
+            tags: ["JavaScript", "Food", "Delivery", "E-commerce"]
+        },
+        {
+            name: "Blogging Platform",
+            url: "https://github.com/skmudassir-it/blogging_app",
+            platform: "JavaScript",
+            image: "",
+            apps: "Full-stack blogging application",
+            color: "from-teal-500/10 to-transparent",
+            tags: ["JavaScript", "Blog", "Full-Stack", "CMS"]
+        },
+        {
+            name: "Nataki Tax",
+            url: "https://github.com/skmudassir-it/nataki_tax",
+            platform: "JavaScript",
+            image: "",
+            apps: "Tax preparation & calculation tool",
+            color: "from-blue-600/10 to-transparent",
+            tags: ["JavaScript", "Tax", "Finance", "Tool"]
+        },
+        {
+            name: "AP Resume Builder",
+            url: "https://github.com/skmudassir-it/ap_resume",
+            platform: "JavaScript",
+            image: "",
+            apps: "Professional resume builder app",
+            color: "from-slate-500/10 to-transparent",
+            tags: ["JavaScript", "Resume", "Career", "Tool"]
+        },
+        {
+            name: "A-Auto",
+            url: "https://github.com/skmudassir-it/a-auto",
+            platform: "JavaScript",
+            image: "",
+            apps: "Automotive dealership website",
+            color: "from-gray-600/10 to-transparent",
+            tags: ["JavaScript", "Automotive", "Dealership", "Business"]
+        },
+        {
+            name: "Web MERN Stack",
+            url: "https://github.com/skmudassir-it/webMERN",
+            platform: "MongoDB + Express + React + Node.js",
+            image: "",
+            apps: "Full-stack MERN application",
+            color: "from-green-600/10 to-transparent",
+            tags: ["MongoDB", "Express", "React", "Node.js"]
+        },
+        {
+            name: "React Web App",
+            url: "https://github.com/skmudassir-it/react_web",
+            platform: "React + JavaScript",
+            image: "",
+            apps: "Modern React SPA with routing",
+            color: "from-cyan-400/10 to-transparent",
+            tags: ["React", "JavaScript", "SPA", "Frontend"]
+        },
+        {
+            name: "AI ChatGPT Clone",
+            url: "https://github.com/skmudassir-it/AiChatGPT",
+            platform: "JavaScript + OpenAI API",
+            image: "",
+            apps: "ChatGPT-like conversational AI interface",
+            color: "from-violet-400/10 to-transparent",
+            tags: ["JavaScript", "OpenAI", "ChatGPT", "AI"]
+        },
+        {
+            name: "Social Media App",
+            url: "https://github.com/skmudassir-it/social-media",
+            platform: "JavaScript",
+            image: "",
+            apps: "Social networking platform",
+            color: "from-pink-500/10 to-transparent",
+            tags: ["JavaScript", "Social", "Networking", "Full-Stack"]
+        },
+        {
+            name: "HolaChat",
+            url: "https://github.com/skmudassir-it/holachat",
+            platform: "JavaScript + WebSockets",
+            image: "",
+            apps: "Real-time chat application",
+            color: "from-blue-500/10 to-transparent",
+            tags: ["JavaScript", "Chat", "WebSockets", "Real-time"]
+        },
+
+        // ─── PYTHON & BACKEND ────────────────────────────────
+        {
+            name: "InsureEase Backend",
+            url: "https://github.com/skmudassir-it/insureease",
+            platform: "Python + FastAPI",
+            image: "",
+            apps: "Insurance CRM backend API platform",
+            color: "from-green-700/10 to-transparent",
+            tags: ["Python", "FastAPI", "Backend", "CRM"]
+        },
+        {
+            name: "Invoice AI",
+            url: "https://github.com/skmudassir-it/InvoiceAI",
+            platform: "Python",
+            image: "",
+            apps: "AI-powered invoice generation & processing",
+            color: "from-amber-600/10 to-transparent",
+            tags: ["Python", "AI", "Invoice", "Finance"]
+        },
+        {
+            name: "ChatGPT Python",
+            url: "https://github.com/skmudassir-it/chatGpt",
+            platform: "Python + OpenAI API",
+            image: "",
+            apps: "Python wrapper for ChatGPT interactions",
+            color: "from-purple-500/10 to-transparent",
+            tags: ["Python", "OpenAI", "ChatGPT", "API"]
+        },
+
+        // ─── MACHINE LEARNING & DATA SCIENCE ─────────────────
+        {
+            name: "Power Plant Energy — Notebook",
+            url: "https://github.com/skmudassir-it/power-plant-energy-output",
+            platform: "Jupyter Notebook + sklearn",
+            image: "",
+            apps: "ML model training & analysis for energy prediction",
+            color: "from-yellow-500/10 to-transparent",
+            tags: ["Jupyter", "ML", "Energy", "sklearn"]
+        },
+        {
+            name: "Machine Learning Projects",
+            url: "https://github.com/skmudassir-it/Machine-Learning",
+            platform: "Jupyter Notebook",
+            image: "",
+            apps: "Collection of ML algorithms & experiments",
+            color: "from-indigo-500/10 to-transparent",
+            tags: ["Jupyter", "ML", "Collection", "Data Science"]
+        },
+        {
+            name: "Dog Breed Predictor",
+            url: "https://github.com/skmudassir-it/dog-breed-prediction",
+            platform: "Jupyter Notebook + Deep Learning",
+            image: "",
+            apps: "CNN-based dog breed image classification",
+            color: "from-brown-500/10 to-transparent",
+            tags: ["Jupyter", "Deep Learning", "CNN", "Classification"]
+        },
+        {
+            name: "PAN Card Prediction",
+            url: "https://github.com/skmudassir-it/Pan-card-prediction",
+            platform: "Jupyter Notebook",
+            image: "",
+            apps: "OCR & ML for PAN card data extraction",
+            color: "from-blue-700/10 to-transparent",
+            tags: ["Jupyter", "OCR", "ML", "Document AI"]
+        },
+        {
+            name: "Breast Cancer Prediction",
+            url: "https://github.com/skmudassir-it/Brest-Cancer-Prediction",
+            platform: "Jupyter Notebook + SVC",
+            image: "",
+            apps: "Cancer classification using sklearn SVC model",
+            color: "from-pink-400/10 to-transparent",
+            tags: ["Jupyter", "Healthcare", "SVM", "Classification"]
+        },
+        {
+            name: "NLP — Natural Language Processing",
+            url: "https://github.com/skmudassir-it/Natural-Langauge-Processing",
+            platform: "Jupyter Notebook",
+            image: "",
+            apps: "Text processing, sentiment & NLP techniques",
+            color: "from-teal-600/10 to-transparent",
+            tags: ["Jupyter", "NLP", "Text", "Sentiment"]
+        },
+        {
+            name: "Tomato Leaf Disease Detection",
+            url: "https://github.com/skmudassir-it/tomato-leaf-diesease",
+            platform: "Jupyter Notebook + CNN",
+            image: "",
+            apps: "Agricultural disease detection from leaf images",
+            color: "from-red-600/10 to-transparent",
+            tags: ["Jupyter", "Agriculture", "CNN", "Computer Vision"]
+        },
+        {
+            name: "Chest X-Ray Pneumonia",
+            url: "https://github.com/skmudassir-it/Chest_X-ray_pneumonia",
+            platform: "Jupyter Notebook + Deep Learning",
+            image: "",
+            apps: "Medical image classification for pneumonia detection",
+            color: "from-blue-800/10 to-transparent",
+            tags: ["Jupyter", "Healthcare", "CNN", "Medical AI"]
+        },
+        {
+            name: "Car Price Predictor",
+            url: "https://github.com/skmudassir-it/CarPricePrediction",
+            platform: "Jupyter Notebook",
+            image: "",
+            apps: "Regression model for vehicle price estimation",
+            color: "from-orange-700/10 to-transparent",
+            tags: ["Jupyter", "Regression", "Auto", "Price Prediction"]
+        },
+        {
+            name: "Heart Failure Predictor",
+            url: "https://github.com/skmudassir-it/Heart-Failure-Prediction",
+            platform: "CSS / ML Pipeline",
+            image: "",
+            apps: "Predictive model for heart failure risk",
+            color: "from-red-700/10 to-transparent",
+            tags: ["ML", "Healthcare", "Prediction", "Classification"]
+        },
+        {
+            name: "House Price Predictor",
+            url: "https://github.com/skmudassir-it/House_price_prediction",
+            platform: "CSS / ML Pipeline",
+            image: "",
+            apps: "Real estate price prediction model",
+            color: "from-green-700/10 to-transparent",
+            tags: ["ML", "Real Estate", "Regression", "Prediction"]
+        },
+        {
+            name: "Bank Prediction",
+            url: "https://github.com/skmudassir-it/bankPrediction",
+            platform: "CSS / ML Pipeline",
+            image: "",
+            apps: "Bank customer churn prediction model",
+            color: "from-purple-700/10 to-transparent",
+            tags: ["ML", "Banking", "Churn", "Classification"]
+        },
+
+        // ─── OTHER PROJECTS ──────────────────────────────────
+        {
+            name: "Watermark App (HTML)",
+            url: "https://github.com/skmudassir-it/watermarkApp",
+            platform: "HTML + Canvas + JavaScript",
+            image: "",
+            apps: "Original vanilla JS watermark tool",
+            color: "from-slate-400/10 to-transparent",
+            tags: ["HTML", "Canvas", "Tool", "Vanilla JS"]
+        },
+        {
+            name: "3D View",
+            url: "https://github.com/skmudassir-it/3dview",
+            platform: "HTML + Three.js",
+            image: "",
+            apps: "3D model viewer with interactive controls",
+            color: "from-gray-500/10 to-transparent",
+            tags: ["HTML", "Three.js", "3D", "Interactive"]
+        },
+        {
+            name: "Django E-Commerce",
+            url: "https://github.com/skmudassir-it/django_ecommerce",
+            platform: "HTML + Django",
+            image: "",
+            apps: "E-commerce platform with Django backend",
+            color: "from-emerald-600/10 to-transparent",
+            tags: ["Django", "Python", "E-commerce", "Full-Stack"]
+        },
+        {
+            name: "Beauty App Build",
+            url: "https://github.com/skmudassir-it/beautyApp_Build",
+            platform: "Mobile App (Uber Eats clone concept)",
+            image: "",
+            apps: "Beauty product delivery app — Uber Eats for beauty",
+            color: "from-pink-300/10 to-transparent",
+            tags: ["Mobile", "Beauty", "Delivery", "App"]
+        },
+        {
+            name: "AWS WordPress Deployment",
+            url: "https://github.com/skmudassir-it/AWS_WordPress",
+            platform: "AWS EC2 + WordPress",
+            image: "",
+            apps: "WordPress installation & hosting on AWS EC2",
+            color: "from-orange-400/10 to-transparent",
+            tags: ["AWS", "WordPress", "DevOps", "Cloud"]
+        },
+        {
+            name: "ML Deployment",
+            url: "https://github.com/skmudassir-it/machine-learning-Deployment",
+            platform: "Python + Flask + Docker",
+            image: "",
+            apps: "End-to-end ML model deployment pipeline",
+            color: "from-indigo-600/10 to-transparent",
+            tags: ["ML", "Flask", "Docker", "DevOps"]
+        },
+        {
+            name: "Voice News App",
+            url: "https://github.com/skmudassir-it/voice-news-app",
+            platform: "JavaScript + Speech API",
+            image: "",
+            apps: "Voice-controlled news reader application",
+            color: "from-cyan-500/10 to-transparent",
+            tags: ["JavaScript", "Voice", "News", "Speech API"]
+        },
+        {
+            name: "Java Projects",
+            url: "https://github.com/skmudassir-it/java",
+            platform: "Java",
+            image: "",
+            apps: "Collection of Java programming projects",
+            color: "from-red-500/10 to-transparent",
+            tags: ["Java", "OOP", "Collection", "Programming"]
+        },
+        {
+            name: "Spring Framework",
+            url: "https://github.com/skmudassir-it/spring",
+            platform: "Java + Spring Boot",
+            image: "",
+            apps: "Spring Boot backend application",
+            color: "from-green-600/10 to-transparent",
+            tags: ["Java", "Spring Boot", "Backend", "API"]
+        },
+        {
+            name: "Kafka Messaging",
+            url: "https://github.com/skmudassir-it/kafka",
+            platform: "Apache Kafka",
+            image: "",
+            apps: "Distributed messaging & event streaming",
+            color: "from-stone-600/10 to-transparent",
+            tags: ["Kafka", "Messaging", "Streaming", "Distributed"]
+        },
+        {
+            name: "Email Stack",
+            url: "https://github.com/skmudassir-it/email_stack",
+            platform: "Email Infrastructure",
+            image: "",
+            apps: "Email server & delivery infrastructure setup",
+            color: "from-blue-400/10 to-transparent",
+            tags: ["Email", "Infrastructure", "DevOps", "SMTP"]
+        },
+        {
+            name: "Reinforcement Learning Project",
+            url: "https://github.com/skmudassir-it/renforncementLearning-project",
+            platform: "Python + RL",
+            image: "",
+            apps: "Reinforcement learning algorithms & experiments",
+            color: "from-violet-500/10 to-transparent",
+            tags: ["Python", "RL", "AI", "Agents"]
+        },
+        {
+            name: "Chatbot",
+            url: "https://github.com/skmudassir-it/chatbot",
+            platform: "Python / NLP",
+            image: "",
+            apps: "Custom conversational AI chatbot",
+            color: "from-teal-400/10 to-transparent",
+            tags: ["Python", "Chatbot", "NLP", "Conversational AI"]
+        },
     ];
 
     return (
