@@ -450,7 +450,7 @@ export const Projects = () => {
             name: "BSW Outlet",
             url: "https://github.com/skmudassir-it/bsw_Watnot",
             platform: "IT Management & Business Operations",
-            image: "",
+            image: "/projects/shots/bsw_outlet.png",
             apps: "Warehouse, Inventory, Payroll, Social Media, Team Mgmt",
             color: "from-indigo-600/10 to-transparent",
             tags: ["IT Operations", "Warehouse", "Business", "Retail"]
@@ -542,7 +542,7 @@ export const Projects = () => {
             name: "IntelliSyncs — AI Warehouse Automation",
             url: "https://intellisyncs-web.vercel.app",
             platform: "Next.js 16 + Tailwind v4 + shadcn/ui",
-            image: "",
+            image: "/projects/shots/intellisyncs_ai_warehouse_automation.png",
             apps: "6-page marketing site, case studies",
             color: "from-cyan-500/10 to-transparent",
             tags: ["Next.js", "AI", "Automation", "B2B"]
@@ -551,7 +551,7 @@ export const Projects = () => {
             name: "Blackbox CRM",
             url: "https://github.com/skmudassir-it/blackbox-crm",
             platform: "Next.js 16 + Tailwind + shadcn/ui",
-            image: "",
+            image: "/projects/shots/blackbox_crm.png",
             apps: "Contacts, Email Gen (DeepSeek), Gmail OAuth, Kanban",
             color: "from-violet-500/10 to-transparent",
             tags: ["Next.js", "CRM", "AI", "Full-Stack"]
@@ -560,7 +560,7 @@ export const Projects = () => {
             name: "InsureEase — Insurance Platform",
             url: "https://github.com/skmudassir-it/insurease-landing",
             platform: "Next.js 16 + Tailwind v4 + shadcn/ui",
-            image: "",
+            image: "/projects/shots/insureease_insurance_platform.png",
             apps: "Landing page + Auth + Dashboard",
             color: "from-emerald-500/10 to-transparent",
             tags: ["Next.js", "InsurTech", "SaaS", "Auth"]
@@ -569,7 +569,7 @@ export const Projects = () => {
             name: "Zooder — Social Feed App",
             url: "https://github.com/skmudassir-it/zooder",
             platform: "Next.js + TypeScript + Tailwind",
-            image: "",
+            image: "/projects/shots/zooder_social_feed_app.png",
             apps: "Real-time social feed with post creation",
             color: "from-rose-500/10 to-transparent",
             tags: ["Next.js", "Social", "Real-time", "TypeScript"]
@@ -578,7 +578,7 @@ export const Projects = () => {
             name: "AMS Client Portal",
             url: "https://ams-client-portal.vercel.app",
             platform: "Next.js + Tailwind + shadcn/ui",
-            image: "",
+            image: "/projects/shots/ams_client_portal.png",
             apps: "Client dashboard with project tracking",
             color: "from-indigo-500/10 to-transparent",
             tags: ["Next.js", "Client Portal", "Dashboard"]
@@ -589,7 +589,7 @@ export const Projects = () => {
             name: "ALT 8 IT Solutions",
             url: "https://alt8-web.vercel.app",
             platform: "Next.js + Tailwind CSS",
-            image: "",
+            image: "/projects/shots/alt_8_it_solutions.png",
             apps: "Modern business website",
             color: "from-sky-500/10 to-transparent",
             tags: ["Next.js", "Business", "IT Services"]
@@ -598,7 +598,7 @@ export const Projects = () => {
             name: "Dr. Daniel Nguyen — Professional Site",
             url: "https://drprofnguyen-site.vercel.app",
             platform: "Next.js + Tailwind CSS",
-            image: "",
+            image: "/projects/shots/dr._daniel_nguyen_professional_site.png",
             apps: "Multi-page federal IT executive portfolio",
             color: "from-teal-500/10 to-transparent",
             tags: ["Next.js", "Portfolio", "Professional"]
@@ -607,7 +607,7 @@ export const Projects = () => {
             name: "Newly Weds Foods",
             url: "https://newly-weds-foods.vercel.app",
             platform: "Next.js + Tailwind CSS",
-            image: "",
+            image: "/projects/shots/newly_weds_foods.png",
             apps: "44-route corporate food manufacturing site",
             color: "from-amber-500/10 to-transparent",
             tags: ["Next.js", "Corporate", "Food Industry"]
@@ -616,7 +616,7 @@ export const Projects = () => {
             name: "Building Coolers LLC",
             url: "https://building-coolers.vercel.app",
             platform: "Next.js + Tailwind CSS",
-            image: "",
+            image: "/projects/shots/building_coolers_llc.png",
             apps: "HVAC / modular cooling solutions",
             color: "from-blue-700/10 to-transparent",
             tags: ["Next.js", "HVAC", "Industrial", "Business"]
@@ -625,7 +625,7 @@ export const Projects = () => {
             name: "Memphis Indian Restaurant",
             url: "https://memphis-indian-restaurant.vercel.app",
             platform: "Next.js + Tailwind CSS",
-            image: "",
+            image: "/projects/shots/memphis_indian_restaurant.png",
             apps: "Animated menu with category transitions",
             color: "from-orange-600/10 to-transparent",
             tags: ["Next.js", "Restaurant", "Food", "Local"]
@@ -634,7 +634,7 @@ export const Projects = () => {
             name: "Mufasa Jeweler",
             url: "https://mufasa-jeweler.vercel.app",
             platform: "Next.js + Tailwind CSS",
-            image: "",
+            image: "/projects/shots/mufasa_jeweler.png",
             apps: "Premium gold jewelry storefront",
             color: "from-yellow-500/10 to-transparent",
             tags: ["Next.js", "E-commerce", "Jewelry", "Luxury"]
@@ -643,7 +643,7 @@ export const Projects = () => {
             name: "Mem Food Truck",
             url: "https://mem-food-truck.vercel.app",
             platform: "Next.js + Tailwind + shadcn/ui",
-            image: "",
+            image: "/projects/shots/mem_food_truck.png",
             apps: "Cinematic street food brand website",
             color: "from-red-600/10 to-transparent",
             tags: ["Next.js", "Food Truck", "Branding"]
@@ -652,7 +652,7 @@ export const Projects = () => {
             name: "Luxury Hotel Landing",
             url: "https://hotel-frontend-next.vercel.app",
             platform: "Next.js + Tailwind CSS",
-            image: "",
+            image: "/projects/shots/luxury_hotel_landing.png",
             apps: "Room cards, amenities, booking flow",
             color: "from-stone-500/10 to-transparent",
             tags: ["Next.js", "Hospitality", "Landing Page"]
@@ -661,7 +661,7 @@ export const Projects = () => {
             name: "AMS Frontend — Headless WP",
             url: "https://ams-frontend-eosin.vercel.app",
             platform: "Next.js + WordPress REST API",
-            image: "",
+            image: "/projects/shots/ams_frontend_headless_wp.png",
             apps: "Decoupled frontend for American Metal and Saw",
             color: "from-zinc-500/10 to-transparent",
             tags: ["Next.js", "Headless", "WordPress", "API"]
@@ -670,7 +670,7 @@ export const Projects = () => {
             name: "AMS IT Services Dashboard",
             url: "https://mind-map-henna.vercel.app",
             platform: "Next.js + TypeScript",
-            image: "",
+            image: "/projects/shots/ams_it_services_dashboard.png",
             apps: "Interactive services dashboard",
             color: "from-purple-500/10 to-transparent",
             tags: ["Next.js", "Dashboard", "Analytics"]
@@ -679,7 +679,7 @@ export const Projects = () => {
             name: "Single-Page Web App",
             url: "https://social.amsitservices.com",
             platform: "React + JavaScript",
-            image: "",
+            image: "/projects/shots/single_page_web_app.png",
             apps: "Multi-section social page with terms & privacy",
             color: "from-pink-500/10 to-transparent",
             tags: ["React", "SPA", "Social", "Web App"]
@@ -690,7 +690,7 @@ export const Projects = () => {
             name: "Baby Feeding Tracker",
             url: "https://baby-feeder-rho.vercel.app",
             platform: "Next.js + Flask + SQLite",
-            image: "",
+            image: "/projects/shots/baby_feeding_tracker.png",
             apps: "Track milk/food, charts, full-stack",
             color: "from-pink-400/10 to-transparent",
             tags: ["Next.js", "Flask", "Full-Stack", "Health"]
@@ -699,7 +699,7 @@ export const Projects = () => {
             name: "Watermark App",
             url: "https://watermark-app-next.vercel.app",
             platform: "Next.js + Canvas API",
-            image: "",
+            image: "/projects/shots/watermark_app.png",
             apps: "Client-side image watermarking, no server",
             color: "from-slate-400/10 to-transparent",
             tags: ["Next.js", "Canvas", "Image Tool", "Client-Side"]
@@ -708,7 +708,7 @@ export const Projects = () => {
             name: "Meme Generator",
             url: "https://meme-generator-next-nine.vercel.app",
             platform: "Next.js + Reddit API",
-            image: "",
+            image: "/projects/shots/meme_generator.png",
             apps: "Browse Reddit memes, gallery, modal, share",
             color: "from-green-500/10 to-transparent",
             tags: ["Next.js", "Reddit API", "Gallery", "Fun"]
@@ -717,7 +717,7 @@ export const Projects = () => {
             name: "BMI Calculator",
             url: "https://bmi-calculator-next-eta.vercel.app",
             platform: "Next.js 16 + Framer Motion",
-            image: "",
+            image: "/projects/shots/bmi_calculator.png",
             apps: "Animated gauge, history, metric/imperial",
             color: "from-lime-500/10 to-transparent",
             tags: ["Next.js", "Health", "Calculator", "Animation"]
@@ -726,7 +726,7 @@ export const Projects = () => {
             name: "Power Plant Energy Predictor",
             url: "https://power-plant-frontend-ten.vercel.app",
             platform: "Next.js + ML (Decision Tree)",
-            image: "",
+            image: "/projects/shots/power_plant_energy_predictor.png",
             apps: "Embedded sklearn model, real-time predictions",
             color: "from-yellow-600/10 to-transparent",
             tags: ["Next.js", "ML", "Energy", "Data Science"]
@@ -735,7 +735,7 @@ export const Projects = () => {
             name: "Birthday Celebration Page",
             url: "https://birthday-celebration-gamma.vercel.app",
             platform: "Next.js + Framer Motion",
-            image: "",
+            image: "/projects/shots/birthday_celebration_page.png",
             apps: "Balloons, fireworks, pop animations",
             color: "from-fuchsia-500/10 to-transparent",
             tags: ["Next.js", "Animation", "Interactive", "Fun"]
@@ -744,7 +744,7 @@ export const Projects = () => {
             name: "Property Listings",
             url: "https://property.amsitservices.com",
             platform: "Next.js + TypeScript",
-            image: "",
+            image: "/projects/shots/property_listings.png",
             apps: "Real estate property showcase",
             color: "from-neutral-500/10 to-transparent",
             tags: ["Next.js", "Real Estate", "Listings"]
@@ -753,7 +753,7 @@ export const Projects = () => {
             name: "Kanban Board",
             url: "https://github.com/skmudassir-it/kanban-board",
             platform: "Next.js + TypeScript + Tailwind + shadcn/ui",
-            image: "",
+            image: "/projects/shots/kanban_board.png",
             apps: "Responsive drag-and-drop board",
             color: "from-blue-400/10 to-transparent",
             tags: ["Next.js", "Kanban", "Productivity", "shadcn"]
@@ -764,7 +764,7 @@ export const Projects = () => {
             name: "InsureEase Auth",
             url: "https://github.com/skmudassir-it/insurease-auth",
             platform: "Next.js 16 + Tailwind + shadcn/ui",
-            image: "",
+            image: "/projects/shots/insureease_auth.png",
             apps: "Login, Registration & Dashboard for insurance agents",
             color: "from-emerald-400/10 to-transparent",
             tags: ["Next.js", "Auth", "InsurTech", "Dashboard"]
@@ -773,7 +773,7 @@ export const Projects = () => {
             name: "AMS India",
             url: "https://github.com/skmudassir-it/AMS_India",
             platform: "Next.js + TypeScript",
-            image: "",
+            image: "/projects/shots/ams_india.png",
             apps: "Regional AMS India landing & services page",
             color: "from-orange-500/10 to-transparent",
             tags: ["Next.js", "Business", "India", "Landing"]
@@ -782,7 +782,7 @@ export const Projects = () => {
             name: "Mineral Wells Church",
             url: "https://github.com/skmudassir-it/Mineral-Wells-Church-",
             platform: "Next.js + TypeScript",
-            image: "",
+            image: "/projects/shots/mineral_wells_church.png",
             apps: "Church website with events & community features",
             color: "from-sky-400/10 to-transparent",
             tags: ["Next.js", "Church", "Community", "Non-Profit"]
@@ -791,7 +791,7 @@ export const Projects = () => {
             name: "Quran App",
             url: "https://github.com/skmudassir-it/quran",
             platform: "Next.js + TypeScript",
-            image: "",
+            image: "/projects/shots/quran_app.png",
             apps: "Islamic scripture reading & study app",
             color: "from-emerald-600/10 to-transparent",
             tags: ["Next.js", "Religion", "Reading", "Education"]
@@ -800,7 +800,7 @@ export const Projects = () => {
             name: "AI Image Generator",
             url: "https://github.com/skmudassir-it/Ai-Image-generator",
             platform: "Next.js + TypeScript",
-            image: "",
+            image: "/projects/shots/ai_image_generator.png",
             apps: "Generate AI images from text prompts",
             color: "from-purple-600/10 to-transparent",
             tags: ["Next.js", "AI", "Image Gen", "Creative"]
@@ -809,7 +809,7 @@ export const Projects = () => {
             name: "Mana Urban Bowl",
             url: "https://github.com/skmudassir-it/mana-urban-bowl",
             platform: "Next.js + TypeScript",
-            image: "",
+            image: "/projects/shots/mana_urban_bowl.png",
             apps: "Restaurant website — urban bowl concept",
             color: "from-green-500/10 to-transparent",
             tags: ["Next.js", "Restaurant", "Food", "Brand"]
@@ -818,7 +818,7 @@ export const Projects = () => {
             name: "BSW Scheduler",
             url: "https://github.com/skmudassir-it/BSW_schuduller",
             platform: "Next.js + TypeScript",
-            image: "",
+            image: "/projects/shots/bsw_scheduler.png",
             apps: "Scheduling & booking tool",
             color: "from-cyan-600/10 to-transparent",
             tags: ["Next.js", "Scheduling", "Booking", "Tool"]
@@ -827,7 +827,7 @@ export const Projects = () => {
             name: "BSW Whatnot",
             url: "https://github.com/skmudassir-it/bsw_Watnot",
             platform: "Next.js + TypeScript",
-            image: "",
+            image: "/projects/shots/bsw_whatnot.png",
             apps: "Whatnot marketplace integration tool",
             color: "from-pink-600/10 to-transparent",
             tags: ["Next.js", "Marketplace", "Whatnot", "Tool"]
@@ -836,7 +836,7 @@ export const Projects = () => {
             name: "Blog App",
             url: "https://github.com/skmudassir-it/blog-App",
             platform: "Next.js + TypeScript",
-            image: "",
+            image: "/projects/shots/blog_app.png",
             apps: "Full-featured blogging platform",
             color: "from-indigo-400/10 to-transparent",
             tags: ["Next.js", "Blog", "CMS", "Content"]
@@ -845,7 +845,7 @@ export const Projects = () => {
             name: "Dating App",
             url: "https://github.com/skmudassir-it/Dating_App",
             platform: "Next.js + TypeScript",
-            image: "",
+            image: "/projects/shots/dating_app.png",
             apps: "Modern dating platform",
             color: "from-rose-500/10 to-transparent",
             tags: ["Next.js", "Dating", "Social", "App"]
@@ -854,7 +854,7 @@ export const Projects = () => {
             name: "E-Commerce Web",
             url: "https://github.com/skmudassir-it/ecommerce-web",
             platform: "Next.js + TypeScript",
-            image: "",
+            image: "/projects/shots/e_commerce_web.png",
             apps: "Full e-commerce storefront",
             color: "from-amber-400/10 to-transparent",
             tags: ["Next.js", "E-commerce", "Storefront", "Shop"]
@@ -865,7 +865,7 @@ export const Projects = () => {
             name: "YouTube Automation",
             url: "https://github.com/skmudassir-it/youtube_automation",
             platform: "JavaScript + Node.js",
-            image: "",
+            image: "/projects/shots/youtube_automation.png",
             apps: "Automated YouTube content management",
             color: "from-red-500/10 to-transparent",
             tags: ["JavaScript", "YouTube", "Automation", "Node.js"]
@@ -874,7 +874,7 @@ export const Projects = () => {
             name: "Food Delivery App",
             url: "https://github.com/skmudassir-it/food_Delevery",
             platform: "JavaScript",
-            image: "",
+            image: "/projects/shots/food_delivery_app.png",
             apps: "Online food ordering & delivery platform",
             color: "from-orange-400/10 to-transparent",
             tags: ["JavaScript", "Food", "Delivery", "E-commerce"]
@@ -883,7 +883,7 @@ export const Projects = () => {
             name: "Blogging Platform",
             url: "https://github.com/skmudassir-it/blogging_app",
             platform: "JavaScript",
-            image: "",
+            image: "/projects/shots/blogging_platform.png",
             apps: "Full-stack blogging application",
             color: "from-teal-500/10 to-transparent",
             tags: ["JavaScript", "Blog", "Full-Stack", "CMS"]
@@ -892,7 +892,7 @@ export const Projects = () => {
             name: "Nataki Tax",
             url: "https://github.com/skmudassir-it/nataki_tax",
             platform: "JavaScript",
-            image: "",
+            image: "/projects/shots/nataki_tax.png",
             apps: "Tax preparation & calculation tool",
             color: "from-blue-600/10 to-transparent",
             tags: ["JavaScript", "Tax", "Finance", "Tool"]
@@ -901,7 +901,7 @@ export const Projects = () => {
             name: "AP Resume Builder",
             url: "https://github.com/skmudassir-it/ap_resume",
             platform: "JavaScript",
-            image: "",
+            image: "/projects/shots/ap_resume_builder.png",
             apps: "Professional resume builder app",
             color: "from-slate-500/10 to-transparent",
             tags: ["JavaScript", "Resume", "Career", "Tool"]
@@ -910,7 +910,7 @@ export const Projects = () => {
             name: "A-Auto",
             url: "https://github.com/skmudassir-it/a-auto",
             platform: "JavaScript",
-            image: "",
+            image: "/projects/shots/a_auto.png",
             apps: "Automotive dealership website",
             color: "from-gray-600/10 to-transparent",
             tags: ["JavaScript", "Automotive", "Dealership", "Business"]
@@ -919,7 +919,7 @@ export const Projects = () => {
             name: "Web MERN Stack",
             url: "https://github.com/skmudassir-it/webMERN",
             platform: "MongoDB + Express + React + Node.js",
-            image: "",
+            image: "/projects/shots/web_mern_stack.png",
             apps: "Full-stack MERN application",
             color: "from-green-600/10 to-transparent",
             tags: ["MongoDB", "Express", "React", "Node.js"]
@@ -928,7 +928,7 @@ export const Projects = () => {
             name: "React Web App",
             url: "https://github.com/skmudassir-it/react_web",
             platform: "React + JavaScript",
-            image: "",
+            image: "/projects/shots/react_web_app.png",
             apps: "Modern React SPA with routing",
             color: "from-cyan-400/10 to-transparent",
             tags: ["React", "JavaScript", "SPA", "Frontend"]
@@ -937,7 +937,7 @@ export const Projects = () => {
             name: "AI ChatGPT Clone",
             url: "https://github.com/skmudassir-it/AiChatGPT",
             platform: "JavaScript + OpenAI API",
-            image: "",
+            image: "/projects/shots/ai_chatgpt_clone.png",
             apps: "ChatGPT-like conversational AI interface",
             color: "from-violet-400/10 to-transparent",
             tags: ["JavaScript", "OpenAI", "ChatGPT", "AI"]
@@ -946,7 +946,7 @@ export const Projects = () => {
             name: "Social Media App",
             url: "https://github.com/skmudassir-it/social-media",
             platform: "JavaScript",
-            image: "",
+            image: "/projects/shots/social_media_app.png",
             apps: "Social networking platform",
             color: "from-pink-500/10 to-transparent",
             tags: ["JavaScript", "Social", "Networking", "Full-Stack"]
@@ -955,7 +955,7 @@ export const Projects = () => {
             name: "HolaChat",
             url: "https://github.com/skmudassir-it/holachat",
             platform: "JavaScript + WebSockets",
-            image: "",
+            image: "/projects/shots/holachat.png",
             apps: "Real-time chat application",
             color: "from-blue-500/10 to-transparent",
             tags: ["JavaScript", "Chat", "WebSockets", "Real-time"]
@@ -966,7 +966,7 @@ export const Projects = () => {
             name: "InsureEase Backend",
             url: "https://github.com/skmudassir-it/insureease",
             platform: "Python + FastAPI",
-            image: "",
+            image: "/projects/shots/insureease_backend.png",
             apps: "Insurance CRM backend API platform",
             color: "from-green-700/10 to-transparent",
             tags: ["Python", "FastAPI", "Backend", "CRM"]
@@ -975,7 +975,7 @@ export const Projects = () => {
             name: "Invoice AI",
             url: "https://github.com/skmudassir-it/InvoiceAI",
             platform: "Python",
-            image: "",
+            image: "/projects/shots/invoice_ai.png",
             apps: "AI-powered invoice generation & processing",
             color: "from-amber-600/10 to-transparent",
             tags: ["Python", "AI", "Invoice", "Finance"]
@@ -984,7 +984,7 @@ export const Projects = () => {
             name: "ChatGPT Python",
             url: "https://github.com/skmudassir-it/chatGpt",
             platform: "Python + OpenAI API",
-            image: "",
+            image: "/projects/shots/chatgpt_python.png",
             apps: "Python wrapper for ChatGPT interactions",
             color: "from-purple-500/10 to-transparent",
             tags: ["Python", "OpenAI", "ChatGPT", "API"]
@@ -995,7 +995,7 @@ export const Projects = () => {
             name: "Power Plant Energy — Notebook",
             url: "https://github.com/skmudassir-it/power-plant-energy-output",
             platform: "Jupyter Notebook + sklearn",
-            image: "",
+            image: "/projects/shots/power_plant_energy_notebook.png",
             apps: "ML model training & analysis for energy prediction",
             color: "from-yellow-500/10 to-transparent",
             tags: ["Jupyter", "ML", "Energy", "sklearn"]
@@ -1004,7 +1004,7 @@ export const Projects = () => {
             name: "Machine Learning Projects",
             url: "https://github.com/skmudassir-it/Machine-Learning",
             platform: "Jupyter Notebook",
-            image: "",
+            image: "/projects/shots/machine_learning_projects.png",
             apps: "Collection of ML algorithms & experiments",
             color: "from-indigo-500/10 to-transparent",
             tags: ["Jupyter", "ML", "Collection", "Data Science"]
@@ -1013,7 +1013,7 @@ export const Projects = () => {
             name: "Dog Breed Predictor",
             url: "https://github.com/skmudassir-it/dog-breed-prediction",
             platform: "Jupyter Notebook + Deep Learning",
-            image: "",
+            image: "/projects/shots/dog_breed_predictor.png",
             apps: "CNN-based dog breed image classification",
             color: "from-brown-500/10 to-transparent",
             tags: ["Jupyter", "Deep Learning", "CNN", "Classification"]
@@ -1022,7 +1022,7 @@ export const Projects = () => {
             name: "PAN Card Prediction",
             url: "https://github.com/skmudassir-it/Pan-card-prediction",
             platform: "Jupyter Notebook",
-            image: "",
+            image: "/projects/shots/pan_card_prediction.png",
             apps: "OCR & ML for PAN card data extraction",
             color: "from-blue-700/10 to-transparent",
             tags: ["Jupyter", "OCR", "ML", "Document AI"]
@@ -1031,7 +1031,7 @@ export const Projects = () => {
             name: "Breast Cancer Prediction",
             url: "https://github.com/skmudassir-it/Brest-Cancer-Prediction",
             platform: "Jupyter Notebook + SVC",
-            image: "",
+            image: "/projects/shots/breast_cancer_prediction.png",
             apps: "Cancer classification using sklearn SVC model",
             color: "from-pink-400/10 to-transparent",
             tags: ["Jupyter", "Healthcare", "SVM", "Classification"]
@@ -1040,7 +1040,7 @@ export const Projects = () => {
             name: "NLP — Natural Language Processing",
             url: "https://github.com/skmudassir-it/Natural-Langauge-Processing",
             platform: "Jupyter Notebook",
-            image: "",
+            image: "/projects/shots/nlp_natural_language_processing.png",
             apps: "Text processing, sentiment & NLP techniques",
             color: "from-teal-600/10 to-transparent",
             tags: ["Jupyter", "NLP", "Text", "Sentiment"]
@@ -1049,7 +1049,7 @@ export const Projects = () => {
             name: "Tomato Leaf Disease Detection",
             url: "https://github.com/skmudassir-it/tomato-leaf-diesease",
             platform: "Jupyter Notebook + CNN",
-            image: "",
+            image: "/projects/shots/tomato_leaf_disease_detection.png",
             apps: "Agricultural disease detection from leaf images",
             color: "from-red-600/10 to-transparent",
             tags: ["Jupyter", "Agriculture", "CNN", "Computer Vision"]
@@ -1058,7 +1058,7 @@ export const Projects = () => {
             name: "Chest X-Ray Pneumonia",
             url: "https://github.com/skmudassir-it/Chest_X-ray_pneumonia",
             platform: "Jupyter Notebook + Deep Learning",
-            image: "",
+            image: "/projects/shots/chest_x_ray_pneumonia.png",
             apps: "Medical image classification for pneumonia detection",
             color: "from-blue-800/10 to-transparent",
             tags: ["Jupyter", "Healthcare", "CNN", "Medical AI"]
@@ -1067,7 +1067,7 @@ export const Projects = () => {
             name: "Car Price Predictor",
             url: "https://github.com/skmudassir-it/CarPricePrediction",
             platform: "Jupyter Notebook",
-            image: "",
+            image: "/projects/shots/car_price_predictor.png",
             apps: "Regression model for vehicle price estimation",
             color: "from-orange-700/10 to-transparent",
             tags: ["Jupyter", "Regression", "Auto", "Price Prediction"]
@@ -1076,7 +1076,7 @@ export const Projects = () => {
             name: "Heart Failure Predictor",
             url: "https://github.com/skmudassir-it/Heart-Failure-Prediction",
             platform: "CSS / ML Pipeline",
-            image: "",
+            image: "/projects/shots/heart_failure_predictor.png",
             apps: "Predictive model for heart failure risk",
             color: "from-red-700/10 to-transparent",
             tags: ["ML", "Healthcare", "Prediction", "Classification"]
@@ -1085,7 +1085,7 @@ export const Projects = () => {
             name: "House Price Predictor",
             url: "https://github.com/skmudassir-it/House_price_prediction",
             platform: "CSS / ML Pipeline",
-            image: "",
+            image: "/projects/shots/house_price_predictor.png",
             apps: "Real estate price prediction model",
             color: "from-green-700/10 to-transparent",
             tags: ["ML", "Real Estate", "Regression", "Prediction"]
@@ -1094,7 +1094,7 @@ export const Projects = () => {
             name: "Bank Prediction",
             url: "https://github.com/skmudassir-it/bankPrediction",
             platform: "CSS / ML Pipeline",
-            image: "",
+            image: "/projects/shots/bank_prediction.png",
             apps: "Bank customer churn prediction model",
             color: "from-purple-700/10 to-transparent",
             tags: ["ML", "Banking", "Churn", "Classification"]
@@ -1105,7 +1105,7 @@ export const Projects = () => {
             name: "Watermark App (HTML)",
             url: "https://github.com/skmudassir-it/watermarkApp",
             platform: "HTML + Canvas + JavaScript",
-            image: "",
+            image: "/projects/shots/watermark_app_(html).png",
             apps: "Original vanilla JS watermark tool",
             color: "from-slate-400/10 to-transparent",
             tags: ["HTML", "Canvas", "Tool", "Vanilla JS"]
@@ -1114,7 +1114,7 @@ export const Projects = () => {
             name: "3D View",
             url: "https://github.com/skmudassir-it/3dview",
             platform: "HTML + Three.js",
-            image: "",
+            image: "/projects/shots/3d_view.png",
             apps: "3D model viewer with interactive controls",
             color: "from-gray-500/10 to-transparent",
             tags: ["HTML", "Three.js", "3D", "Interactive"]
@@ -1123,7 +1123,7 @@ export const Projects = () => {
             name: "Django E-Commerce",
             url: "https://github.com/skmudassir-it/django_ecommerce",
             platform: "HTML + Django",
-            image: "",
+            image: "/projects/shots/django_e_commerce.png",
             apps: "E-commerce platform with Django backend",
             color: "from-emerald-600/10 to-transparent",
             tags: ["Django", "Python", "E-commerce", "Full-Stack"]
@@ -1132,7 +1132,7 @@ export const Projects = () => {
             name: "Beauty App Build",
             url: "https://github.com/skmudassir-it/beautyApp_Build",
             platform: "Mobile App (Uber Eats clone concept)",
-            image: "",
+            image: "/projects/shots/beauty_app_build.png",
             apps: "Beauty product delivery app — Uber Eats for beauty",
             color: "from-pink-300/10 to-transparent",
             tags: ["Mobile", "Beauty", "Delivery", "App"]
@@ -1141,7 +1141,7 @@ export const Projects = () => {
             name: "AWS WordPress Deployment",
             url: "https://github.com/skmudassir-it/AWS_WordPress",
             platform: "AWS EC2 + WordPress",
-            image: "",
+            image: "/projects/shots/aws_wordpress_deployment.png",
             apps: "WordPress installation & hosting on AWS EC2",
             color: "from-orange-400/10 to-transparent",
             tags: ["AWS", "WordPress", "DevOps", "Cloud"]
@@ -1150,7 +1150,7 @@ export const Projects = () => {
             name: "ML Deployment",
             url: "https://github.com/skmudassir-it/machine-learning-Deployment",
             platform: "Python + Flask + Docker",
-            image: "",
+            image: "/projects/shots/ml_deployment.png",
             apps: "End-to-end ML model deployment pipeline",
             color: "from-indigo-600/10 to-transparent",
             tags: ["ML", "Flask", "Docker", "DevOps"]
@@ -1159,7 +1159,7 @@ export const Projects = () => {
             name: "Voice News App",
             url: "https://github.com/skmudassir-it/voice-news-app",
             platform: "JavaScript + Speech API",
-            image: "",
+            image: "/projects/shots/voice_news_app.png",
             apps: "Voice-controlled news reader application",
             color: "from-cyan-500/10 to-transparent",
             tags: ["JavaScript", "Voice", "News", "Speech API"]
@@ -1168,7 +1168,7 @@ export const Projects = () => {
             name: "Java Projects",
             url: "https://github.com/skmudassir-it/java",
             platform: "Java",
-            image: "",
+            image: "/projects/shots/java_projects.png",
             apps: "Collection of Java programming projects",
             color: "from-red-500/10 to-transparent",
             tags: ["Java", "OOP", "Collection", "Programming"]
@@ -1177,7 +1177,7 @@ export const Projects = () => {
             name: "Spring Framework",
             url: "https://github.com/skmudassir-it/spring",
             platform: "Java + Spring Boot",
-            image: "",
+            image: "/projects/shots/spring_framework.png",
             apps: "Spring Boot backend application",
             color: "from-green-600/10 to-transparent",
             tags: ["Java", "Spring Boot", "Backend", "API"]
@@ -1186,7 +1186,7 @@ export const Projects = () => {
             name: "Kafka Messaging",
             url: "https://github.com/skmudassir-it/kafka",
             platform: "Apache Kafka",
-            image: "",
+            image: "/projects/shots/kafka_messaging.png",
             apps: "Distributed messaging & event streaming",
             color: "from-stone-600/10 to-transparent",
             tags: ["Kafka", "Messaging", "Streaming", "Distributed"]
@@ -1195,7 +1195,7 @@ export const Projects = () => {
             name: "Email Stack",
             url: "https://github.com/skmudassir-it/email_stack",
             platform: "Email Infrastructure",
-            image: "",
+            image: "/projects/shots/email_stack.png",
             apps: "Email server & delivery infrastructure setup",
             color: "from-blue-400/10 to-transparent",
             tags: ["Email", "Infrastructure", "DevOps", "SMTP"]
@@ -1204,7 +1204,7 @@ export const Projects = () => {
             name: "Reinforcement Learning Project",
             url: "https://github.com/skmudassir-it/renforncementLearning-project",
             platform: "Python + RL",
-            image: "",
+            image: "/projects/shots/reinforcement_learning_project.png",
             apps: "Reinforcement learning algorithms & experiments",
             color: "from-violet-500/10 to-transparent",
             tags: ["Python", "RL", "AI", "Agents"]
@@ -1213,7 +1213,7 @@ export const Projects = () => {
             name: "Chatbot",
             url: "https://github.com/skmudassir-it/chatbot",
             platform: "Python / NLP",
-            image: "",
+            image: "/projects/shots/chatbot.png",
             apps: "Custom conversational AI chatbot",
             color: "from-teal-400/10 to-transparent",
             tags: ["Python", "Chatbot", "NLP", "Conversational AI"]
