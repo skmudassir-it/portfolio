@@ -35,6 +35,70 @@ const Home = () => {
         { label: 'Python / Data Science', value: 95, icon: <Code2 size={16} /> },
     ];
 
+    // Expanded skill categories — more cards
+    const skillGroups = [
+        {
+            title: 'AI & Machine Learning',
+            icon: <BrainCircuit size={20} />,
+            gradient: 'linear-gradient(135deg, #818cf8, #22d3ee)',
+            skills: [
+                'Scikit-learn', 'TensorFlow / Keras', 'PyTorch', 'Computer Vision',
+                'NLP & Transformers', 'Reinforcement Learning', 'ML Model Deployment',
+                'Feature Engineering', 'MLOps Pipelines', 'AI Agents / LangChain'
+            ]
+        },
+        {
+            title: 'Frontend Development',
+            icon: <Code2 size={20} />,
+            gradient: 'linear-gradient(135deg, #f472b6, #818cf8)',
+            skills: [
+                'React / Next.js', 'TypeScript', 'Tailwind CSS', 'Material UI',
+                'Framer Motion', 'Vite / Webpack', 'Redux / Zustand', 'Responsive Design',
+                'Three.js / 3D Web', 'PWA & Performance'
+            ]
+        },
+        {
+            title: 'Backend & Databases',
+            icon: <Database size={20} />,
+            gradient: 'linear-gradient(135deg, #22d3ee, #34d399)',
+            skills: [
+                'Node.js / Express', 'Python / Flask / Django', 'REST & GraphQL APIs',
+                'PostgreSQL', 'MySQL', 'MongoDB', 'SQLite', 'Prisma / TypeORM',
+                'Redis / Caching', 'WebSockets'
+            ]
+        },
+        {
+            title: 'Cloud & DevOps',
+            icon: <Cloud size={20} />,
+            gradient: 'linear-gradient(135deg, #f59e0b, #f472b6)',
+            skills: [
+                'AWS (EC2, S3, Lambda)', 'Docker & Compose', 'Kubernetes', 'CI/CD Pipelines',
+                'Nginx / Traefik', 'Vercel / Dokploy', 'GitHub Actions', 'Linux Administration',
+                'Terraform / IaC', 'Monitoring & Logging'
+            ]
+        },
+        {
+            title: 'Automation & Agentic AI',
+            icon: <Terminal size={20} />,
+            gradient: 'linear-gradient(135deg, #34d399, #22d3ee)',
+            skills: [
+                'N8N Workflows', 'API Integrations', 'Webhooks & Events', 'Zapier / Make',
+                'AI Chatbots', 'Data Scraping', 'Email Automation', 'Business Workflows',
+                'Vector Databases', 'LLM Prompt Engineering'
+            ]
+        },
+        {
+            title: 'E-commerce & CMS',
+            icon: <Layout size={20} />,
+            gradient: 'linear-gradient(135deg, #f472b6, #f59e0b)',
+            skills: [
+                'Shopify Themes', 'WordPress / Headless', 'WooCommerce', 'Payment Gateways',
+                'Storefront API', 'Email Marketing', 'SEO Optimization', 'Analytics / GA4',
+                'Conversion Optimization', 'Custom Integrations'
+            ]
+        },
+    ];
+
     return (
         <Box sx={{ position: 'relative', overflow: 'hidden', bgcolor: 'background.default', minHeight: '100vh' }}>
             {/* Neural network animated background */}
@@ -233,6 +297,61 @@ const Home = () => {
                         ))}
                     </Stack>
                 </Card>
+            </Box>
+
+            {/* ===== SKILLS GRID ===== */}
+            <Box component="section" sx={{ position: 'relative', zIndex: 1, py: 8, px: 2 }}>
+                <Box sx={{ maxWidth: 1200, mx: 'auto' }}>
+                    <Box sx={{ textAlign: 'center', mb: 5 }}>
+                        <Typography sx={{ color: 'primary.main', fontWeight: 900, letterSpacing: '0.3em', textTransform: 'uppercase', fontSize: '0.75rem', mb: 1 }}>
+                            Skill Arsenal
+                        </Typography>
+                        <Typography variant="h3" sx={{ fontWeight: 800, mb: 2 }}>
+                            Everything I <Box component="span" sx={{ background: 'linear-gradient(135deg,#34d399,#22d3ee)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Bring to the Table</Box>
+                        </Typography>
+                        <Typography sx={{ color: 'text.secondary', maxWidth: 600, mx: 'auto' }}>
+                            Six disciplines, sixty capabilities — from model training to production deployment.
+                        </Typography>
+                    </Box>
+
+                    <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }, gap: 3 }}>
+                        {skillGroups.map((group, idx) => (
+                            <motion.div key={group.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.08 }}>
+                                <Card variant="outlined" sx={{
+                                    borderRadius: 4, height: '100%', p: 2.5,
+                                    bgcolor: 'rgba(255,255,255,0.04)', borderColor: 'rgba(255,255,255,0.1)',
+                                    backdropFilter: 'blur(8px)', transition: 'all 0.3s',
+                                    '&:hover': {
+                                        transform: 'translateY(-6px)',
+                                        borderColor: 'primary.main',
+                                        boxShadow: '0 12px 40px rgba(129,140,248,0.2)',
+                                        bgcolor: 'rgba(129,140,248,0.06)'
+                                    }
+                                }}>
+                                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}>
+                                        <Box sx={{
+                                            width: 42, height: 42, borderRadius: 2, display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                            background: group.gradient, color: '#0f172a', flexShrink: 0
+                                        }}>
+                                            {group.icon}
+                                        </Box>
+                                        <Typography variant="h6" sx={{ fontWeight: 800, fontSize: '1.05rem' }}>{group.title}</Typography>
+                                    </Box>
+                                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
+                                        {group.skills.map((skill) => (
+                                            <Chip key={skill} label={skill} size="small" sx={{
+                                                fontSize: '0.68rem', fontWeight: 600,
+                                                bgcolor: 'rgba(255,255,255,0.06)', color: 'text.secondary',
+                                                border: '1px solid rgba(255,255,255,0.08)',
+                                                '&:hover': { bgcolor: 'rgba(129,140,248,0.15)', color: 'primary.main', borderColor: 'primary.main' }
+                                            }} />
+                                        ))}
+                                    </Box>
+                                </Card>
+                            </motion.div>
+                        ))}
+                    </Box>
+                </Box>
             </Box>
 
             {/* ===== TECH STACK ===== */}
