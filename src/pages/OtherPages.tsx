@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Card, CardContent, Chip, Box, Typography, Button } from '@mui/material';
 
 const PageHeader = ({ title, subtitle }: { title: string; subtitle: string }) => (
     <div className="relative pt-32 pb-20 px-4 bg-light overflow-hidden">
@@ -1224,7 +1225,7 @@ export const Projects = () => {
         <div className="min-h-screen bg-light">
             <PageHeader title="Projects" subtitle="Engineering digital excellence across diverse platforms, from global e-commerce to custom CMS and non-profit portals." />
             <section className="py-24 px-4">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, i) => (
                         <motion.div
                             key={i}
@@ -1232,37 +1233,71 @@ export const Projects = () => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.05 }}
-                            className="glass-morphism overflow-hidden rounded-[40px] group flex flex-col h-full hover:bg-white/5/80 transition-all duration-500 shadow-sm border border-black/5"
+                            className="h-full"
                         >
-                            <div className={`h-64 bg-gradient-to-br ${project.color} flex items-center justify-center relative overflow-hidden p-10`}>
-                                {project.image && (
-                                    <img
-                                        src={project.image}
-                                        alt={project.name}
-                                        className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-700 filter drop-shadow-lg"
-                                    />
-                                )}
-                                <div className="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-                                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="btn-primary px-8 py-3 rounded-full flex items-center gap-2">Visit Website <span className="text-lg">→</span></a>
-                                </div>
-                            </div>
-                            <div className="p-10 flex-grow flex flex-col text-center items-center">
-                                <h3 className="text-2xl md:text-3xl font-black mb-4 text-dark group-hover:text-primary transition-colors">{project.name}</h3>
-                                <div className="flex flex-wrap justify-center gap-2 mb-8">
-                                    {project.tags.map((tag, idx) => (
-                                        <span key={idx} className="px-4 py-1.5 bg-white/5 text-dark/60 text-[10px] font-black rounded-full uppercase tracking-widest">{tag}</span>
-                                    ))}
-                                </div>
-                                <div className="space-y-4 mt-auto w-full pt-8 border-t border-black/5">
-                                    <div className="flex items-center justify-center gap-3 text-sm font-bold text-primary">
-                                        <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                                        {project.platform}
-                                    </div>
-                                    <div className="text-xs font-black uppercase tracking-widest text-dark/40">
-                                        {project.apps}
-                                    </div>
-                                </div>
-                            </div>
+                            <Card variant="outlined" sx={{
+                                height: '100%', display: 'flex', flexDirection: 'column', borderRadius: 4,
+                                bgcolor: 'rgba(255,255,255,0.04)', borderColor: 'rgba(255,255,255,0.1)',
+                                backdropFilter: 'blur(8px)', overflow: 'hidden',
+                                transition: 'all 0.3s',
+                                '&:hover': {
+                                    transform: 'translateY(-6px)',
+                                    borderColor: 'primary.main',
+                                    boxShadow: '0 12px 40px rgba(129,140,248,0.2)',
+                                    bgcolor: 'rgba(129,140,248,0.06)'
+                                }
+                            }}>
+                                <Box sx={{
+                                    height: 200, position: 'relative', overflow: 'hidden',
+                                    bgcolor: 'rgba(255,255,255,0.06)',
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center', p: 3
+                                }}>
+                                    {project.image && (
+                                        <Box component="img" src={project.image} alt={project.name} loading="lazy"
+                                            sx={{
+                                                maxWidth: '100%', maxHeight: '100%', objectFit: 'contain',
+                                                transition: 'transform 0.7s',
+                                                '&:hover': { transform: 'scale(1.08)' }
+                                            }} />
+                                    )}
+                                    <Box sx={{
+                                        position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        opacity: 0, transition: 'opacity 0.3s', bgcolor: 'rgba(2,6,23,0.7)',
+                                        '&:hover': { opacity: 1 }
+                                    }}>
+                                        <Button variant="contained" size="small" href={project.url} target="_blank" rel="noopener noreferrer"
+                                            sx={{
+                                                background: 'linear-gradient(135deg, #818cf8, #f472b6)',
+                                                color: '#0f172a', fontWeight: 800, borderRadius: 3
+                                            }}>
+                                            Visit Website →
+                                        </Button>
+                                    </Box>
+                                </Box>
+                                <CardContent sx={{ p: 3, display: 'flex', flexDirection: 'column', flexGrow: 1, textAlign: 'center' }}>
+                                    <Typography variant="h6" sx={{ fontWeight: 800, mb: 1.5 }}>
+                                        {project.name}
+                                    </Typography>
+                                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75, justifyContent: 'center', mb: 2 }}>
+                                        {project.tags.map((tag, idx) => (
+                                            <Chip key={idx} label={tag} size="small" sx={{
+                                                fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.08em',
+                                                bgcolor: 'rgba(255,255,255,0.06)', color: 'text.secondary',
+                                                '&:hover': { bgcolor: 'rgba(129,140,248,0.15)', color: 'primary.main' }
+                                            }} />
+                                        ))}
+                                    </Box>
+                                    <Box sx={{ mt: 'auto', pt: 2, borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+                                        <Typography sx={{ color: 'primary.main', fontWeight: 800, fontSize: '0.8rem', mb: 0.5, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1 }}>
+                                            <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#818cf8', display: 'inline-block', animation: 'pulse 2s infinite' }} />
+                                            {project.platform}
+                                        </Typography>
+                                        <Typography sx={{ color: 'text.secondary', fontSize: '0.68rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                                            {project.apps}
+                                        </Typography>
+                                    </Box>
+                                </CardContent>
+                            </Card>
                         </motion.div>
                     ))}
                 </div>
