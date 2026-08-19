@@ -542,7 +542,7 @@ export const Projects = () => {
             name: "IntelliSyncs — AI Warehouse Automation",
             url: "https://intellisyncs-web.vercel.app",
             platform: "Next.js 16 + Tailwind v4 + shadcn/ui",
-            image: "/projects/shots/intellisyncs_ai_warehouse_automation.png",
+            image: "/projects/shots/intellisyncs_ai_warehouse_automation.webp",
             apps: "6-page marketing site, case studies",
             color: "from-cyan-500/10 to-transparent",
             tags: ["Next.js", "AI", "Automation", "B2B"]
@@ -589,7 +589,7 @@ export const Projects = () => {
             name: "ALT 8 IT Solutions",
             url: "https://alt8-web.vercel.app",
             platform: "Next.js + Tailwind CSS",
-            image: "/projects/shots/alt_8_it_solutions.png",
+            image: "/projects/shots/alt_8_it_solutions.webp",
             apps: "Modern business website",
             color: "from-sky-500/10 to-transparent",
             tags: ["Next.js", "Business", "IT Services"]
@@ -607,7 +607,7 @@ export const Projects = () => {
             name: "Newly Weds Foods",
             url: "https://newly-weds-foods.vercel.app",
             platform: "Next.js + Tailwind CSS",
-            image: "/projects/shots/newly_weds_foods.png",
+            image: "/projects/shots/newly_weds_foods.webp",
             apps: "44-route corporate food manufacturing site",
             color: "from-amber-500/10 to-transparent",
             tags: ["Next.js", "Corporate", "Food Industry"]
@@ -616,7 +616,7 @@ export const Projects = () => {
             name: "Building Coolers LLC",
             url: "https://building-coolers.vercel.app",
             platform: "Next.js + Tailwind CSS",
-            image: "/projects/shots/building_coolers_llc.png",
+            image: "/projects/shots/building_coolers_llc.webp",
             apps: "HVAC / modular cooling solutions",
             color: "from-blue-700/10 to-transparent",
             tags: ["Next.js", "HVAC", "Industrial", "Business"]
@@ -634,7 +634,7 @@ export const Projects = () => {
             name: "Mufasa Jeweler",
             url: "https://mufasa-jeweler.vercel.app",
             platform: "Next.js + Tailwind CSS",
-            image: "/projects/shots/mufasa_jeweler.png",
+            image: "/projects/shots/mufasa_jeweler.webp",
             apps: "Premium gold jewelry storefront",
             color: "from-yellow-500/10 to-transparent",
             tags: ["Next.js", "E-commerce", "Jewelry", "Luxury"]
@@ -652,7 +652,7 @@ export const Projects = () => {
             name: "Luxury Hotel Landing",
             url: "https://hotel-frontend-next.vercel.app",
             platform: "Next.js + Tailwind CSS",
-            image: "/projects/shots/luxury_hotel_landing.png",
+            image: "/projects/shots/luxury_hotel_landing.webp",
             apps: "Room cards, amenities, booking flow",
             color: "from-stone-500/10 to-transparent",
             tags: ["Next.js", "Hospitality", "Landing Page"]
@@ -661,7 +661,7 @@ export const Projects = () => {
             name: "AMS Frontend — Headless WP",
             url: "https://ams-frontend-eosin.vercel.app",
             platform: "Next.js + WordPress REST API",
-            image: "/projects/shots/ams_frontend_headless_wp.png",
+            image: "/projects/shots/ams_frontend_headless_wp.webp",
             apps: "Decoupled frontend for American Metal and Saw",
             color: "from-zinc-500/10 to-transparent",
             tags: ["Next.js", "Headless", "WordPress", "API"]
@@ -708,7 +708,7 @@ export const Projects = () => {
             name: "Meme Generator",
             url: "https://meme-generator-next-nine.vercel.app",
             platform: "Next.js + Reddit API",
-            image: "/projects/shots/meme_generator.png",
+            image: "/projects/shots/meme_generator.webp",
             apps: "Browse Reddit memes, gallery, modal, share",
             color: "from-green-500/10 to-transparent",
             tags: ["Next.js", "Reddit API", "Gallery", "Fun"]
@@ -735,7 +735,7 @@ export const Projects = () => {
             name: "Birthday Celebration Page",
             url: "https://birthday-celebration-gamma.vercel.app",
             platform: "Next.js + Framer Motion",
-            image: "/projects/shots/birthday_celebration_page.png",
+            image: "/projects/shots/birthday_celebration_page.webp",
             apps: "Balloons, fireworks, pop animations",
             color: "from-fuchsia-500/10 to-transparent",
             tags: ["Next.js", "Animation", "Interactive", "Fun"]
@@ -744,7 +744,7 @@ export const Projects = () => {
             name: "Property Listings",
             url: "https://property.amsitservices.com",
             platform: "Next.js + TypeScript",
-            image: "/projects/shots/property_listings.png",
+            image: "/projects/shots/property_listings.webp",
             apps: "Real estate property showcase",
             color: "from-neutral-500/10 to-transparent",
             tags: ["Next.js", "Real Estate", "Listings"]

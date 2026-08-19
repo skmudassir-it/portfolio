@@ -1,10 +1,26 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Suspense, lazy } from 'react';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Home from './pages/Home';
-import TechDetail from './pages/TechDetail';
-import Resume from './pages/Resume';
-import { Education, Experience, Publication, Projects, Contact, Certifications, ExperienceDetail } from './pages/OtherPages';
+
+// Route-level code splitting — each page loads its own JS chunk
+const TechDetail = lazy(() => import('./pages/TechDetail'));
+const Resume = lazy(() => import('./pages/Resume'));
+const Education = lazy(() => import('./pages/OtherPages').then(m => ({ default: m.Education })));
+const Experience = lazy(() => import('./pages/OtherPages').then(m => ({ default: m.Experience })));
+const ExperienceDetail = lazy(() => import('./pages/OtherPages').then(m => ({ default: m.ExperienceDetail })));
+const Publication = lazy(() => import('./pages/OtherPages').then(m => ({ default: m.Publication })));
+const Projects = lazy(() => import('./pages/OtherPages').then(m => ({ default: m.Projects })));
+const Certifications = lazy(() => import('./pages/OtherPages').then(m => ({ default: m.Certifications })));
+const Contact = lazy(() => import('./pages/OtherPages').then(m => ({ default: m.Contact })));
+
+// Loading fallback
+const PageLoader = () => (
+    <div className="min-h-[60vh] flex items-center justify-center">
+        <div className="w-10 h-10 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+    </div>
+);
 
 function App() {
     return (
@@ -12,18 +28,20 @@ function App() {
             <div className="flex flex-col min-h-screen">
                 <Navbar />
                 <main className="flex-grow">
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/tech/:slug" element={<TechDetail />} />
-                        <Route path="/education" element={<Education />} />
-                        <Route path="/experience" element={<Experience />} />
-                        <Route path="/experience/:slug" element={<ExperienceDetail />} />
-                        <Route path="/publication" element={<Publication />} />
-                        <Route path="/projects" element={<Projects />} />
-                        <Route path="/certifications" element={<Certifications />} />
-                        <Route path="/contact" element={<Contact />} />
-                        <Route path="/resume" element={<Resume />} />
-                    </Routes>
+                    <Suspense fallback={<PageLoader />}>
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/tech/:slug" element={<TechDetail />} />
+                            <Route path="/education" element={<Education />} />
+                            <Route path="/experience" element={<Experience />} />
+                            <Route path="/experience/:slug" element={<ExperienceDetail />} />
+                            <Route path="/publication" element={<Publication />} />
+                            <Route path="/projects" element={<Projects />} />
+                            <Route path="/certifications" element={<Certifications />} />
+                            <Route path="/contact" element={<Contact />} />
+                            <Route path="/resume" element={<Resume />} />
+                        </Routes>
+                    </Suspense>
                 </main>
                 <Footer />
             </div>
