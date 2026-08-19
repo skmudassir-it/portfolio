@@ -107,7 +107,7 @@ const TechDetail = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             className="glass-morphism p-8 rounded-[32px] text-center mb-8"
                         >
-                            <div className="w-24 h-24 bg-white rounded-3xl p-4 flex items-center justify-center shadow-sm mx-auto mb-6">
+                            <div className="w-24 h-24 bg-white/5 rounded-3xl p-4 flex items-center justify-center shadow-sm mx-auto mb-6">
                                 <img src={tech.logo} alt={tech.name} className="max-w-full max-h-full object-contain" />
                             </div>
                             <h1 className="text-3xl font-black text-dark mb-2">{tech.name}</h1>

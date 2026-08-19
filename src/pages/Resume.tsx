@@ -39,7 +39,7 @@ const Resume = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-white pt-32 pb-20 px-4 sm:px-6 lg:px-8 print:pt-0 print:pb-0">
+        <div className="min-h-screen bg-white/5 pt-32 pb-20 px-4 sm:px-6 lg:px-8 print:pt-0 print:pb-0">
             {/* Action Buttons - Hidden when printing */}
             <div className="max-w-5xl mx-auto mb-8 flex justify-end gap-4 print:hidden">
                 <button
@@ -60,7 +60,7 @@ const Resume = () => {
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="max-w-5xl mx-auto bg-white shadow-2xl rounded-[32px] overflow-hidden border border-gray-100 print:shadow-none print:rounded-none print:border-none"
+                className="max-w-5xl mx-auto bg-white/5 shadow-2xl rounded-[32px] overflow-hidden border border-white/10 print:shadow-none print:rounded-none print:border-none"
             >
                 {/* Header Section */}
                 <div className="bg-dark text-white p-12 print:p-8">
@@ -94,7 +94,7 @@ const Resume = () => {
                             <div className="space-y-10">
                                 {experienceData.map((exp, idx) => (
                                     <div key={idx} className="relative pl-8 border-l-2 border-primary/20">
-                                        <div className="absolute -left-[11px] top-0 w-5 h-5 bg-white border-4 border-primary rounded-full" />
+                                        <div className="absolute -left-[11px] top-0 w-5 h-5 bg-white/5 border-4 border-primary rounded-full" />
                                         <div className="flex justify-between items-start mb-2">
                                             <h4 className="text-xl font-bold text-dark">{exp.role}</h4>
                                             <span className="text-xs font-black bg-primary/10 text-primary px-3 py-1 rounded-full">{exp.period}</span>
@@ -102,7 +102,7 @@ const Resume = () => {
                                         <p className="text-primary font-bold mb-4">{exp.company}</p>
                                         <ul className="space-y-2">
                                             {exp.responsibilities.slice(0, 3).map((resp, i) => (
-                                                <li key={i} className="text-gray-600 text-sm leading-relaxed flex gap-2">
+                                                <li key={i} className="text-dark-light text-sm leading-relaxed flex gap-2">
                                                     <span className="text-primary mt-1">•</span> {resp}
                                                 </li>
                                             ))}
@@ -126,8 +126,8 @@ const Resume = () => {
                                             <p className="text-secondary font-bold text-sm">{edu.school}</p>
                                         </div>
                                         <div className="text-right">
-                                            <span className="text-xs font-bold text-gray-500">{edu.period}</span>
-                                            <p className="text-xs text-gray-400">{edu.location}</p>
+                                            <span className="text-xs font-bold text-dark-light/70">{edu.period}</span>
+                                            <p className="text-xs text-dark-light/50">{edu.location}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -145,7 +145,7 @@ const Resume = () => {
                             </h3>
                             <div className="flex flex-wrap gap-2">
                                 {skills.map((skill, idx) => (
-                                    <span key={idx} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-bold rounded-lg border border-gray-200">
+                                    <span key={idx} className="px-3 py-1 bg-white/5 text-dark text-xs font-bold rounded-lg border border-white/10">
                                         {skill}
                                     </span>
                                 ))}
@@ -159,15 +159,15 @@ const Resume = () => {
                                 TOP CERTIFICATIONS
                             </h3>
                             <ul className="space-y-4">
-                                <li className="text-sm font-bold text-gray-700 flex items-center gap-2">
+                                <li className="text-sm font-bold text-dark flex items-center gap-2">
                                     <div className="w-2 h-2 bg-secondary rounded-full" />
                                     AWS Certified Developer
                                 </li>
-                                <li className="text-sm font-bold text-gray-700 flex items-center gap-2">
+                                <li className="text-sm font-bold text-dark flex items-center gap-2">
                                     <div className="w-2 h-2 bg-secondary rounded-full" />
                                     Azure DevOps Engineer Expert
                                 </li>
-                                <li className="text-sm font-bold text-gray-700 flex items-center gap-2">
+                                <li className="text-sm font-bold text-dark flex items-center gap-2">
                                     <div className="w-2 h-2 bg-secondary rounded-full" />
                                     Google Python Automation
                                 </li>
@@ -185,14 +185,14 @@ const Resume = () => {
                                     <span>English</span>
                                     <span className="text-primary">Professional</span>
                                 </div>
-                                <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+                                <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden">
                                     <div className="h-full bg-primary" style={{ width: '95%' }} />
                                 </div>
                                 <div className="flex justify-between text-sm font-bold mt-4">
                                     <span>Hindi / Urdu</span>
                                     <span className="text-primary">Native</span>
                                 </div>
-                                <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+                                <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden">
                                     <div className="h-full bg-primary" style={{ width: '100%' }} />
                                 </div>
                             </div>
@@ -209,7 +209,7 @@ const Resume = () => {
                 </div>
 
                 {/* Footer */}
-                <div className="p-8 text-center text-gray-400 text-[10px] border-t border-gray-50 uppercase tracking-[0.2em] print:block">
+                <div className="p-8 text-center text-dark-light/50 text-[10px] border-t border-gray-50 uppercase tracking-[0.2em] print:block">
                     Generated by Mudassir's Personal Portfolio • {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
                 </div>
             </motion.div>

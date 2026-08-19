@@ -66,9 +66,9 @@ export const Education = () => (
                         initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className={`glass-morphism p-10 rounded-[32px] border-l-[6px] ${edu.color} hover:bg-white/80 transition-all duration-500 shadow-sm flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left`}
+                        className={`glass-morphism p-10 rounded-[32px] border-l-[6px] ${edu.color} hover:bg-white/5/80 transition-all duration-500 shadow-sm flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left`}
                     >
-                        <div className="w-24 h-24 md:w-32 md:h-32 flex-shrink-0 bg-white rounded-3xl p-4 flex items-center justify-center shadow-sm border border-black/5 overflow-hidden">
+                        <div className="w-24 h-24 md:w-32 md:h-32 flex-shrink-0 bg-white/5 rounded-3xl p-4 flex items-center justify-center shadow-sm border border-black/5 overflow-hidden">
                             <img src={edu.image} alt={edu.school} className="max-w-full max-h-full object-contain hover:scale-110 transition-transform duration-500" />
                         </div>
                         <div className="flex-grow w-full">
@@ -234,7 +234,7 @@ const TestimonialCard = ({ quote, author, relation, title }: { quote: string, au
         className="glass-morphism p-8 rounded-3xl relative h-full flex flex-col"
     >
         <Quote className="text-primary/20 absolute top-6 right-8" size={40} />
-        <p className="text-gray-600 italic leading-relaxed mb-6 text-lg">"{quote}"</p>
+        <p className="text-dark-light italic leading-relaxed mb-6 text-lg">"{quote}"</p>
         <div className="mt-auto">
             <h4 className="font-bold text-lg text-dark">{author}</h4>
             <p className="text-sm text-primary font-bold uppercase tracking-wider mt-1">
@@ -259,8 +259,8 @@ export const Experience = () => (
                             transition={{ delay: i * 0.1 }}
                         >
                             <Link to={`/experience/${exp.slug}`} className="group block h-full">
-                                <div className={`glass-morphism p-10 rounded-[40px] border-l-[6px] ${exp.color} hover:bg-white/80 transition-all duration-500 h-full flex flex-col items-center text-center shadow-sm`}>
-                                    <div className="w-24 h-24 md:w-32 md:h-32 bg-white rounded-3xl p-5 flex items-center justify-center shadow-md mb-8 group-hover:scale-110 transition-transform duration-500 overflow-hidden">
+                                <div className={`glass-morphism p-10 rounded-[40px] border-l-[6px] ${exp.color} hover:bg-white/5/80 transition-all duration-500 h-full flex flex-col items-center text-center shadow-sm`}>
+                                    <div className="w-24 h-24 md:w-32 md:h-32 bg-white/5 rounded-3xl p-5 flex items-center justify-center shadow-md mb-8 group-hover:scale-110 transition-transform duration-500 overflow-hidden">
                                         <img src={exp.image} alt={exp.company} className="max-w-full max-h-full object-contain" />
                                     </div>
                                     <h3 className="text-2xl md:text-3xl font-black mb-3 text-dark group-hover:text-primary transition-colors">{exp.role}</h3>
@@ -268,7 +268,7 @@ export const Experience = () => (
                                     <p className="text-xs text-primary font-black uppercase tracking-[0.2em] mb-8">{exp.domain}</p>
 
                                     <div className="mt-auto pt-6 border-t border-black/5 w-full flex flex-col items-center">
-                                        <span className="px-6 py-2 rounded-full bg-black/5 text-xs font-black uppercase tracking-widest text-dark/70 mb-4">
+                                        <span className="px-6 py-2 rounded-full bg-white/5 text-xs font-black uppercase tracking-widest text-dark/70 mb-4">
                                             {exp.period}
                                         </span>
                                         <div className="text-primary font-black text-xs uppercase tracking-widest flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -282,7 +282,7 @@ export const Experience = () => (
                 </div>
 
                 {/* Academic/General Recommendations */}
-                <div className="max-w-4xl mx-auto pt-20 border-t border-gray-100">
+                <div className="max-w-4xl mx-auto pt-20 border-t border-white/10">
                     <h2 className="text-4xl font-black text-center mb-16">Voices of <span className="text-gradient">Mentors & Clients</span></h2>
                     <div className="grid grid-cols-1 gap-8">
                         {generalRecommendations.map((rec, i) => (
@@ -316,7 +316,7 @@ export const ExperienceDetail = () => {
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            className="w-40 h-40 md:w-56 md:h-56 bg-white rounded-[40px] p-8 flex items-center justify-center shadow-xl border border-black/5"
+                            className="w-40 h-40 md:w-56 md:h-56 bg-white/5 rounded-[40px] p-8 flex items-center justify-center shadow-xl border border-black/5"
                         >
                             <img src={exp.image} alt={exp.company} className="max-w-full max-h-full object-contain" />
                         </motion.div>
@@ -328,7 +328,7 @@ export const ExperienceDetail = () => {
                             <h1 className="text-4xl md:text-7xl font-black mb-6 text-dark tracking-tight leading-tight">{exp.role}</h1>
                             <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">{exp.company}</h2>
                             <div className="flex flex-wrap gap-4 justify-center md:justify-start items-center">
-                                <span className="px-6 py-2 rounded-full bg-white shadow-sm text-sm font-black uppercase tracking-widest text-dark/70">{exp.period}</span>
+                                <span className="px-6 py-2 rounded-full bg-white/5 shadow-sm text-sm font-black uppercase tracking-widest text-dark/70">{exp.period}</span>
                                 <span className="text-secondary font-black uppercase tracking-[0.2em] text-xs">{exp.domain}</span>
                             </div>
                         </motion.div>
@@ -354,7 +354,7 @@ export const ExperienceDetail = () => {
                                         className="flex gap-4"
                                     >
                                         <CheckCircle2 className="text-primary flex-shrink-0 mt-1" size={20} />
-                                        <p className="text-gray-600 text-lg leading-relaxed">{resp}</p>
+                                        <p className="text-dark-light text-lg leading-relaxed">{resp}</p>
                                     </motion.div>
                                 ))}
                             </div>
@@ -366,7 +366,7 @@ export const ExperienceDetail = () => {
                             </h3>
                             <div className="flex flex-wrap gap-3 text-nowrap">
                                 {exp.tech.map((t, idx) => (
-                                    <span key={idx} className="px-4 py-2 glass-morphism text-gray-600 text-sm font-bold rounded-xl border border-gray-100 italic transition-all hover:border-primary/50 hover:bg-white">
+                                    <span key={idx} className="px-4 py-2 glass-morphism text-dark-light text-sm font-bold rounded-xl border border-white/10 italic transition-all hover:border-primary/50 hover:bg-white/5">
                                         {t}
                                     </span>
                                 ))}
@@ -376,7 +376,7 @@ export const ExperienceDetail = () => {
 
                     {/* Role Specific Recommendations */}
                     {exp.recommendations && (
-                        <div className="mt-20 pt-20 border-t border-gray-100">
+                        <div className="mt-20 pt-20 border-t border-white/10">
                             <h3 className="text-3xl font-bold mb-12">Colleague Recommendations</h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 {exp.recommendations.map((rec, i) => (
@@ -422,13 +422,13 @@ export const Publication = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className={`glass-morphism p-10 rounded-[40px] border-l-[6px] ${pub.color} hover:bg-white/80 transition-all duration-500 group flex flex-col md:flex-row gap-10 items-center md:items-start text-center md:text-left`}
+                            className={`glass-morphism p-10 rounded-[40px] border-l-[6px] ${pub.color} hover:bg-white/5/80 transition-all duration-500 group flex flex-col md:flex-row gap-10 items-center md:items-start text-center md:text-left`}
                         >
-                            <div className="w-32 h-32 md:w-48 md:h-48 flex-shrink-0 bg-white rounded-3xl p-6 flex items-center justify-center shadow-md border border-black/5 overflow-hidden">
+                            <div className="w-32 h-32 md:w-48 md:h-48 flex-shrink-0 bg-white/5 rounded-3xl p-6 flex items-center justify-center shadow-md border border-black/5 overflow-hidden">
                                 <img src={pub.image} alt="Journal Logo" className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500" />
                             </div>
                             <div className="flex-grow">
-                                <span className="inline-block px-4 py-1 bg-black/5 text-primary text-xs font-black uppercase tracking-widest rounded-lg mb-4">{pub.publishedIn}</span>
+                                <span className="inline-block px-4 py-1 bg-white/5 text-primary text-xs font-black uppercase tracking-widest rounded-lg mb-4">{pub.publishedIn}</span>
                                 <h3 className="text-2xl md:text-3xl font-black mb-4 text-dark group-hover:text-primary transition-colors leading-tight">{pub.title}</h3>
                                 <p className="text-dark/60 mb-8 leading-relaxed font-medium text-lg">{pub.description}</p>
                                 <a href={pub.url} target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2 px-8 py-3 text-sm">
@@ -1232,7 +1232,7 @@ export const Projects = () => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.05 }}
-                            className="glass-morphism overflow-hidden rounded-[40px] group flex flex-col h-full hover:bg-white/80 transition-all duration-500 shadow-sm border border-black/5"
+                            className="glass-morphism overflow-hidden rounded-[40px] group flex flex-col h-full hover:bg-white/5/80 transition-all duration-500 shadow-sm border border-black/5"
                         >
                             <div className={`h-64 bg-gradient-to-br ${project.color} flex items-center justify-center relative overflow-hidden p-10`}>
                                 {project.image && (
@@ -1250,7 +1250,7 @@ export const Projects = () => {
                                 <h3 className="text-2xl md:text-3xl font-black mb-4 text-dark group-hover:text-primary transition-colors">{project.name}</h3>
                                 <div className="flex flex-wrap justify-center gap-2 mb-8">
                                     {project.tags.map((tag, idx) => (
-                                        <span key={idx} className="px-4 py-1.5 bg-black/5 text-dark/60 text-[10px] font-black rounded-full uppercase tracking-widest">{tag}</span>
+                                        <span key={idx} className="px-4 py-1.5 bg-white/5 text-dark/60 text-[10px] font-black rounded-full uppercase tracking-widest">{tag}</span>
                                     ))}
                                 </div>
                                 <div className="space-y-4 mt-auto w-full pt-8 border-t border-black/5">
@@ -1278,7 +1278,7 @@ export const Contact = () => (
             <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
                     <h3 className="text-3xl font-bold mb-6">Get in Touch</h3>
-                    <p className="text-gray-600 mb-8 leading-relaxed">
+                    <p className="text-dark-light mb-8 leading-relaxed">
                         Whether you have a question, a project idea, or just want to say hi, my inbox is always open.
                     </p>
                     <div className="space-y-6">
@@ -1287,15 +1287,15 @@ export const Contact = () => (
                                 <img src="/mudassir-image.jpeg" alt="Mudassir" className="w-full h-full object-cover" />
                             </div>
                             <div className="space-y-4 w-full">
-                                <div className="flex items-center gap-4 text-gray-600">
+                                <div className="flex items-center gap-4 text-dark-light">
                                     <div className="w-12 h-12 rounded-xl glass-morphism flex items-center justify-center text-primary italic">@</div>
                                     <span className="font-medium">skmudassir.it@gmail.com</span>
                                 </div>
-                                <div className="flex items-center gap-4 text-gray-600">
+                                <div className="flex items-center gap-4 text-dark-light">
                                     <div className="w-12 h-12 rounded-xl glass-morphism flex items-center justify-center text-primary"><Phone size={20} /></div>
                                     <span className="font-medium">+1-(901)-415-0779</span>
                                 </div>
-                                <div className="flex items-center gap-4 text-gray-600">
+                                <div className="flex items-center gap-4 text-dark-light">
                                     <div className="w-12 h-12 rounded-xl glass-morphism flex items-center justify-center text-primary"><Globe size={20} /></div>
                                     <a href="https://skmudassir.in" target="_blank" rel="noopener noreferrer" className="font-medium hover:text-primary transition-colors">skmudassir.in</a>
                                 </div>
@@ -1306,16 +1306,16 @@ export const Contact = () => (
                 <div className="glass-morphism p-8 rounded-3xl">
                     <form className="space-y-6">
                         <div className="space-y-2">
-                            <label className="text-sm font-semibold text-gray-600">Name</label>
-                            <input type="text" className="w-full bg-black/5 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="Your Name" />
+                            <label className="text-sm font-semibold text-dark-light">Name</label>
+                            <input type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="Your Name" />
                         </div>
                         <div className="space-y-2">
-                            <label className="text-sm font-semibold text-gray-600">Email</label>
-                            <input type="email" className="w-full bg-black/5 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="your@email.com" />
+                            <label className="text-sm font-semibold text-dark-light">Email</label>
+                            <input type="email" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="your@email.com" />
                         </div>
                         <div className="space-y-2">
-                            <label className="text-sm font-semibold text-gray-600">Message</label>
-                            <textarea rows={4} className="w-full bg-black/5 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="How can I help you?"></textarea>
+                            <label className="text-sm font-semibold text-dark-light">Message</label>
+                            <textarea rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="How can I help you?"></textarea>
                         </div>
                         <button type="submit" className="w-full btn-primary">Send Message</button>
                     </form>
@@ -1476,8 +1476,8 @@ export const Certifications = () => (
                                         className="group relative"
                                     >
                                         <a href={cert.link} target="_blank" rel="noopener noreferrer" className="block h-full">
-                                            <div className="glass-morphism p-8 rounded-[32px] h-full transition-all duration-500 hover:bg-white flex flex-col items-center text-center shadow-sm border border-black/5">
-                                                <div className="relative w-32 h-32 md:w-40 md:h-40 mb-8 rounded-[32px] overflow-hidden bg-white shadow-md flex items-center justify-center p-6 border border-black/5">
+                                            <div className="glass-morphism p-8 rounded-[32px] h-full transition-all duration-500 hover:bg-white/5 flex flex-col items-center text-center shadow-sm border border-black/5">
+                                                <div className="relative w-32 h-32 md:w-40 md:h-40 mb-8 rounded-[32px] overflow-hidden bg-white/5 shadow-md flex items-center justify-center p-6 border border-black/5">
                                                     {cert.image ? (
                                                         <img
                                                             src={cert.image}
@@ -1490,7 +1490,7 @@ export const Certifications = () => (
                                                         </div>
                                                     )}
                                                     <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                                        <span className="px-6 py-2 bg-white text-primary font-black rounded-full text-xs shadow-xl uppercase tracking-widest">Verify Credential</span>
+                                                        <span className="px-6 py-2 bg-white/5 text-primary font-black rounded-full text-xs shadow-xl uppercase tracking-widest">Verify Credential</span>
                                                     </div>
                                                 </div>
                                                 <h3 className="text-xl md:text-2xl font-bold mb-4 group-hover:text-primary transition-colors line-clamp-2 leading-tight">{cert.title}</h3>
