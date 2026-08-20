@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Moon, Sun, Monitor } from 'lucide-react';
+import { useThemeMode } from '../../theme/ThemeContext';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
+    const { mode, cycleMode } = useThemeMode();
 
     const navLinks = [
         { name: 'Home', path: '/' },
@@ -25,6 +27,8 @@ const Navbar = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    const ThemeIcon = mode === 'dark' ? Moon : mode === 'light' ? Sun : Monitor;
 
     return (
         <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'glass-morphism py-3' : 'bg-transparent py-6'}`}>
@@ -49,10 +53,28 @@ const Navbar = () => {
                                 {link.name}
                             </Link>
                         ))}
+
+                        {/* Theme Toggle */}
+                        <button
+                            onClick={cycleMode}
+                            aria-label={`Theme: ${mode} — click to change`}
+                            title={`Theme: ${mode} — click to switch`}
+                            className="p-2 rounded-full glass-morphism hover:scale-110 transition-all duration-300"
+                        >
+                            <ThemeIcon size={18} className="text-dark-light" />
+                        </button>
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <div className="md:hidden">
+                    <div className="md:hidden flex items-center gap-3">
+                        <button
+                            onClick={cycleMode}
+                            aria-label={`Theme: ${mode}`}
+                            title={`Theme: ${mode} — click to switch`}
+                            className="p-2 rounded-full glass-morphism hover:scale-110 transition-all duration-300"
+                        >
+                            <ThemeIcon size={18} className="text-dark-light" />
+                        </button>
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             className="text-dark hover:text-primary"

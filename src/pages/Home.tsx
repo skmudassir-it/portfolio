@@ -3,6 +3,8 @@ import { ArrowRight, BookOpen, Briefcase, FileText, Layout, Send, Rocket, Termin
 import { Link } from 'react-router-dom';
 import { experienceData } from './OtherPages';
 import NeuralNetwork from '../components/NeuralNetwork';
+import TechMarquee from '../components/TechMarquee';
+import { useThemeMode } from '../theme/ThemeContext';
 import {
     Card, CardContent, Chip, Stack, Box, Typography, Avatar, Button,
     useTheme, alpha, Paper, Divider, LinearProgress
@@ -11,6 +13,17 @@ import {
 
 const Home = () => {
     const theme = useTheme();
+    const { resolved: themeMode } = useThemeMode();
+    const isLight = themeMode === 'light';
+    // theme-aware surface colors
+    const cardBg = isLight ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.04)';
+    const cardBorder = isLight ? 'rgba(15,23,42,0.1)' : 'rgba(255,255,255,0.1)';
+    const terminalBg = isLight ? 'rgba(248,250,252,0.95)' : 'rgba(2,6,23,0.85)';
+    const terminalBorder = isLight ? 'rgba(99,102,241,0.3)' : 'rgba(129,140,248,0.25)';
+    const softText = isLight ? '#334155' : '#cbd5e1';
+    const monoGreen = isLight ? '#059669' : '#34d399';
+    const monoAccent = isLight ? '#4f46e5' : '#818cf8';
+    const monoAmber = isLight ? '#d97706' : '#fbbf24';
 
     const techStack = [
         { name: 'N8N', slug: 'n8n', icon: '/skills/N8n-logo-new.svg.png', desc: 'Workflow Automation' },
@@ -223,7 +236,7 @@ const Home = () => {
                         {/* Terminal-style card */}
                         <Paper elevation={0} sx={{
                             maxWidth: 560, mx: 'auto', mb: 5, textAlign: 'left', overflow: 'hidden',
-                            bgcolor: 'rgba(2,6,23,0.85)', border: '1px solid rgba(129,140,248,0.25)',
+                            bgcolor: terminalBg, border: `1px solid ${terminalBorder}`,
                             borderRadius: 3, backdropFilter: 'blur(12px)',
                             fontFamily: 'monospace', fontSize: '0.8rem'
                         }}>
@@ -233,19 +246,19 @@ const Home = () => {
                                 <Box sx={{ width: 10, height: 10, borderRadius: '50%', bgcolor: '#34d399' }} />
                                 <Typography sx={{ ml: 1, color: '#64748b', fontSize: '0.7rem', fontFamily: 'monospace' }}>mudassir@ai-engineer ~ %</Typography>
                             </Box>
-                            <Box sx={{ p: 2, color: '#cbd5e1', lineHeight: 1.9 }}>
-                                <Box><span style={{ color: '#818cf8' }}>$ whoami</span></Box>
-                                <Box sx={{ color: '#e2e8f0' }}>Forward Deployed Engineer · AI/ML · Cloud</Box>
-                                <Box sx={{ mt: 1 }}><span style={{ color: '#818cf8' }}>$ cat deployment.txt</span></Box>
-                                <Box sx={{ color: '#34d399' }}>
+                            <Box sx={{ p: 2, color: softText, lineHeight: 1.9 }}>
+                                <Box><span style={{ color: monoAccent }}>$ whoami</span></Box>
+                                <Box sx={{ color: softText === '#334155' ? '#1e293b' : '#e2e8f0' }}>Forward Deployed Engineer · AI/ML · Cloud</Box>
+                                <Box sx={{ mt: 1 }}><span style={{ color: monoAccent }}>$ cat deployment.txt</span></Box>
+                                <Box sx={{ color: monoGreen }}>
                                     - Backend APIs & System Design (Python / Node)<br />
                                     - Data Pipelines & SQL Optimization<br />
                                     - Docker / K8s / AWS Enterprise Deploys<br />
                                     - SSO, SAML & Secure Integrations<br />
                                     - On-site Client Delivery & Docs
                                 </Box>
-                                <Box sx={{ mt: 1 }}><span style={{ color: '#818cf8' }}>$ status</span></Box>
-                                <Box sx={{ color: '#fbbf24' }}>● Deployed & available for new engagements</Box>
+                                <Box sx={{ mt: 1 }}><span style={{ color: monoAccent }}>$ status</span></Box>
+                                <Box sx={{ color: monoAmber }}>● Deployed & available for new engagements</Box>
                             </Box>
                         </Paper>
 
@@ -276,6 +289,9 @@ const Home = () => {
                 </Box>
             </Box>
 
+            {/* ===== TECH MARQUEE ===== */}
+            <TechMarquee />
+
             {/* ===== ML SKILLS ===== */}
             <Box component="section" sx={{ position: 'relative', zIndex: 1, py: 8, px: 2 }}>
                 <Box sx={{ maxWidth: 800, mx: 'auto', mb: 5, textAlign: 'center' }}>
@@ -289,7 +305,7 @@ const Home = () => {
                 </Box>
                 <Card variant="outlined" sx={{
                     maxWidth: 800, mx: 'auto', borderRadius: 4,
-                    bgcolor: 'rgba(255,255,255,0.04)', borderColor: 'rgba(129,140,248,0.2)',
+                    bgcolor: cardBg, borderColor: cardBorder,
                     backdropFilter: 'blur(10px)', p: { xs: 2, md: 4 }
                 }}>
                     <Stack spacing={3}>
@@ -340,7 +356,7 @@ const Home = () => {
                             <motion.div key={group.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.08 }}>
                                 <Card variant="outlined" sx={{
                                     borderRadius: 4, height: '100%', p: 2.5,
-                                    bgcolor: 'rgba(255,255,255,0.04)', borderColor: 'rgba(255,255,255,0.1)',
+                                    bgcolor: cardBg, borderColor: cardBorder,
                                     backdropFilter: 'blur(8px)', transition: 'all 0.3s',
                                     '&:hover': {
                                         transform: 'translateY(-6px)',
@@ -397,7 +413,7 @@ const Home = () => {
                                 <Link to={`/tech/${tech.slug}`} style={{ textDecoration: 'none' }}>
                                     <Card variant="outlined" sx={{
                                         borderRadius: 4, height: '100%',
-                                        bgcolor: 'rgba(255,255,255,0.04)', borderColor: 'rgba(255,255,255,0.1)',
+                                        bgcolor: cardBg, borderColor: cardBorder,
                                         backdropFilter: 'blur(8px)', textAlign: 'center', p: 3,
                                         transition: 'all 0.3s',
                                         '&:hover': {
@@ -457,7 +473,7 @@ const Home = () => {
                                 <Link to={`/experience/${exp.slug}`} style={{ textDecoration: 'none' }}>
                                     <Card variant="outlined" sx={{
                                         borderRadius: 4, height: '100%', textAlign: 'center', p: 3,
-                                        bgcolor: 'rgba(255,255,255,0.04)', borderColor: 'rgba(255,255,255,0.1)',
+                                        bgcolor: cardBg, borderColor: cardBorder,
                                         borderTop: `4px solid ${idx % 2 === 0 ? '#818cf8' : '#f472b6'}`,
                                         backdropFilter: 'blur(8px)', transition: 'all 0.3s',
                                         '&:hover': { transform: 'translateY(-6px)', borderTopColor: '#22d3ee', boxShadow: '0 12px 40px rgba(34,211,238,0.2)' }
@@ -500,7 +516,7 @@ const Home = () => {
                             <motion.div key={idx} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }}>
                                 <Card variant="outlined" sx={{
                                     borderRadius: 4, overflow: 'hidden', height: '100%',
-                                    bgcolor: 'rgba(255,255,255,0.04)', borderColor: 'rgba(255,255,255,0.1)',
+                                    bgcolor: cardBg, borderColor: cardBorder,
                                     backdropFilter: 'blur(8px)', transition: 'all 0.3s',
                                     '&:hover': { transform: 'translateY(-6px)', borderColor: 'secondary.main', boxShadow: '0 12px 40px rgba(244,114,182,0.25)' }
                                 }}>
