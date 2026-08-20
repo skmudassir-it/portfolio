@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { experienceData } from './OtherPages';
 import NeuralNetwork from '../components/NeuralNetwork';
 import TechMarquee from '../components/TechMarquee';
+import RadarChart from '../components/RadarChart';
 import { useThemeMode } from '../theme/ThemeContext';
 import {
     Card, CardContent, Chip, Stack, Box, Typography, Avatar, Button,
@@ -308,31 +309,16 @@ const Home = () => {
                     bgcolor: cardBg, borderColor: cardBorder,
                     backdropFilter: 'blur(10px)', p: { xs: 2, md: 4 }
                 }}>
-                    <Stack spacing={3}>
-                        {mlSkills.map((s, i) => (
-                            <Box key={s.label}>
-                                <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
-                                    <Typography sx={{ fontWeight: 700, display: 'flex', alignItems: 'center', gap: 1, color: 'text.secondary' }}>
-                                        {s.icon} {s.label}
-                                    </Typography>
-                                    <Typography sx={{ fontWeight: 800, color: 'primary.main' }}>{s.value}%</Typography>
-                                </Box>
-                                <LinearProgress
-                                    variant="determinate" value={s.value}
-                                    sx={{
-                                        height: 8, borderRadius: 4,
-                                        bgcolor: 'rgba(255,255,255,0.08)',
-                                        '& .MuiLinearProgress-bar': {
-                                            borderRadius: 4,
-                                            background: i % 2 === 0
-                                                ? 'linear-gradient(90deg, #818cf8, #22d3ee)'
-                                                : 'linear-gradient(90deg, #f472b6, #818cf8)'
-                                        }
-                                    }}
-                                />
-                            </Box>
+                    <RadarChart skills={mlSkills.map(s => ({ label: s.label, value: s.value }))} size={420} />
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5, justifyContent: 'center', mt: 2 }}>
+                        {mlSkills.map(s => (
+                            <Chip key={s.label} icon={s.icon} label={`${s.value}%`} size="small" sx={{
+                                fontWeight: 700, color: 'primary.main',
+                                bgcolor: 'rgba(129,140,248,0.1)',
+                                border: '1px solid rgba(129,140,248,0.3)'
+                            }} />
                         ))}
-                    </Stack>
+                    </Box>
                 </Card>
             </Box>
 
