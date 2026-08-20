@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, BookOpen, Briefcase, FileText, Layout, Send, Rocket, Terminal, BrainCircuit, Database, Cloud, Code2 } from 'lucide-react';
+import { ArrowRight, BookOpen, Briefcase, FileText, Layout, Send, Rocket, Terminal, BrainCircuit, Database, Cloud, Code2, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { experienceData } from './OtherPages';
 import NeuralNetwork from '../components/NeuralNetwork';
@@ -29,72 +29,79 @@ const Home = () => {
     ];
 
     const mlSkills = [
-        { label: 'Machine Learning', value: 92, icon: <BrainCircuit size={16} /> },
-        { label: 'Deep Learning / NLP', value: 85, icon: <Database size={16} /> },
-        { label: 'Cloud / MLOps (AWS)', value: 90, icon: <Cloud size={16} /> },
-        { label: 'Python / Data Science', value: 95, icon: <Code2 size={16} /> },
+        { label: 'Backend & API Development', value: 95, icon: <Code2 size={16} /> },
+        { label: 'Data Engineering & SQL', value: 90, icon: <Database size={16} /> },
+        { label: 'Cloud & DevOps (AWS/Docker)', value: 92, icon: <Cloud size={16} /> },
+        { label: 'Enterprise Integration & SSO', value: 85, icon: <Terminal size={16} /> },
+        { label: 'Client Communication & Docs', value: 93, icon: <Send size={16} /> },
     ];
 
-    // Expanded skill categories — more cards
+    // FDE skill matrix — enterprise SaaS / data platform focus
     const skillGroups = [
         {
-            title: 'AI & Machine Learning',
-            icon: <BrainCircuit size={20} />,
+            title: 'Backend & APIs',
+            priority: 'HIGH',
+            icon: <Code2 size={20} />,
             gradient: 'linear-gradient(135deg, #818cf8, #22d3ee)',
             skills: [
-                'Scikit-learn', 'TensorFlow / Keras', 'PyTorch', 'Computer Vision',
-                'NLP & Transformers', 'Reinforcement Learning', 'ML Model Deployment',
-                'Feature Engineering', 'MLOps Pipelines', 'AI Agents / LangChain'
+                'Python (FastAPI/Flask)', 'TypeScript / Node.js', 'RESTful APIs', 'gRPC',
+                'System Design', 'Microservices', 'OAuth2 / JWT', 'DSA (LeetCode)',
+                'API Wrappers', 'Custom Connectors'
             ]
         },
         {
-            title: 'Frontend Development',
-            icon: <Code2 size={20} />,
-            gradient: 'linear-gradient(135deg, #f472b6, #818cf8)',
-            skills: [
-                'React / Next.js', 'TypeScript', 'Tailwind CSS', 'Material UI',
-                'Framer Motion', 'Vite / Webpack', 'Redux / Zustand', 'Responsive Design',
-                'Three.js / 3D Web', 'PWA & Performance'
-            ]
-        },
-        {
-            title: 'Backend & Databases',
+            title: 'Data & Databases',
+            priority: 'HIGH',
             icon: <Database size={20} />,
             gradient: 'linear-gradient(135deg, #22d3ee, #34d399)',
             skills: [
-                'Node.js / Express', 'Python / Flask / Django', 'REST & GraphQL APIs',
-                'PostgreSQL', 'MySQL', 'MongoDB', 'SQLite', 'Prisma / TypeORM',
-                'Redis / Caching', 'WebSockets'
+                'PostgreSQL', 'SQL Optimization', 'MongoDB', 'Redis',
+                'Pandas / Polars', 'Apache Spark', 'ETL Pipelines', 'Airflow',
+                'Data Warehousing', 'Snowflake / BigQuery'
             ]
         },
         {
-            title: 'Cloud & DevOps',
+            title: 'DevOps & Cloud',
+            priority: 'HIGH',
             icon: <Cloud size={20} />,
             gradient: 'linear-gradient(135deg, #f59e0b, #f472b6)',
             skills: [
-                'AWS (EC2, S3, Lambda)', 'Docker & Compose', 'Kubernetes', 'CI/CD Pipelines',
-                'Nginx / Traefik', 'Vercel / Dokploy', 'GitHub Actions', 'Linux Administration',
-                'Terraform / IaC', 'Monitoring & Logging'
+                'Docker', 'Kubernetes', 'AWS / GCP', 'Nginx / Caddy',
+                'CI/CD Pipelines', 'GitHub Actions', 'Terraform / IaC', 'Prometheus',
+                'Datadog / Monitoring', 'VPC & Networking'
             ]
         },
         {
-            title: 'Automation & Agentic AI',
-            icon: <Terminal size={20} />,
+            title: 'Enterprise Security',
+            priority: 'MEDIUM',
+            icon: <ShieldCheck size={20} />,
             gradient: 'linear-gradient(135deg, #34d399, #22d3ee)',
             skills: [
-                'N8N Workflows', 'API Integrations', 'Webhooks & Events', 'Zapier / Make',
-                'AI Chatbots', 'Data Scraping', 'Email Automation', 'Business Workflows',
-                'Vector Databases', 'LLM Prompt Engineering'
+                'OAuth2 / OpenID', 'SAML / SSO', 'Active Directory', 'Reverse Proxies',
+                'VPN / VPC Peering', 'Secure Auth Flows', 'Secrets Management', 'RBAC',
+                'API Security', 'Zero-Trust Basics'
             ]
         },
         {
-            title: 'E-commerce & CMS',
-            icon: <Layout size={20} />,
+            title: 'AI & Machine Learning',
+            priority: 'HIGH',
+            icon: <BrainCircuit size={20} />,
+            gradient: 'linear-gradient(135deg, #f472b6, #818cf8)',
+            skills: [
+                'Scikit-learn', 'TensorFlow / Keras', 'PyTorch', 'Computer Vision',
+                'NLP & Transformers', 'ML Model Deployment', 'Feature Engineering',
+                'MLOps Pipelines', 'AI Agents / LangChain', 'LLM Prompt Engineering'
+            ]
+        },
+        {
+            title: 'Client-Facing & Delivery',
+            priority: 'HIGH',
+            icon: <Send size={20} />,
             gradient: 'linear-gradient(135deg, #f472b6, #f59e0b)',
             skills: [
-                'Shopify Themes', 'WordPress / Headless', 'WooCommerce', 'Payment Gateways',
-                'Storefront API', 'Email Marketing', 'SEO Optimization', 'Analytics / GA4',
-                'Conversion Optimization', 'Custom Integrations'
+                'Requirement Gathering', 'Client Communication', 'Technical Writing',
+                'Architecture Diagrams', 'docker-compose Setup Guides', 'API Documentation',
+                'On-site Integration', 'End-to-End Delivery', 'Stakeholder Updates', 'POC Prototyping'
             ]
         },
     ];
@@ -148,7 +155,7 @@ const Home = () => {
                         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5, justifyContent: 'center', mb: 2 }}>
                             <Chip
                                 icon={<Terminal size={14} />}
-                                label="AI / ML ENGINEER"
+                                label="FORWARD DEPLOYED ENGINEER"
                                 sx={{
                                     bgcolor: alpha(theme.palette.primary.main, 0.15),
                                     color: 'primary.main', fontWeight: 800, letterSpacing: '0.15em',
@@ -156,11 +163,21 @@ const Home = () => {
                                 }}
                             />
                             <Chip
-                                label="FULL-STACK DEVELOPER"
+                                icon={<BrainCircuit size={14} />}
+                                label="AI / ML ENGINEER"
                                 sx={{
                                     bgcolor: alpha(theme.palette.secondary.main, 0.15),
                                     color: 'secondary.main', fontWeight: 800, letterSpacing: '0.15em',
                                     fontSize: '0.7rem', border: `1px solid ${alpha(theme.palette.secondary.main, 0.3)}`
+                                }}
+                            />
+                            <Chip
+                                icon={<Cloud size={14} />}
+                                label="CLOUD / DEVOPS"
+                                sx={{
+                                    bgcolor: alpha('#22d3ee', 0.15),
+                                    color: '#22d3ee', fontWeight: 800, letterSpacing: '0.15em',
+                                    fontSize: '0.7rem', border: '1px solid rgba(34,211,238,0.3)'
                                 }}
                             />
                         </Box>
@@ -176,12 +193,12 @@ const Home = () => {
                         </Typography>
 
                         <Typography variant="h4" sx={{ fontWeight: 700, color: 'text.primary', mb: 2, fontSize: { xs: '1.3rem', md: '1.8rem' } }}>
-                            Building Intelligent Systems & Scalable AI Solutions
+                            Forward Deployed Engineer — Shipping Enterprise AI & Data Solutions
                         </Typography>
 
-                        <Typography sx={{ color: 'text.secondary', fontSize: { xs: '1rem', md: '1.15rem' }, maxWidth: 680, mx: 'auto', mb: 4, lineHeight: 1.7 }}>
-                            I engineer production-ready machine learning pipelines, agentic AI workflows,
-                            and cloud-native applications — turning complex problems into elegant, automated solutions.
+                        <Typography sx={{ color: 'text.secondary', fontSize: { xs: '1rem', md: '1.15rem' }, maxWidth: 720, mx: 'auto', mb: 4, lineHeight: 1.7 }}>
+                            I embed with clients to design, build and deploy production-grade systems — backend APIs, data pipelines,
+                            cloud infrastructure and enterprise integrations — turning business problems into shipped, working software.
                         </Typography>
 
                         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, justifyContent: 'center', mb: 5 }}>
@@ -218,16 +235,17 @@ const Home = () => {
                             </Box>
                             <Box sx={{ p: 2, color: '#cbd5e1', lineHeight: 1.9 }}>
                                 <Box><span style={{ color: '#818cf8' }}>$ whoami</span></Box>
-                                <Box sx={{ color: '#e2e8f0' }}>AI/ML Engineer · Full-Stack Developer · Cloud Architect</Box>
-                                <Box sx={{ mt: 1 }}><span style={{ color: '#818cf8' }}>$ cat specialties.txt</span></Box>
+                                <Box sx={{ color: '#e2e8f0' }}>Forward Deployed Engineer · AI/ML · Cloud</Box>
+                                <Box sx={{ mt: 1 }}><span style={{ color: '#818cf8' }}>$ cat deployment.txt</span></Box>
                                 <Box sx={{ color: '#34d399' }}>
-                                    - Machine Learning & Deep Learning<br />
-                                    - Agentic AI & Automation (N8N)<br />
-                                    - AWS Cloud & MLOps<br />
-                                    - Production Deployments
+                                    - Backend APIs & System Design (Python / Node)<br />
+                                    - Data Pipelines & SQL Optimization<br />
+                                    - Docker / K8s / AWS Enterprise Deploys<br />
+                                    - SSO, SAML & Secure Integrations<br />
+                                    - On-site Client Delivery & Docs
                                 </Box>
                                 <Box sx={{ mt: 1 }}><span style={{ color: '#818cf8' }}>$ status</span></Box>
-                                <Box sx={{ color: '#fbbf24' }}>● Available for new projects</Box>
+                                <Box sx={{ color: '#fbbf24' }}>● Deployed & available for new engagements</Box>
                             </Box>
                         </Paper>
 
@@ -262,9 +280,12 @@ const Home = () => {
             <Box component="section" sx={{ position: 'relative', zIndex: 1, py: 8, px: 2 }}>
                 <Box sx={{ maxWidth: 800, mx: 'auto', mb: 5, textAlign: 'center' }}>
                     <Typography sx={{ color: 'primary.main', fontWeight: 900, letterSpacing: '0.3em', textTransform: 'uppercase', fontSize: '0.75rem', mb: 1 }}>
-                        Core Expertise
+                        FDE Core Competencies
                     </Typography>
-                    <Typography variant="h3" sx={{ fontWeight: 800, mb: 2 }}>AI / ML Engineering <Box component="span" sx={{ background: 'linear-gradient(135deg,#818cf8,#f472b6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Skills</Box></Typography>
+                    <Typography variant="h3" sx={{ fontWeight: 800, mb: 2 }}>Forward Deployed <Box component="span" sx={{ background: 'linear-gradient(135deg,#818cf8,#f472b6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Engineering Skills</Box></Typography>
+                    <Typography sx={{ color: 'text.secondary', maxWidth: 640, mx: 'auto' }}>
+                        Backend systems · data engineering · cloud deployment · enterprise integration · client-facing delivery
+                    </Typography>
                 </Box>
                 <Card variant="outlined" sx={{
                     maxWidth: 800, mx: 'auto', borderRadius: 4,
@@ -304,13 +325,13 @@ const Home = () => {
                 <Box sx={{ maxWidth: 1200, mx: 'auto' }}>
                     <Box sx={{ textAlign: 'center', mb: 5 }}>
                         <Typography sx={{ color: 'primary.main', fontWeight: 900, letterSpacing: '0.3em', textTransform: 'uppercase', fontSize: '0.75rem', mb: 1 }}>
-                            Skill Arsenal
+                            Skill Matrix
                         </Typography>
                         <Typography variant="h3" sx={{ fontWeight: 800, mb: 2 }}>
-                            Everything I <Box component="span" sx={{ background: 'linear-gradient(135deg,#34d399,#22d3ee)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Bring to the Table</Box>
+                            FDE <Box component="span" sx={{ background: 'linear-gradient(135deg,#34d399,#22d3ee)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Skill Matrix</Box>
                         </Typography>
                         <Typography sx={{ color: 'text.secondary', maxWidth: 600, mx: 'auto' }}>
-                            Six disciplines, sixty capabilities — from model training to production deployment.
+                            Six disciplines, sixty capabilities — from backend systems to enterprise deployments.
                         </Typography>
                     </Box>
 
@@ -335,7 +356,13 @@ const Home = () => {
                                         }}>
                                             {group.icon}
                                         </Box>
-                                        <Typography variant="h6" sx={{ fontWeight: 800, fontSize: '1.05rem' }}>{group.title}</Typography>
+                                        <Typography variant="h6" sx={{ fontWeight: 800, fontSize: '1.05rem', flexGrow: 1 }}>{group.title}</Typography>
+                                        <Chip label={group.priority} size="small" sx={{
+                                            fontSize: '0.6rem', fontWeight: 900, letterSpacing: '0.1em',
+                                            color: group.priority === 'HIGH' ? '#34d399' : '#fbbf24',
+                                            bgcolor: group.priority === 'HIGH' ? 'rgba(52,211,153,0.1)' : 'rgba(251,191,36,0.1)',
+                                            border: `1px solid ${group.priority === 'HIGH' ? 'rgba(52,211,153,0.3)' : 'rgba(251,191,36,0.3)'}`
+                                        }} />
                                     </Box>
                                     <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
                                         {group.skills.map((skill) => (
@@ -402,7 +429,7 @@ const Home = () => {
                     <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1 }}>
                         <BrainCircuit size={44} style={{ color: '#818cf8', marginBottom: 16 }} />
                         <Typography variant="h4" sx={{ fontWeight: 700, fontStyle: 'italic', lineHeight: 1.4, mb: 3 }}>
-                            "The best AI is invisible — it quietly automates the mundane and amplifies human potential."
+                            "The best deployed software is the kind clients forget is software — it just works, on their infrastructure, at their scale."
                         </Typography>
                         <Divider sx={{ width: 100, mx: 'auto', borderColor: 'primary.main', borderWidth: 2, borderRadius: 2 }} />
                     </motion.div>
@@ -510,10 +537,10 @@ const Home = () => {
                     <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
                         <Send size={40} style={{ color: '#f472b6', marginBottom: 16 }} />
                         <Typography variant="h3" sx={{ fontWeight: 900, mb: 2 }}>
-                            Ready to Build <Box component="span" sx={{ background: 'linear-gradient(135deg,#818cf8,#f472b6,#22d3ee)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Intelligent Systems?</Box>
+                            Ready to Deploy <Box component="span" sx={{ background: 'linear-gradient(135deg,#818cf8,#f472b6,#22d3ee)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Enterprise Solutions?</Box>
                         </Typography>
                         <Typography sx={{ color: 'text.secondary', mb: 4, fontSize: '1.05rem' }}>
-                            Let's collaborate on your next AI, automation, or web project — I'm just a click away.
+                            Let's collaborate on your next enterprise integration, data platform, or AI deployment — I'm just a click away.
                         </Typography>
                         <Button component={Link} to="/contact" variant="contained" size="large" endIcon={<Send />}
                             sx={{ background: 'linear-gradient(135deg, #818cf8, #f472b6, #22d3ee)', color: '#0f172a', fontWeight: 800, px: 5, py: 1.6, borderRadius: 3 }}>
