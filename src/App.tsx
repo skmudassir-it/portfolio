@@ -7,6 +7,7 @@ import Home from './pages/Home';
 
 // Route-level code splitting — each page loads its own JS chunk
 const TechDetail = lazy(() => import('./pages/TechDetail'));
+const SkillDetail = lazy(() => import('./pages/SkillDetail'));
 const Resume = lazy(() => import('./pages/Resume'));
 const Education = lazy(() => import('./pages/OtherPages').then(m => ({ default: m.Education })));
 const Experience = lazy(() => import('./pages/OtherPages').then(m => ({ default: m.Experience })));
@@ -34,6 +35,7 @@ function App() {
                         <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="/tech/:slug" element={<TechDetail />} />
+                            <Route path="/skill/:slug" element={<SkillDetail />} />
                             <Route path="/education" element={<Education />} />
                             <Route path="/experience" element={<Experience />} />
                             <Route path="/experience/:slug" element={<ExperienceDetail />} />

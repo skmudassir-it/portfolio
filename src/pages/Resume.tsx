@@ -34,8 +34,17 @@ const Resume = () => {
     ];
 
     const skills = [
-        "Python", "Java", "SQL", "JavaScript", "React", "Node.js", "AWS", "Azure DevOps", "Google Cloud",
-        "Machine Learning", "Data Analytics", "CI/CD", "Docker", "Jenkins", "Shopify", "WordPress"
+        "Python (FastAPI/Flask)", "TypeScript / Node.js", "React / Next.js", "PostgreSQL", "MongoDB", "Redis",
+        "Machine Learning", "Deep Learning / NLP", "Data Pipelines / ETL", "Docker", "Kubernetes", "AWS", "GCP",
+        "CI/CD", "Nginx / Traefik", "OAuth2 / SSO", "N8N Automation", "Shopify", "WordPress"
+    ];
+
+    const coreCompetencies = [
+        { title: "Client Delivery & Deployment", value: 95 },
+        { title: "Business Growth Strategy", value: 90 },
+        { title: "ROI & Revenue Impact", value: 88 },
+        { title: "Enterprise Integration", value: 86 },
+        { title: "Stakeholder Communication", value: 93 },
     ];
 
     return (
@@ -67,7 +76,7 @@ const Resume = () => {
                     <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                         <div className="text-center md:text-left">
                             <h1 className="text-5xl font-black mb-2 tracking-tight">MUDASSIR <span className="text-primary italic">SHAIK</span></h1>
-                            <h2 className="text-2xl font-bold text-primary/80 mb-6">Software Engineer & Data Enthusiast</h2>
+                            <h2 className="text-2xl font-bold text-primary/80 mb-6">Forward Deployed Engineer · AI/ML · Cloud</h2>
                             <div className="flex flex-wrap justify-center md:justify-start gap-6 text-sm opacity-80">
                                 <span className="flex items-center gap-2"><Mail size={16} className="text-primary" /> skmudassir.it@gmail.com</span>
                                 <span className="flex items-center gap-2"><Phone size={16} className="text-primary" /> +1-(901)-415-0779</span>
@@ -80,6 +89,13 @@ const Resume = () => {
                             <img src="/mudassir-image.jpeg" alt="Mudassir" className="w-full h-full object-cover" />
                         </div>
                     </div>
+                    <p className="mt-8 text-dark-light text-sm leading-relaxed max-w-3xl print:text-[10px]">
+                        Forward Deployed Engineer with 10+ years across full-stack development, data engineering,
+                        cloud infrastructure and AI/ML. I embed with clients to design, build and ship production-grade
+                        systems — backend APIs, data pipelines, enterprise integrations and automated workflows —
+                        measuring success in deployments shipped, revenue enabled, and businesses scaled. 84+ projects,
+                        26+ live client sites, 6 cloud certifications.
+                    </p>
                 </div>
 
                 <div className="p-12 print:p-8 grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -148,6 +164,35 @@ const Resume = () => {
                                     <span key={idx} className="px-3 py-1 bg-white/5 text-dark text-xs font-bold rounded-lg border border-white/10">
                                         {skill}
                                     </span>
+                                ))}
+                            </div>
+                        </section>
+
+                        {/* Core Competencies */}
+                        <section>
+                            <h3 className="text-2xl font-black mb-8 flex items-center gap-3">
+                                <span className="w-8 h-1.5 bg-primary rounded-full"></span>
+                                CORE COMPETENCIES
+                            </h3>
+                            <div className="space-y-4">
+                                {coreCompetencies.map((c, idx) => (
+                                    <div key={idx}>
+                                        <div className="flex justify-between text-sm font-bold mb-1">
+                                            <span className="text-dark">{c.title}</span>
+                                            <span className="text-primary">{c.value}%</span>
+                                        </div>
+                                        <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                                            <div
+                                                className="h-full rounded-full"
+                                                style={{
+                                                    width: `${c.value}%`,
+                                                    background: idx % 2 === 0
+                                                        ? 'linear-gradient(90deg, #818cf8, #22d3ee)'
+                                                        : 'linear-gradient(90deg, #f472b6, #818cf8)'
+                                                }}
+                                            />
+                                        </div>
+                                    </div>
                                 ))}
                             </div>
                         </section>

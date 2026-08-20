@@ -63,6 +63,7 @@ const Home = () => {
     const skillGroups = [
         {
             title: 'Backend & APIs',
+            slug: 'backend-apis',
             priority: 'HIGH',
             icon: <Code2 size={20} />,
             gradient: 'linear-gradient(135deg, #818cf8, #22d3ee)',
@@ -74,6 +75,7 @@ const Home = () => {
         },
         {
             title: 'Data & Databases',
+            slug: 'data-databases',
             priority: 'HIGH',
             icon: <Database size={20} />,
             gradient: 'linear-gradient(135deg, #22d3ee, #34d399)',
@@ -85,6 +87,7 @@ const Home = () => {
         },
         {
             title: 'DevOps & Cloud',
+            slug: 'devops-cloud',
             priority: 'HIGH',
             icon: <Cloud size={20} />,
             gradient: 'linear-gradient(135deg, #f59e0b, #f472b6)',
@@ -96,6 +99,7 @@ const Home = () => {
         },
         {
             title: 'Enterprise Security',
+            slug: 'enterprise-security',
             priority: 'MEDIUM',
             icon: <ShieldCheck size={20} />,
             gradient: 'linear-gradient(135deg, #34d399, #22d3ee)',
@@ -107,6 +111,7 @@ const Home = () => {
         },
         {
             title: 'AI & Machine Learning',
+            slug: 'ai-machine-learning',
             priority: 'HIGH',
             icon: <BrainCircuit size={20} />,
             gradient: 'linear-gradient(135deg, #f472b6, #818cf8)',
@@ -118,6 +123,7 @@ const Home = () => {
         },
         {
             title: 'Client-Facing & Delivery',
+            slug: 'client-delivery',
             priority: 'HIGH',
             icon: <Send size={20} />,
             gradient: 'linear-gradient(135deg, #f472b6, #f59e0b)',
@@ -403,43 +409,53 @@ const Home = () => {
                     <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }, gap: 3 }}>
                         {skillGroups.map((group, idx) => (
                             <motion.div key={group.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.08 }}>
-                                <Card variant="outlined" sx={{
-                                    borderRadius: 4, height: '100%', p: 2.5,
-                                    bgcolor: cardBg, borderColor: cardBorder,
-                                    backdropFilter: 'blur(8px)', transition: 'all 0.3s',
-                                    '&:hover': {
-                                        transform: 'translateY(-6px)',
-                                        borderColor: 'primary.main',
-                                        boxShadow: '0 12px 40px rgba(129,140,248,0.2)',
-                                        bgcolor: 'rgba(129,140,248,0.06)'
-                                    }
-                                }}>
-                                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}>
-                                        <Box sx={{
-                                            width: 42, height: 42, borderRadius: 2, display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                            background: group.gradient, color: '#0f172a', flexShrink: 0
-                                        }}>
-                                            {group.icon}
-                                        </Box>
-                                        <Typography variant="h6" sx={{ fontWeight: 800, fontSize: '1.05rem', flexGrow: 1 }}>{group.title}</Typography>
-                                        <Chip label={group.priority} size="small" sx={{
-                                            fontSize: '0.6rem', fontWeight: 900, letterSpacing: '0.1em',
-                                            color: group.priority === 'HIGH' ? '#34d399' : '#fbbf24',
-                                            bgcolor: group.priority === 'HIGH' ? 'rgba(52,211,153,0.1)' : 'rgba(251,191,36,0.1)',
-                                            border: `1px solid ${group.priority === 'HIGH' ? 'rgba(52,211,153,0.3)' : 'rgba(251,191,36,0.3)'}`
-                                        }} />
-                                    </Box>
-                                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
-                                        {group.skills.map((skill) => (
-                                            <Chip key={skill} label={skill} size="small" sx={{
-                                                fontSize: '0.68rem', fontWeight: 600,
-                                                bgcolor: 'rgba(255,255,255,0.06)', color: 'text.secondary',
-                                                border: '1px solid rgba(255,255,255,0.08)',
-                                                '&:hover': { bgcolor: 'rgba(129,140,248,0.15)', color: 'primary.main', borderColor: 'primary.main' }
+                                <Link to={`/skill/${group.slug}`} style={{ textDecoration: 'none' }}>
+                                    <Card variant="outlined" sx={{
+                                        borderRadius: 4, height: '100%', p: 2.5,
+                                        bgcolor: cardBg, borderColor: cardBorder,
+                                        backdropFilter: 'blur(8px)', transition: 'all 0.3s',
+                                        '&:hover': {
+                                            transform: 'translateY(-6px)',
+                                            borderColor: 'primary.main',
+                                            boxShadow: '0 12px 40px rgba(129,140,248,0.2)',
+                                            bgcolor: 'rgba(129,140,248,0.06)'
+                                        }
+                                    }}>
+                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}>
+                                            <Box sx={{
+                                                width: 42, height: 42, borderRadius: 2, display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                                background: group.gradient, color: '#0f172a', flexShrink: 0
+                                            }}>
+                                                {group.icon}
+                                            </Box>
+                                            <Typography variant="h6" sx={{ fontWeight: 800, fontSize: '1.05rem', flexGrow: 1 }}>{group.title}</Typography>
+                                            <Chip label={group.priority} size="small" sx={{
+                                                fontSize: '0.6rem', fontWeight: 900, letterSpacing: '0.1em',
+                                                color: group.priority === 'HIGH' ? '#34d399' : '#fbbf24',
+                                                bgcolor: group.priority === 'HIGH' ? 'rgba(52,211,153,0.1)' : 'rgba(251,191,36,0.1)',
+                                                border: `1px solid ${group.priority === 'HIGH' ? 'rgba(52,211,153,0.3)' : 'rgba(251,191,36,0.3)'}`
                                             }} />
-                                        ))}
-                                    </Box>
-                                </Card>
+                                        </Box>
+                                        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
+                                            {group.skills.map((skill) => (
+                                                <Chip key={skill} label={skill} size="small" sx={{
+                                                    fontSize: '0.68rem', fontWeight: 600,
+                                                    bgcolor: 'rgba(255,255,255,0.06)', color: 'text.secondary',
+                                                    border: '1px solid rgba(255,255,255,0.08)',
+                                                    '&:hover': { bgcolor: 'rgba(129,140,248,0.15)', color: 'primary.main', borderColor: 'primary.main' }
+                                                }} />
+                                            ))}
+                                        </Box>
+                                        <Typography sx={{
+                                            color: 'primary.main', fontSize: '0.68rem', fontWeight: 800,
+                                            textTransform: 'uppercase', letterSpacing: '0.1em', mt: 2,
+                                            display: 'flex', alignItems: 'center', gap: 0.5, opacity: 0.7,
+                                            transition: 'opacity 0.3s', '&:hover': { opacity: 1 }
+                                        }}>
+                                            View Productivity Gains <ArrowRight size={13} />
+                                        </Typography>
+                                    </Card>
+                                </Link>
                             </motion.div>
                         ))}
                     </Box>

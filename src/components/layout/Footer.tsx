@@ -1,4 +1,5 @@
 import { Github, Linkedin, Twitter } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -17,10 +18,10 @@ const Footer = () => {
                     <div>
                         <h4 className="text-lg font-semibold mb-4 text-dark">Quick Links</h4>
                         <ul className="space-y-2">
-                            <li><a href="/" className="text-dark-light hover:text-primary transition-colors">Home</a></li>
-                            <li><a href="/projects" className="text-dark-light hover:text-primary transition-colors">Projects</a></li>
-                            <li><a href="/certifications" className="text-dark-light hover:text-primary transition-colors">Certifications</a></li>
-                            <li><a href="/experience" className="text-dark-light hover:text-primary transition-colors">Experience</a></li>
+                            <li><Link to="/" className="text-dark-light hover:text-primary transition-colors">Home</Link></li>
+                            <li><Link to="/projects" className="text-dark-light hover:text-primary transition-colors">Projects</Link></li>
+                            <li><Link to="/certifications" className="text-dark-light hover:text-primary transition-colors">Certifications</Link></li>
+                            <li><Link to="/experience" className="text-dark-light hover:text-primary transition-colors">Experience</Link></li>
                         </ul>
                     </div>
                     <div>
@@ -37,9 +38,9 @@ const Footer = () => {
                                     <Twitter size={18} />
                                 </a>
                             </div>
-                            <a href="/resume" className="inline-block bg-gradient-to-r from-primary via-secondary to-accent text-slate-950 px-6 py-2 rounded-full font-bold hover:brightness-110 transition-all shadow-glow text-center max-w-[150px]">
+                            <Link to="/resume" className="inline-block bg-gradient-to-r from-primary via-secondary to-accent text-slate-950 px-6 py-2 rounded-full font-bold hover:brightness-110 transition-all shadow-glow text-center max-w-[150px]">
                                 E-Resume
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
