@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { experienceData } from './OtherPages';
 import NeuralNetwork from '../components/NeuralNetwork';
 import TechMarquee from '../components/TechMarquee';
+import TechIcon from '../components/TechIcon';
 import RadarChart from '../components/RadarChart';
 import WorkflowInfographic from '../components/WorkflowInfographic';
 import { useThemeMode } from '../theme/ThemeContext';
@@ -34,6 +35,12 @@ const Home = () => {
         { name: 'WordPress', slug: 'wordpress', icon: '/skills/wplogoblue-stacked-rgb_zqpuyr.avif', desc: 'CMS Development' },
         { name: 'AWS', slug: 'aws', icon: '/skills/1_tFl-8wQUENETYLjX5mYWuA.png', desc: 'Cloud Infrastructure' },
         { name: 'Email Marketing', slug: 'email-marketing', icon: '/skills/Email-marketing-The-Comms-Avenue.png', desc: 'Growth Strategy' },
+        { name: 'Docker', slug: 'docker', icon: 'svg:docker', desc: 'Containerization' },
+        { name: 'Python', slug: 'python', icon: 'svg:python', desc: 'Backend & Data Science' },
+        { name: 'Next.js', slug: 'nextjs', icon: 'svg:nextdotjs', desc: 'React Framework' },
+        { name: 'PostgreSQL', slug: 'postgresql', icon: 'svg:postgresql', desc: 'Relational Database' },
+        { name: 'TypeScript', slug: 'typescript', icon: 'svg:typescript', desc: 'Typed JavaScript' },
+        { name: 'Kubernetes', slug: 'kubernetes', icon: 'svg:kubernetes', desc: 'Container Orchestration' },
     ];
 
     const stats = [
@@ -465,8 +472,14 @@ const Home = () => {
                                             bgcolor: 'rgba(129,140,248,0.08)'
                                         }
                                     }}>
-                                        <Avatar src={tech.icon} alt={`${tech.name} — ${tech.desc}`} variant="rounded"
-                                            sx={{ width: 64, height: 64, mx: 'auto', mb: 2, bgcolor: 'rgba(255,255,255,0.08)', p: 1 }} />
+                                        {tech.icon.startsWith('svg:') ? (
+                                            <Box sx={{ width: 64, height: 64, mx: 'auto', mb: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                                <TechIcon slug={tech.icon.slice(4)} size={64} />
+                                            </Box>
+                                        ) : (
+                                            <Avatar src={tech.icon} alt={`${tech.name} — ${tech.desc}`} variant="rounded"
+                                                sx={{ width: 64, height: 64, mx: 'auto', mb: 2, bgcolor: 'rgba(255,255,255,0.08)', p: 1 }} />
+                                        )}
                                         <Typography variant="h6" sx={{ fontWeight: 800, mb: 0.5 }}>{tech.name}</Typography>
                                         <Typography sx={{ color: 'text.secondary', fontSize: '0.9rem', mb: 1 }}>{tech.desc}</Typography>
                                         <Typography sx={{ color: 'primary.main', fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', opacity: 0, transition: 'opacity 0.3s' }}

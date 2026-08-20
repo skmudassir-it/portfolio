@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, CheckCircle2, Rocket, TrendingUp, Lightbulb } from 'lucide-react';
+import TechIcon from '../components/TechIcon';
 
 const techDetails = {
     'n8n': {
@@ -74,6 +75,78 @@ const techDetails = {
             'Re-engagement Strategy for Dormant Leads'
         ],
         businessValue: 'Turns the highest-ROI marketing channel into a predictable revenue engine. Most business owners see a 20-30% revenue lift from optimized automated flows.'
+    },
+    'docker': {
+        name: 'Docker',
+        logo: '',
+        desc: 'Containerization & Reproducible Deployments',
+        howIUse: 'I package every application into slim, production-ready Docker images — multi-stage builds that shrink images by 10-20×. I design docker-compose setups that spin up full stacks (app, db, cache, proxy) with one command.',
+        projects: [
+            'Slim-Image Fleet Migration (135+ apps)',
+            'Multi-service docker-compose Stacks',
+            'CI/CD Container Build Pipelines'
+        ],
+        businessValue: 'Cut infrastructure costs dramatically (image sizes 1.5GB → 50-200MB), eliminate "works on my machine", and enable instant, reproducible deployments on any host.'
+    },
+    'python': {
+        name: 'Python',
+        logo: '',
+        desc: 'Backend, Data Science & ML Engineering',
+        howIUse: 'My primary language for backend APIs (FastAPI/Flask), data pipelines (Pandas, Spark), and machine learning (scikit-learn, TensorFlow, PyTorch). I write production-grade, typed Python that ships.',
+        projects: [
+            'ML Model Deployment Pipelines',
+            'Data Engineering & ETL Systems',
+            'FastAPI Backend Services'
+        ],
+        businessValue: 'Delivers the full data-to-decision pipeline — from data ingestion to trained models serving live predictions — in one language your whole team understands.'
+    },
+    'nextjs': {
+        name: 'Next.js',
+        logo: '',
+        desc: 'Full-Stack React Framework & SSR',
+        howIUse: 'I build SEO-strong, fast-loading applications with Next.js — static export for marketing sites (49MB images), standalone SSR for dynamic apps (201MB), ISR for hybrid content.',
+        projects: [
+            'Client Business Sites (SEO-optimized)',
+            'Full-Stack Web Applications',
+            'Headless Commerce Frontends'
+        ],
+        businessValue: 'Combines SEO visibility, sub-second loads, and developer velocity — the framework choice for businesses that need to rank AND convert.'
+    },
+    'postgresql': {
+        name: 'PostgreSQL',
+        logo: '',
+        desc: 'Relational Database & SQL Optimization',
+        howIUse: 'I design normalized schemas, write complex optimized queries, and tune indexes for scale. I use Prisma for type-safe access and handle migrations safely in production.',
+        projects: [
+            'Optimized Schema Design for SaaS',
+            'Query Performance Tuning',
+            'Type-safe Data Access with Prisma'
+        ],
+        businessValue: 'Reliable, ACID-compliant data storage that stays fast as you scale — no surprise bottlenecks, no data loss, and query times that keep pages snappy.'
+    },
+    'typescript': {
+        name: 'TypeScript',
+        logo: '',
+        desc: 'Typed JavaScript for Production Systems',
+        howIUse: 'I write all frontend and Node.js backend code in strict TypeScript — catching entire classes of bugs at compile time and making large codebases maintainable by teams.',
+        projects: [
+            'Type-safe React Applications',
+            'Strict Node.js API Services',
+            'Shared Type Systems Across Stacks'
+        ],
+        businessValue: 'Fewer production bugs, safer refactors, and a codebase that scales with your team — engineering confidence you can ship on.'
+    },
+    'kubernetes': {
+        name: 'Kubernetes',
+        logo: '',
+        desc: 'Container Orchestration & Auto-scaling',
+        howIUse: 'I deploy and manage containerized applications on Kubernetes — rolling updates, auto-scaling, service discovery, and self-healing infrastructure for client-hosted environments.',
+        projects: [
+            'Swarm-to-K8s Migration Strategy',
+            'Zero-downtime Rolling Deployments',
+            'Resource-optimized Cluster Config'
+        ],
+        businessValue: 'Enterprise-grade uptime with automatic healing and scaling — applications that survive traffic spikes and node failures without manual intervention.'
     }
 };
 
@@ -108,7 +181,11 @@ const TechDetail = () => {
                             className="glass-morphism p-8 rounded-[32px] text-center mb-8"
                         >
                             <div className="w-24 h-24 bg-white/5 rounded-3xl p-4 flex items-center justify-center shadow-sm mx-auto mb-6">
-                                <img src={tech.logo} alt={tech.name} className="max-w-full max-h-full object-contain" />
+                                {tech.logo ? (
+                                    <img src={tech.logo} alt={tech.name} className="max-w-full max-h-full object-contain" />
+                                ) : (
+                                    <TechIcon slug={slug || ''} size={64} />
+                                )}
                             </div>
                             <h1 className="text-3xl font-black text-dark mb-2">{tech.name}</h1>
                             <p className="text-primary font-bold text-sm tracking-widest uppercase">{tech.desc}</p>
