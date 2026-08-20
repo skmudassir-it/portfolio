@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, BookOpen, Briefcase, FileText, Layout, Send, Rocket, Terminal, BrainCircuit, Database, Cloud, Code2, ShieldCheck } from 'lucide-react';
+import { ArrowRight, BookOpen, Briefcase, FileText, Layout, Send, Rocket, Terminal, BrainCircuit, Database, Cloud, Code2, ShieldCheck, TrendingUp, DollarSign } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { experienceData } from './OtherPages';
 import NeuralNetwork from '../components/NeuralNetwork';
@@ -42,12 +42,13 @@ const Home = () => {
         { value: '6', label: 'Cloud Certifications' },
     ];
 
+    // Business & growth perspective — what FDEs deliver to clients
     const mlSkills = [
-        { label: 'Backend & API Development', value: 95, icon: <Code2 size={16} /> },
-        { label: 'Data Engineering & SQL', value: 90, icon: <Database size={16} /> },
-        { label: 'Cloud & DevOps (AWS/Docker)', value: 92, icon: <Cloud size={16} /> },
-        { label: 'Enterprise Integration & SSO', value: 85, icon: <Terminal size={16} /> },
-        { label: 'Client Communication & Docs', value: 93, icon: <Send size={16} /> },
+        { label: 'Client Delivery & Deployment', value: 95, icon: <Rocket size={16} /> },
+        { label: 'Business Growth Strategy', value: 90, icon: <TrendingUp size={16} /> },
+        { label: 'ROI & Revenue Impact', value: 88, icon: <DollarSign size={16} /> },
+        { label: 'Enterprise Integration', value: 86, icon: <ShieldCheck size={16} /> },
+        { label: 'Stakeholder Communication', value: 93, icon: <Send size={16} /> },
     ];
 
     // FDE skill matrix — enterprise SaaS / data platform focus
@@ -293,15 +294,15 @@ const Home = () => {
             {/* ===== TECH MARQUEE ===== */}
             <TechMarquee />
 
-            {/* ===== ML SKILLS ===== */}
+            {/* ===== BUSINESS IMPACT RADAR ===== */}
             <Box component="section" sx={{ position: 'relative', zIndex: 1, py: 8, px: 2 }}>
                 <Box sx={{ maxWidth: 800, mx: 'auto', mb: 5, textAlign: 'center' }}>
                     <Typography sx={{ color: 'primary.main', fontWeight: 900, letterSpacing: '0.3em', textTransform: 'uppercase', fontSize: '0.75rem', mb: 1 }}>
-                        FDE Core Competencies
+                        Business Impact
                     </Typography>
-                    <Typography variant="h3" sx={{ fontWeight: 800, mb: 2 }}>Forward Deployed <Box component="span" sx={{ background: 'linear-gradient(135deg,#818cf8,#f472b6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Engineering Skills</Box></Typography>
+                    <Typography variant="h3" sx={{ fontWeight: 800, mb: 2 }}>Engineering for <Box component="span" sx={{ background: 'linear-gradient(135deg,#818cf8,#f472b6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Growth & ROI</Box></Typography>
                     <Typography sx={{ color: 'text.secondary', maxWidth: 640, mx: 'auto' }}>
-                        Backend systems · data engineering · cloud deployment · enterprise integration · client-facing delivery
+                        Beyond code — I measure success in deployments shipped, revenue enabled, and businesses scaled.
                     </Typography>
                 </Box>
                 <Card variant="outlined" sx={{
@@ -320,6 +321,42 @@ const Home = () => {
                         ))}
                     </Box>
                 </Card>
+
+                {/* Business growth metric cards */}
+                <Box sx={{
+                    display: 'grid', gridTemplateColumns: { xs: '1fr 1fr', md: 'repeat(4, 1fr)' },
+                    gap: 2, maxWidth: 900, mx: 'auto', mt: 4
+                }}>
+                    {[
+                        { value: '40+', label: 'Client Sites Shipped', icon: <Rocket size={18} />, grad: 'linear-gradient(135deg, #818cf8, #22d3ee)' },
+                        { value: '24/7', label: 'Uptime SLA Delivered', icon: <ShieldCheck size={18} />, grad: 'linear-gradient(135deg, #34d399, #22d3ee)' },
+                        { value: '10×', label: 'Cost Reduction via Slim Deploys', icon: <TrendingUp size={18} />, grad: 'linear-gradient(135deg, #f472b6, #818cf8)' },
+                        { value: '100%', label: 'On-time Delivery Record', icon: <DollarSign size={18} />, grad: 'linear-gradient(135deg, #f59e0b, #f472b6)' },
+                    ].map((m, i) => (
+                        <motion.div key={m.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 + i * 0.08 }}>
+                            <Card variant="outlined" sx={{
+                                borderRadius: 3, textAlign: 'center', py: 2.5, px: 1.5, height: '100%',
+                                bgcolor: cardBg, borderColor: cardBorder,
+                                transition: 'all 0.3s',
+                                '&:hover': { transform: 'translateY(-4px)', borderColor: 'primary.main', boxShadow: '0 10px 30px rgba(129,140,248,0.2)' }
+                            }}>
+                                <Box sx={{
+                                    width: 38, height: 38, borderRadius: 2, mx: 'auto', mb: 1.5,
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                    background: m.grad, color: '#0f172a'
+                                }}>
+                                    {m.icon}
+                                </Box>
+                                <Typography sx={{ fontWeight: 900, fontSize: '1.5rem', background: m.grad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                                    {m.value}
+                                </Typography>
+                                <Typography sx={{ fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'text.secondary', fontWeight: 700, mt: 0.5 }}>
+                                    {m.label}
+                                </Typography>
+                            </Card>
+                        </motion.div>
+                    ))}
+                </Box>
             </Box>
 
             {/* ===== SKILLS GRID ===== */}
