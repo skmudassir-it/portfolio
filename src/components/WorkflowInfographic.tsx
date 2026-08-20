@@ -1,12 +1,13 @@
 import { Box, Typography } from '@mui/material';
 import {
-    Inbox, Search, Wrench, Camera, Code2, GitBranch, Rocket, Trophy
+    Inbox, Search, MessagesSquare, Wrench, Camera, Compass, Code2,
+    FlaskConical, GitBranch, Rocket, LineChart, Trophy
 } from 'lucide-react';
 import { useThemeMode } from '../theme/ThemeContext';
 
 /**
- * n8n-style workflow infographic — CSS grid layout, no absolute positioning,
- * per-connector SVGs (uniform scaling, no distortion). Mobile-safe.
+ * n8n-style workflow infographic — 12-node approach.
+ * 4-row serpentine: CSS grid, per-connector SVGs (no distortion), mobile-safe.
  */
 
 interface WorkflowNode {
@@ -20,17 +21,34 @@ interface WorkflowNode {
 const NODES: WorkflowNode[] = [
     { id: 'receive', title: 'Receive Document', subtitle: 'Project Intake', icon: <Inbox size={20} />, color: '#818cf8' },
     { id: 'analyze', title: 'Analyze Problem', subtitle: 'Requirements Deep-Dive', icon: <Search size={20} />, color: '#22d3ee' },
-    { id: 'upgrade', title: 'Address Upgrade', subtitle: 'Scope & Solutions', icon: <Wrench size={20} />, color: '#34d399' },
-    { id: 'document', title: 'Document Process', subtitle: 'Screenshots & Specs', icon: <Camera size={20} />, color: '#f59e0b' },
-    { id: 'develop', title: 'Develop System', subtitle: 'Build & Engineer', icon: <Code2 size={20} />, color: '#f472b6' },
-    { id: 'repo', title: 'Update Repo', subtitle: 'Commit & Push', icon: <GitBranch size={20} />, color: '#22d3ee' },
+    { id: 'consult', title: 'Client Consultation', subtitle: 'Clarify & Align', icon: <MessagesSquare size={20} />, color: '#34d399' },
+    { id: 'upgrade', title: 'Address Upgrade', subtitle: 'Scope & Solutions', icon: <Wrench size={20} />, color: '#f59e0b' },
+    { id: 'document', title: 'Document Process', subtitle: 'Screenshots & Specs', icon: <Camera size={20} />, color: '#f472b6' },
+    { id: 'design', title: 'System Design', subtitle: 'Architecture & Plan', icon: <Compass size={20} />, color: '#a78bfa' },
+    { id: 'develop', title: 'Develop System', subtitle: 'Build & Engineer', icon: <Code2 size={20} />, color: '#818cf8' },
+    { id: 'test', title: 'Test & Validate', subtitle: 'QA & Review', icon: <FlaskConical size={20} />, color: '#22d3ee' },
+    { id: 'repo', title: 'Update Repo', subtitle: 'Commit & Push', icon: <GitBranch size={20} />, color: '#34d399' },
     { id: 'deploy', title: 'Deploy & Verify', subtitle: 'Ship to Production', icon: <Rocket size={20} />, color: '#f59e0b' },
-    { id: 'deliver', title: 'Deliver Value', subtitle: 'Handoff & Growth', icon: <Trophy size={20} />, color: '#f472b6' },
+    { id: 'monitor', title: 'Monitor & Optimize', subtitle: 'Performance & Scale', icon: <LineChart size={20} />, color: '#f472b6' },
+    { id: 'deliver', title: 'Deliver Value', subtitle: 'Handoff & Growth', icon: <Trophy size={20} />, color: '#a78bfa' },
 ];
 
-// flow order: 0→1→2→3 (top L→R), 3→4 (down right), 4→5→6→7 (bottom R→L), 7→0 (loop left)
-const TOP_ORDER = [0, 1, 2, 3];
-const BOTTOM_ORDER = [7, 6, 5, 4];
+// Serpentine rows (display order left→right):
+// Row 1: 1,2,3  |  Row 2: 6,5,4  |  Row 3: 7,8,9  |  Row 4: 12,11,10
+const ROWS = [
+    [0, 1, 2],
+    [5, 4, 3],
+    [6, 7, 8],
+    [11, 10, 9],
+];
+
+// Vertical connectors: (topNodeIdx, bottomNodeIdx, which column: 'left'|'right', direction)
+const VERTICALS: { top: number; bottom: number; col: 'left' | 'right'; dir: 'down' | 'up' }[] = [
+    { top: 2, bottom: 3, col: 'right', dir: 'down' },    // 3 → 4
+    { top: 5, bottom: 6, col: 'left', dir: 'down' },     // 6 → 7
+    { top: 8, bottom: 9, col: 'right', dir: 'down' },    // 9 → 10
+    { top: 11, bottom: 0, col: 'left', dir: 'up' },      // 12 → 1 (loop)
+];
 
 // Right arrow connector (points right)
 const ArrowRight = ({ color, dashed = false }: { color: string; dashed?: boolean }) => (
@@ -50,7 +68,7 @@ const ArrowLeft = ({ color, dashed = false }: { color: string; dashed?: boolean 
     </svg>
 );
 
-// Down arrow (from top row right node to bottom row right node)
+// Down arrow
 const ArrowDown = ({ color }: { color: string }) => (
     <svg viewBox="0 0 24 60" style={{ width: 28, height: '100%', display: 'block', margin: '0 auto' }} aria-hidden="true">
         <line x1="12" y1="2" x2="12" y2="48" stroke={color} strokeWidth="2" />
@@ -58,7 +76,7 @@ const ArrowDown = ({ color }: { color: string }) => (
     </svg>
 );
 
-// Up arrow (loop back, left side: bottom-left node up to top-left node)
+// Up arrow (loop back)
 const ArrowUp = ({ color }: { color: string }) => (
     <svg viewBox="0 0 24 60" style={{ width: 28, height: '100%', display: 'block', margin: '0 auto' }} aria-hidden="true">
         <line x1="12" y1="58" x2="12" y2="12" stroke={color} strokeWidth="2"
@@ -73,8 +91,8 @@ const NodeCard = ({ node }: { node: WorkflowNode }) => {
     return (
         <Box sx={{
             display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-            gap: 0.6, textAlign: 'center',
-            height: '100%', minHeight: 96, py: 1.5, px: 1,
+            gap: 0.5, textAlign: 'center',
+            height: '100%', minHeight: 88, py: 1.2, px: 1,
             background: isLight ? 'rgba(255,255,255,0.95)' : 'rgba(17,25,40,0.95)',
             border: `1.5px solid ${node.color}`,
             borderTop: `4px solid ${node.color}`,
@@ -88,13 +106,13 @@ const NodeCard = ({ node }: { node: WorkflowNode }) => {
         }}>
             <Box sx={{ color: node.color, display: 'flex' }}>{node.icon}</Box>
             <Typography sx={{
-                fontSize: { xs: '0.58rem', sm: '0.66rem' }, fontWeight: 800,
+                fontSize: { xs: '0.56rem', sm: '0.64rem' }, fontWeight: 800,
                 color: isLight ? '#1e293b' : '#f1f5f9', lineHeight: 1.15,
             }}>
                 {node.title}
             </Typography>
             <Typography sx={{
-                fontSize: { xs: '0.42rem', sm: '0.5rem' }, fontWeight: 600,
+                fontSize: { xs: '0.4rem', sm: '0.48rem' }, fontWeight: 600,
                 color: isLight ? '#64748b' : '#94a3b8', lineHeight: 1.1,
             }}>
                 {node.subtitle}
@@ -110,7 +128,6 @@ const WorkflowInfographic = () => {
     const dotColor = isLight ? 'rgba(100,116,139,0.18)' : 'rgba(148,163,184,0.12)';
     const gridBg = isLight ? '#ffffff' : '#0b1220';
     const nodeBorder = isLight ? 'rgba(15,23,42,0.12)' : 'rgba(148,163,184,0.2)';
-    const lineColor = isLight ? 'rgba(99,102,241,0.55)' : 'rgba(129,140,248,0.6)';
 
     return (
         <Box sx={{
@@ -136,48 +153,48 @@ const WorkflowInfographic = () => {
                 </Typography>
             </Box>
 
-            {/* grid: 7 cols x 3 rows */}
+            {/* grid: 5 cols (3 nodes + 2 arrow lanes) x 7 rows (4 node rows + 3 connector rows) */}
             <Box sx={{
                 display: 'grid',
-                gridTemplateColumns: '1fr 44px 1fr 44px 1fr 44px 1fr',
-                gridTemplateRows: '1fr 36px 1fr',
-                gap: 1,
+                gridTemplateColumns: '1fr 40px 1fr 40px 1fr',
+                gridTemplateRows: '1fr 32px 1fr 32px 1fr 32px 1fr',
+                gap: 0.75,
                 alignItems: 'stretch',
-                mt: 4,   // room for title chip
+                mt: 4,
             }}>
-                {/* Row 1 — top nodes with right arrows */}
-                {TOP_ORDER.map((idx, i) => (
-                    <Box key={`top-${idx}`} sx={{ gridColumn: i * 2 + 1, gridRow: 1 }}>
-                        <NodeCard node={NODES[idx]} />
-                    </Box>
-                ))}
-                {TOP_ORDER.slice(0, 3).map((idx, i) => (
-                    <Box key={`tarrow-${i}`} sx={{ gridColumn: i * 2 + 2, gridRow: 1, display: 'flex', alignItems: 'center' }}>
-                        <ArrowRight color={NODES[idx].color} dashed={i % 2 === 1} />
-                    </Box>
+                {/* node rows */}
+                {ROWS.map((row, r) => (
+                    row.map((idx, c) => (
+                        <Box key={`n-${idx}`} sx={{ gridColumn: c * 2 + 1, gridRow: r * 2 + 1 }}>
+                            <NodeCard node={NODES[idx]} />
+                        </Box>
+                    ))
                 ))}
 
-                {/* down connector — col 7, row 2 (4→5) */}
-                <Box sx={{ gridColumn: 7, gridRow: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <ArrowDown color={NODES[3].color} />
-                </Box>
+                {/* horizontal arrows — row 1 & 3 point right; row 2 & 4 point left (serpentine) */}
+                {ROWS.map((row, r) => {
+                    const dir = r % 2 === 0 ? 'right' : 'left';
+                    return row.slice(0, 3).map((idx, c) => (
+                        <Box key={`a-${r}-${c}`} sx={{ gridColumn: c * 2 + 2, gridRow: r * 2 + 1, display: 'flex', alignItems: 'center' }}>
+                            {dir === 'right'
+                                ? <ArrowRight color={NODES[idx].color} dashed={c % 2 === 1} />
+                                : <ArrowLeft color={NODES[idx].color} dashed={c % 2 === 1} />}
+                        </Box>
+                    ));
+                })}
 
-                {/* Row 3 — bottom nodes (reversed flow, left arrows) */}
-                {BOTTOM_ORDER.map((idx, i) => (
-                    <Box key={`bot-${idx}`} sx={{ gridColumn: i * 2 + 1, gridRow: 3 }}>
-                        <NodeCard node={NODES[idx]} />
+                {/* vertical connectors */}
+                {VERTICALS.map((v, i) => (
+                    <Box key={`v-${i}`} sx={{
+                        gridColumn: v.col === 'right' ? 5 : 1,
+                        gridRow: v.top > v.bottom || v.dir === 'up' ? 2 : 6,
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    }}>
+                        {v.dir === 'down'
+                            ? <ArrowDown color={NODES[v.top].color} />
+                            : <ArrowUp color={NODES[v.top].color} />}
                     </Box>
                 ))}
-                {BOTTOM_ORDER.slice(0, 3).map((idx, i) => (
-                    <Box key={`barr-${i}`} sx={{ gridColumn: i * 2 + 2, gridRow: 3, display: 'flex', alignItems: 'center' }}>
-                        <ArrowLeft color={NODES[idx].color} dashed={i % 2 === 1} />
-                    </Box>
-                ))}
-
-                {/* up connector (loop 8→1) — col 1, row 2 */}
-                <Box sx={{ gridColumn: 1, gridRow: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <ArrowUp color={NODES[7].color} />
-                </Box>
             </Box>
 
             {/* bottom status bar */}
@@ -188,12 +205,12 @@ const WorkflowInfographic = () => {
                 border: `1px solid ${nodeBorder}`,
             }}>
                 <Typography sx={{ fontSize: '0.6rem', fontWeight: 700, color: isLight ? '#64748b' : '#94a3b8', fontFamily: 'monospace' }}>
-                    workflow: fde-delivery-v2
+                    workflow: fde-delivery-v12
                 </Typography>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                     <Box sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: '#34d399' }} />
                     <Typography sx={{ fontSize: '0.6rem', fontWeight: 700, color: '#34d399', fontFamily: 'monospace' }}>
-                        ● Success — 8/8 nodes executed
+                        ● Success — 12/12 nodes executed
                     </Typography>
                 </Box>
             </Box>
