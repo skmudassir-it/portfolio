@@ -456,14 +456,14 @@ const Home = () => {
                         <Typography variant="h3" sx={{ fontWeight: 800 }}>Solving Problems with <Box component="span" sx={{ background: 'linear-gradient(135deg,#f472b6,#22d3ee)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Modern Tech</Box></Typography>
                     </Box>
 
-                    <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }, gap: 3 }}>
+                    <Box sx={{ display: 'grid', gridTemplateColumns: { xs: 'repeat(2, 1fr)', sm: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }, gap: { xs: 2, lg: 3 } }}>
                         {techStack.map((tech, idx) => (
                             <motion.div key={tech.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.08 }}>
                                 <Link to={`/tech/${tech.slug}`} style={{ textDecoration: 'none' }}>
                                     <Card variant="outlined" sx={{
                                         borderRadius: 4, height: '100%',
                                         bgcolor: cardBg, borderColor: cardBorder,
-                                        backdropFilter: 'blur(8px)', textAlign: 'center', p: 3,
+                                        backdropFilter: 'blur(8px)', textAlign: 'center', p: { xs: 1.5, sm: 3 },
                                         transition: 'all 0.3s',
                                         '&:hover': {
                                             transform: 'translateY(-6px)',
@@ -473,15 +473,15 @@ const Home = () => {
                                         }
                                     }}>
                                         {tech.icon.startsWith('svg:') ? (
-                                            <Box sx={{ width: 64, height: 64, mx: 'auto', mb: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                                <TechIcon slug={tech.icon.slice(4)} size={64} />
+                                            <Box sx={{ width: { xs: 44, sm: 64 }, height: { xs: 44, sm: 64 }, mx: 'auto', mb: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                                <TechIcon slug={tech.icon.slice(4)} size={44} />
                                             </Box>
                                         ) : (
                                             <Avatar src={tech.icon} alt={`${tech.name} — ${tech.desc}`} variant="rounded"
-                                                sx={{ width: 64, height: 64, mx: 'auto', mb: 2, bgcolor: 'rgba(255,255,255,0.08)', p: 1 }} />
+                                                sx={{ width: { xs: 44, sm: 64 }, height: { xs: 44, sm: 64 }, mx: 'auto', mb: 1, bgcolor: 'rgba(255,255,255,0.08)', p: 1 }} />
                                         )}
-                                        <Typography variant="h6" sx={{ fontWeight: 800, mb: 0.5 }}>{tech.name}</Typography>
-                                        <Typography sx={{ color: 'text.secondary', fontSize: '0.9rem', mb: 1 }}>{tech.desc}</Typography>
+                                        <Typography variant="h6" sx={{ fontWeight: 800, mb: 0.5, fontSize: { xs: '0.95rem', sm: '1.25rem' } }}>{tech.name}</Typography>
+                                        <Typography sx={{ color: 'text.secondary', fontSize: { xs: '0.72rem', sm: '0.9rem' }, mb: 1 }}>{tech.desc}</Typography>
                                         <Typography sx={{ color: 'primary.main', fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', opacity: 0, transition: 'opacity 0.3s' }}
                                             className="card-link-hint">
                                             Learn More →
