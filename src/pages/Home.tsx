@@ -5,6 +5,7 @@ import { experienceData } from './OtherPages';
 import NeuralNetwork from '../components/NeuralNetwork';
 import TechMarquee from '../components/TechMarquee';
 import RadarChart from '../components/RadarChart';
+import WorkflowInfographic from '../components/WorkflowInfographic';
 import { useThemeMode } from '../theme/ThemeContext';
 import {
     Card, CardContent, Chip, Stack, Box, Typography, Avatar, Button,
@@ -356,6 +357,24 @@ const Home = () => {
                             </Card>
                         </motion.div>
                     ))}
+                </Box>
+            </Box>
+
+            {/* ===== WORKFLOW INFographic (n8n style) ===== */}
+            <Box component="section" sx={{ position: 'relative', zIndex: 1, py: 8, px: 2 }}>
+                <Box sx={{ maxWidth: 1000, mx: 'auto' }}>
+                    <Box sx={{ textAlign: 'center', mb: 4 }}>
+                        <Typography sx={{ color: 'secondary.main', fontWeight: 900, letterSpacing: '0.3em', textTransform: 'uppercase', fontSize: '0.75rem', mb: 1 }}>
+                            How I Work
+                        </Typography>
+                        <Typography variant="h3" sx={{ fontWeight: 800, mb: 2 }}>
+                            From Discovery to <Box component="span" sx={{ background: 'linear-gradient(135deg,#34d399,#22d3ee)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Delivered Value</Box>
+                        </Typography>
+                        <Typography sx={{ color: 'text.secondary', maxWidth: 620, mx: 'auto' }}>
+                            A proven, repeatable delivery pipeline — the same rigor I apply to every client engagement.
+                        </Typography>
+                    </Box>
+                    <WorkflowInfographic />
                 </Box>
             </Box>
 
