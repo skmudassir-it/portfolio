@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 
 // Route-level code splitting — each page loads its own JS chunk
@@ -25,6 +26,7 @@ const PageLoader = () => (
 function App() {
     return (
         <Router>
+            <ScrollToTop />
             <div className="flex flex-col min-h-screen">
                 <Navbar />
                 <main className="flex-grow">
