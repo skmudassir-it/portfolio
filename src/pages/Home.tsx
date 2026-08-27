@@ -47,7 +47,7 @@ const Home = () => {
         { value: '84+', label: 'Projects Built' },
         { value: '10+', label: 'Years Experience' },
         { value: '26+', label: 'Live Client Sites' },
-        { value: '6', label: 'Cloud Certifications' },
+        { value: '7', label: 'Cloud Certifications' },
     ];
 
     // Business & growth perspective — what FDEs deliver to clients
@@ -301,6 +301,52 @@ const Home = () => {
                                 </motion.div>
                             ))}
                         </Box>
+
+                        {/* Latest certification highlight */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.7 }}
+                        >
+                            <Card
+                                variant="outlined"
+                                sx={{
+                                    mt: 3, borderRadius: 3, display: 'flex', alignItems: 'center', gap: 2,
+                                    flexWrap: { xs: 'wrap', sm: 'nowrap' }, justifyContent: 'center',
+                                    bgcolor: 'rgba(255,255,255,0.04)', borderColor: 'rgba(129,140,248,0.3)',
+                                    backdropFilter: 'blur(8px)', p: 2
+                                }}
+                            >
+                                <Box
+                                    component="img"
+                                    src="/certificates/Oracle_AgenticAI.png"
+                                    alt="Oracle Agentic AI Certified Foundations Associate"
+                                    sx={{ width: 130, height: 65, objectFit: 'contain', flexShrink: 0, borderRadius: 1, bgcolor: '#fff', p: 0.5 }}
+                                />
+                                <Box sx={{ textAlign: { xs: 'center', sm: 'left' }, flex: 1 }}>
+                                    <Typography sx={{ fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: 'secondary.main', fontWeight: 900 }}>
+                                        Newest Credential
+                                    </Typography>
+                                    <Typography sx={{ fontWeight: 800, fontSize: '1rem', mt: 0.5 }}>
+                                        Oracle Agentic AI Certified Foundations Associate
+                                    </Typography>
+                                    <Typography sx={{ fontSize: '0.75rem', color: 'text.secondary', mt: 0.25 }}>
+                                        Oracle University · Aug 2026
+                                    </Typography>
+                                </Box>
+                                <Button
+                                    component="a"
+                                    href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=9A2564D294CE6FC962C00833FCFD7D087BFC57EA5414E8843E84F31155D2E183"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    size="small"
+                                    variant="contained"
+                                    sx={{ borderRadius: 2, fontWeight: 800, textTransform: 'none', flexShrink: 0 }}
+                                >
+                                    Verify Badge
+                                </Button>
+                            </Card>
+                        </motion.div>
                     </motion.div>
                 </Box>
             </Box>

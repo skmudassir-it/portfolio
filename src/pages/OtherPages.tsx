@@ -1366,6 +1366,19 @@ export const Certifications = () => (
             <div className="max-w-7xl mx-auto space-y-24">
                 {[
                     {
+                        category: "Oracle University",
+                        certs: [
+                            {
+                                title: "Agentic AI Certified Foundations Associate",
+                                issuer: "Oracle",
+                                type: "Associate",
+                                date: "Aug 2026",
+                                image: "/certificates/Oracle_AgenticAI.png",
+                                link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=9A2564D294CE6FC962C00833FCFD7D087BFC57EA5414E8843E84F31155D2E183"
+                            }
+                        ]
+                    },
+                    {
                         category: "Amazon Web Services (AWS)",
                         certs: [
                             {
